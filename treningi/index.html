@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тренинги — Андрей Мейстер</title>
+  <style>
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0C0C0C;
+      color: #F0F0F0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 200;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #3A86FF;
+      letter-spacing: 0.15em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #CCCCCC;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== АНИМАЦИИ ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+      text-shadow: 0 0 10px #3A86FF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      border: 1px solid #3A86FF;
+      background-color: transparent;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .btn-small {
+      padding: 10px 24px;
+      font-size: 0.8rem;
+    }
+
+    /* ===== ШАПКА ===== */
+    .header {
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      position: sticky;
+      top: 0;
+      background-color: #0C0C0C;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+    }
+
+    .logo span {
+      color: #3A86FF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #F0F0F0;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
+    }
+
+    /* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+    .page-header {
+      padding: 80px 0 40px;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: #3A86FF;
+      max-width: 700px;
+    }
+
+    /* ===== ТРЕНИНГИ ===== */
+    .trainings-section {
+      padding: 80px 0;
+    }
+
+    .training-card {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      margin-bottom: 40px;
+      padding: 40px;
+      transition: all 0.3s ease;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .training-card:nth-child(1) { animation-delay: 0.1s; }
+    .training-card:nth-child(2) { animation-delay: 0.2s; }
+    .training-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .training-card:hover {
+      border-color: #3A86FF;
+      box-shadow: 0 0 30px rgba(58, 134, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .training-icon {
+      font-size: 6rem;
+      text-align: center;
+      color: #3A86FF;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .training-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .training-title {
+      font-size: 2rem;
+      font-weight: 300;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .training-meta {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 20px;
+      color: #3A86FF;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .training-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .training-description {
+      margin-bottom: 30px;
+    }
+
+    .training-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #CCCCCC;
+    }
+
+    .feature::before {
+      content: "→";
+      color: #C6A43F;
+      font-weight: bold;
+    }
+
+    .training-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+    }
+
+    .training-price {
+      font-size: 1.5rem;
+      color: #C6A43F;
+      letter-spacing: 0.1em;
+    }
+
+    .training-price small {
+      font-size: 0.9rem;
+      color: #666;
+      text-decoration: line-through;
+      margin-right: 15px;
+    }
+
+    /* ===== РАСПИСАНИЕ ===== */
+    .schedule-section {
+      padding: 80px 0;
+      background-color: rgba(58, 134, 255, 0.02);
+      border-top: 1px solid rgba(58, 134, 255, 0.1);
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .schedule-item {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .schedule-item:hover {
+      border-color: #C6A43F;
+      transform: translateY(-5px);
+    }
+
+    .schedule-date {
+      font-size: 2rem;
+      font-weight: 200;
+      color: #3A86FF;
+      margin-bottom: 15px;
+    }
+
+    .schedule-month {
+      font-size: 1rem;
+      color: #C6A43F;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+    }
+
+    .schedule-title {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+    }
+
+    .schedule-status {
+      display: inline-block;
+      padding: 5px 15px;
+      border: 1px solid #3A86FF;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-top: 15px;
+    }
+
+    .schedule-status.available {
+      border-color: #00FF00;
+      color: #00FF00;
+      animation: pulse 2s infinite;
+    }
+
+    /* ===== ФОРМАТЫ ===== */
+    .formats-section {
+      padding: 80px 0;
+    }
+
+    .formats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .format-card {
+      text-align: center;
+      padding: 40px 30px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .format-card:hover {
+      border-color: #3A86FF;
+      box-shadow: 0 0 30px rgba(58, 134, 255, 0.2);
+    }
+
+    .format-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #3A86FF;
+    }
+
+    .format-title {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+    }
+
+    .format-price {
+      font-size: 1.8rem;
+      color: #C6A43F;
+      margin: 20px 0;
+    }
+
+    .format-price small {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    .footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+      background-color: #0C0C0C;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #F0F0F0;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      border-bottom-color: #C6A43F;
+      color: #C6A43F;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      margin-top: 40px;
+    }
+
+    .text-blue { color: #3A86FF; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .training-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .training-icon {
+        font-size: 4rem;
+      }
+      
+      .training-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .schedule-grid, .formats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .training-footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a href="/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/">Главная</a>
+        <a href="/#strategies">Стратегии</a>
+        <a href="/#projects">Проекты</a>
+        <a href="/knigi/">Книги</a>
+        <a href="/treningi/" class="active">Тренинги</a>
+        <a href="/obo-mne/">Обо мне</a>
+      </div>
+      <a href="#kontakt" class="btn" onclick="alert('Форма записи появится здесь')">Запись</a>
+    </div>
+  </div>
+</header>
+
+<!-- ЗАГОЛОВОК -->
+<section class="page-header">
+  <div class="container">
+    <h1>ТРЕНИНГИ</h1>
+    <p>Практические курсы по развитию системного мышления, латерального мышления и навыков влияния</p>
+  </div>
+</section>
+
+<!-- ОСНОВНЫЕ ТРЕНИНГИ -->
+<section class="trainings-section">
+  <div class="container">
+    <div class="training-card">
+      <div class="training-icon">🧠</div>
+      <div class="training-content">
+        <h2 class="training-title">РАЗГОВОРНЫЙ ГИПНОЗ</h2>
+        <div class="training-meta">
+          <span>📅 3 дня</span>
+          <span>⏰ 24 часа</span>
+          <span>👥 до 15 человек</span>
+        </div>
+        <p class="training-description">Освоение навыков влияния в повседневной жизни. Научитесь использовать речевые конструкции, которые естественным образом влияют на восприятие и решения собеседника.</p>
+        <div class="training-features">
+          <div class="feature">Техники эриксоновского гипноза</div>
+          <div class="feature">Речевые пресуппозиции</div>
+          <div class="feature">Якорение и триггеры</div>
+          <div class="feature">Работа с возражениями</div>
+        </div>
+        <div class="training-footer">
+          <div class="training-price"><small>₽45 000</small> ₽35 000</div>
+          <a href="#" class="btn btn-small" onclick="alert('Запись на тренинг')">Записаться</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="training-card">
+      <div class="training-icon">🔮</div>
+      <div class="training-content">
+        <h2 class="training-title">ЛАТЕРАЛЬНОЕ МЫШЛЕНИЕ</h2>
+        <div class="training-meta">
+          <span>📅 2 дня</span>
+          <span>⏰ 16 часов</span>
+          <span>👥 до 12 человек</span>
+        </div>
+        <p class="training-description">Как находить нестандартные решения там, где стандартные методы не работают. Прорывные идеи и креативные стратегии.</p>
+        <div class="training-features">
+          <div class="feature">Техники Эдварда де Боно</div>
+          <div class="feature">Провокативные идеи</div>
+          <div class="feature">Шесть шляп мышления</div>
+          <div class="feature">Методы генерации идей</div>
+        </div>
+        <div class="training-footer">
+          <div class="training-price"><small>₽35 000</small> ₽28 000</div>
+          <a href="#" class="btn btn-small" onclick="alert('Запись на тренинг')">Записаться</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="training-card">
+      <div class="training-icon">🎯</div>
+      <div class="training-content">
+        <h2 class="training-title">СИСТЕМНЫЙ АНАЛИЗ БИЗНЕСА</h2>
+        <div class="training-meta">
+          <span>📅 4 дня</span>
+          <span>⏰ 32 часа</span>
+          <span>👥 индивидуально</span>
+        </div>
+        <p class="training-description">Для собственников бизнеса и топ-менеджеров. Видеть бизнес как систему и находить точки максимального влияния.</p>
+        <div class="training-features">
+          <div class="feature">Системное мышление в бизнесе</div>
+          <div class="feature">Точки рычага</div>
+          <div class="feature">Анализ обратных связей</div>
+          <div class="feature">Стратегическое планирование</div>
+        </div>
+        <div class="training-footer">
+          <div class="training-price">по запросу</div>
+          <a href="#" class="btn btn-small" onclick="alert('Свяжитесь со мной для обсуждения')">Обсудить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- РАСПИСАНИЕ -->
+<section class="schedule-section">
+  <div class="container">
+    <h2>БЛИЖАЙШИЕ ДАТЫ</h2>
+    <div class="schedule-grid">
+      <div class="schedule-item">
+        <div class="schedule-date">15-17</div>
+        <div class="schedule-month">МАЯ 2026</div>
+        <div class="schedule-title">Разговорный гипноз</div>
+        <div class="schedule-status available">✓ МЕСТА ЕСТЬ</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-date">22-23</div>
+        <div class="schedule-month">МАЯ 2026</div>
+        <div class="schedule-title">Латеральное мышление</div>
+        <div class="schedule-status available">✓ МЕСТА ЕСТЬ</div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-date">5-8</div>
+        <div class="schedule-month">ИЮНЯ 2026</div>
+        <div class="schedule-title">Системный анализ</div>
+        <div class="schedule-status" style="border-color: #FF0000; color: #FF0000;">✗ ПО ЗАПРОСУ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ФОРМАТЫ ОБУЧЕНИЯ -->
+<section class="formats-section">
+  <div class="container">
+    <h2>ФОРМАТЫ ОБУЧЕНИЯ</h2>
+    <div class="formats-grid">
+      <div class="format-card">
+        <div class="format-icon">🏛️</div>
+        <h3 class="format-title">ОЧНО</h3>
+        <p>Интенсивная работа в малых группах, живое общение, практика с обратной связью</p>
+        <div class="format-price">от 35 000 ₽</div>
+      </div>
+      <div class="format-card">
+        <div class="format-icon">💻</div>
+        <h3 class="format-title">ОНЛАЙН</h3>
+        <p>Участие из любой точки мира, записи занятий, домашние задания</p>
+        <div class="format-price">от 25 000 ₽</div>
+      </div>
+      <div class="format-card">
+        <div class="format-icon">👤</div>
+        <h3 class="format-title">ИНДИВИДУАЛЬНО</h3>
+        <p>Персональная программа под ваш запрос, гибкий график</p>
+        <div class="format-price">по запросу</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © Андрей Мейстер · системное мышление · 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+// Подсветка активного пункта меню
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (currentPath === href || currentPath.startsWith(href + '/')) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
