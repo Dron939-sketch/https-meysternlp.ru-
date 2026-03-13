@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Андрей Мейстер — системное мышление</title>
+  <style>
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0C0C0C;
+      color: #F0F0F0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      scroll-margin-top: 100px;
+    }
+
+    /* ===== ТИПОГРАФИКА ===== */
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 200;
+      margin-bottom: 0.5rem;
+      color: #FFFFFF;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #3A86FF;
+      letter-spacing: 0.15em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #CCCCCC;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== АНИМАЦИИ ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+      text-shadow: 0 0 10px #3A86FF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      border: 1px solid #3A86FF;
+      background-color: transparent;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    /* ===== ШАПКА ===== */
+    .header {
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      position: sticky;
+      top: 0;
+      background-color: #0C0C0C;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+    }
+
+    .logo span {
+      color: #3A86FF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 50px;
+    }
+
+    .nav-links a {
+      color: #F0F0F0;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #3A86FF;
+      text-shadow: none;
+    }
+
+    /* ===== ГЕРОЙ ===== */
+    .hero {
+      padding: 100px 0;
+      background-color: #0C0C0C;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #3A86FF;
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      max-width: 90%;
+      border-left: 2px solid #3A86FF;
+      padding-left: 20px;
+      margin: 30px 0 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    /* ===== ВИДЕО 16:9 С РАМКОЙ ПО КОНТУРУ ===== */
+    .hero-image {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: #0C0C0C;
+      overflow: hidden;
+      position: relative;
+      border: none;
+      box-shadow: none;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background-color: #0C0C0C;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 2px solid #3A86FF;
+      box-sizing: border-box;
+      pointer-events: none;
+      z-index: 2;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-wrapper:hover::before {
+      border-color: #C6A43F;
+      box-shadow: 0 0 20px rgba(198, 164, 63, 0.5);
+    }
+
+    .video-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, transparent 45%, #0C0C0C 100%);
+      pointer-events: none;
+      z-index: 3;
+      opacity: 0.45;
+      mix-blend-mode: multiply;
+    }
+
+    .hero-sticker {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background-color: transparent;
+      color: #3A86FF;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      border: 1px solid #3A86FF;
+      text-transform: uppercase;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .hero-sticker:hover {
+      background-color: #C6A43F;
+      border-color: #C6A43F;
+      color: #0C0C0C;
+      box-shadow: 0 0 25px rgba(198, 164, 63, 0.5);
+    }
+
+    /* ===== СТРАТЕГИИ ===== */
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .strategies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .strategy-card {
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      transition: all 0.3s ease;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .strategy-card:nth-child(1) { animation-delay: 0.1s; }
+    .strategy-card:nth-child(2) { animation-delay: 0.2s; }
+    .strategy-card:nth-child(3) { animation-delay: 0.3s; }
+    .strategy-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .strategy-card:hover {
+      border-color: #3A86FF;
+      box-shadow: 0 0 30px rgba(58, 134, 255, 0.2);
+      transform: translateY(-5px);
+      background-color: rgba(58, 134, 255, 0.05);
+    }
+
+    .strategy-number {
+      font-size: 2.5rem;
+      font-weight: 100;
+      color: #3A86FF;
+      margin-bottom: 20px;
+      opacity: 0.8;
+    }
+
+    .strategy-title {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+    }
+
+    /* ===== ПРОЕКТЫ ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 40px 30px;
+      transition: all 0.3s ease;
+      text-align: left;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.2s; }
+    .project-card:nth-child(2) { animation-delay: 0.3s; }
+    .project-card:nth-child(3) { animation-delay: 0.4s; }
+
+    .project-card:hover {
+      border-color: #3A86FF;
+      box-shadow: 0 0 40px rgba(58, 134, 255, 0.15);
+      background-color: rgba(58, 134, 255, 0.03);
+    }
+
+    .project-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #3A86FF;
+      opacity: 0.8;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+    }
+
+    .project-link:hover {
+      border-bottom-color: #3A86FF;
+    }
+
+    /* ===== СИСТЕМНОЕ МЫШЛЕНИЕ (НОВЫЙ БЛОК) ===== */
+    .system-section {
+      padding: 80px 0;
+      background-color: #0C0C0C;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .system-intro {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #3A86FF;
+      margin-bottom: 60px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+
+    .system-cycle {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    .cycle-item {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .cycle-item:hover {
+      border-color: #C6A43F;
+      box-shadow: 0 0 30px rgba(198, 164, 63, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .cycle-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #3A86FF;
+      transition: color 0.3s ease;
+    }
+
+    .cycle-item:hover .cycle-icon {
+      color: #C6A43F;
+    }
+
+    .cycle-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+      letter-spacing: 0.1em;
+    }
+
+    .cycle-item p {
+      font-size: 0.95rem;
+      color: #CCCCCC;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .cycle-arrow {
+      font-size: 1.5rem;
+      color: #3A86FF;
+      margin-top: 10px;
+    }
+
+    .about-author {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .about-author p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #F0F0F0;
+    }
+
+    .about-author strong {
+      color: #3A86FF;
+      font-weight: 400;
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    .footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+      background-color: #0C0C0C;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .social-links a {
+      color: #F0F0F0;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      border-bottom-color: #C6A43F;
+      color: #C6A43F;
+      text-shadow: none;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      margin-top: 40px;
+    }
+
+    /* ===== УТИЛИТЫ ===== */
+    .text-blue { color: #3A86FF; }
+    .text-light { color: #F0F0F0; }
+    .border-blue { border-color: #3A86FF; }
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-4 { margin-top: 1.5rem; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-4 { margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <div class="logo"><span>А</span>МЕЙСТЕР</div>
+      <div class="nav-links">
+        <a href="#home">Главная</a>
+        <a href="#strategies">Стратегии</a>
+        <a href="#projects">Проекты</a>
+        <a href="https://meysternlp.ru/knigi/">Книги</a>
+        <a href="https://meysternlp.ru/treningi/">Тренинги</a>
+        <a href="https://meysternlp.ru/obo-mne/">Обо мне</a>
+      </div>
+      <a href="https://meysternlp.ru/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE3OTEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D" class="btn">Запись</a>
+    </div>
+  </div>
+</header>
+
+<!-- ГЕРОЙ -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Левый блок с текстом -->
+      <div class="hero-content">
+        <div class="hero-subtitle">тренер системного и латерального мышления</div>
+        <h1>Андрей<br>Мейстер</h1>
+        <div class="hero-description">
+          Автор бестселлера «Теория манипуляции», кандидат наук. Вижу закономерности там, где другие видят хаос.
+        </div>
+        <div class="hero-buttons">
+          <a href="https://meysternlp.ru/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE3OTEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D" class="btn">Консультация</a>
+          <a href="#projects" class="btn">Проекты</a>
+        </div>
+      </div>
+      <!-- Правый блок с видео 16:9 -->
+      <div class="hero-image">
+        <div class="video-wrapper">
+          <video autoplay loop muted playsinline>
+            <source src="Новый%20проект.mp4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+        <div class="hero-sticker">системно</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- СТРАТЕГИИ -->
+<section id="strategies" class="section">
+  <div class="container">
+    <h2>ЧЕМ Я МОГУ БЫТЬ ПОЛЕЗЕН</h2>
+    <div class="strategies-grid">
+      <div class="strategy-card">
+        <div class="strategy-number">01</div>
+        <div class="strategy-title">Принятие</div>
+        <p>Снизить ожидания, смириться, принять реальность. Помогу сравнить ваши цели с возможностями и дать честную обратную связь.</p>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-number">02</div>
+        <div class="strategy-title">Магия</div>
+        <p>Научу самогипнозу и работе с подсознанием без эзотерики. «Посылать сигналы Вселенной» — теперь научно.</p>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-number">03</div>
+        <div class="strategy-title">Масштаб</div>
+        <p>Уйти от токсичных людей или создать компанию. Помогу с системным анализом бизнеса и маркетингом.</p>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-number">04</div>
+        <div class="strategy-title">Изменение</div>
+        <p>Изменить поведение, чтобы получить другую обратную связь. Здесь я — рациональный партнер.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРОЕКТЫ -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2>МОИ ПРОЕКТЫ</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon">🧠</div>
+        <div class="project-title">Практикум</div>
+        <p>«Разговорный гипноз» — освоение навыков влияния в повседневной жизни.</p>
+        <a href="https://meysternlp.ru/treningi/" class="project-link">Подробнее →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">📘</div>
+        <div class="project-title">Книги</div>
+        <p>Трилогия «Теория манипуляции» — бестселлеры по психологии влияния.</p>
+        <a href="https://meysternlp.ru/knigi/" class="project-link">Подробнее →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🎲</div>
+        <div class="project-title">Игры</div>
+        <p>Дидактическая игра «Маркетолог» — учимся мыслить системно.</p>
+        <a href="https://meysternlp.ru/didakticheskie-igry/" class="project-link">Подробнее →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- СИСТЕМНОЕ МЫШЛЕНИЕ (НОВЫЙ БЛОК) -->
+<section class="system-section">
+  <div class="container">
+    <h2>СИСТЕМНОЕ МЫШЛЕНИЕ</h2>
+    <p class="system-intro">Всё взаимосвязано. Изменение одного элемента влияет на все остальные.</p>
+    
+    <div class="system-cycle">
+      <!-- Гормональный фон -->
+      <div class="cycle-item">
+        <div class="cycle-icon">🧪</div>
+        <h3>ГОРМОНАЛЬНЫЙ ФОН</h3>
+        <p>Определяет наше поведение и решения</p>
+        <div class="cycle-arrow">↓</div>
+      </div>
+      
+      <!-- Поведение / Архитектура прогрессии -->
+      <div class="cycle-item">
+        <div class="cycle-icon">🏗️</div>
+        <h3>АРХИТЕКТУРА ПРОГРЕССИИ</h3>
+        <p>Процессы деятельности влияют на мышление и восприятие мира</p>
+        <div class="cycle-arrow">↓</div>
+      </div>
+      
+      <!-- Качество жизни -->
+      <div class="cycle-item">
+        <div class="cycle-icon">🏆</div>
+        <h3>КАЧЕСТВО ЖИЗНИ</h3>
+        <p>Влияет на гормональный фон</p>
+        <div class="cycle-arrow">↓</div>
+      </div>
+      
+      <!-- Возможности -->
+      <div class="cycle-item">
+        <div class="cycle-icon">🔑</div>
+        <h3>ВОЗМОЖНОСТИ</h3>
+        <p>Определяют качество жизни</p>
+        <div class="cycle-arrow">↓</div>
+      </div>
+      
+      <!-- Социальные связи -->
+      <div class="cycle-item">
+        <div class="cycle-icon">👥</div>
+        <h3>СОЦИАЛЬНЫЕ СВЯЗИ</h3>
+        <p>Определяют возможности</p>
+        <div class="cycle-arrow">↓</div>
+      </div>
+      
+      <!-- Речь -->
+      <div class="cycle-item">
+        <div class="cycle-icon">💬</div>
+        <h3>РЕЧЬ</h3>
+        <p>Влияет на социальные связи</p>
+        <div class="cycle-arrow">↓</div>
+      </div>
+      
+      <!-- Мышление -->
+      <div class="cycle-item">
+        <div class="cycle-icon">🧩</div>
+        <h3>МЫШЛЕНИЕ</h3>
+        <p>Отражается в речи и влияет на гормональный фон</p>
+        <div class="cycle-arrow">↻</div>
+      </div>
+    </div>
+    
+    <!-- Описание Андрея Мейстера -->
+    <div class="about-author">
+      <p><strong>Андрей Мейстер</strong> — психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика». Специализируется на развитии латерального мышления, системного анализа и когнитивных навыков. Помогает людям видеть закономерности там, где другие видят хаос, и находить решения там, где другие видят тупик. Ведёт тренинги по темам: системное мышление, латеральное мышление, когнитивная гибкость, принятие решений.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © Андрей Мейстер · системное мышление · 2026
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
