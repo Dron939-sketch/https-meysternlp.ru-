@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Латеральное мышление: что это и как развить — Андрей Мейстер</title>
+  <style>
+    /* Копируем те же стили, что и в списке статей */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0C0C0C;
+      color: #F0F0F0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 200;
+      margin: 60px 0 20px;
+      color: #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ШАПКА */
+    .header {
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      background-color: #0C0C0C;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: #3A86FF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #F0F0F0;
+      text-decoration: none;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid #3A86FF;
+      background: transparent;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #3A86FF;
+      color: #0C0C0C;
+    }
+
+    /* Статья */
+    .article-header {
+      margin: 40px 0;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 30px;
+      color: #C6A43F;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .article-content h2 {
+      color: #3A86FF;
+      font-size: 1.8rem;
+      margin: 40px 0 20px;
+      font-weight: 300;
+    }
+
+    .article-content h3 {
+      color: #FFFFFF;
+      font-size: 1.3rem;
+      margin: 30px 0 15px;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content ul, 
+    .article-content ol {
+      margin: 20px 0 20px 30px;
+      color: #CCCCCC;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background: rgba(58, 134, 255, 0.1);
+      border-left: 3px solid #C6A43F;
+      padding: 20px;
+      margin: 30px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 40px 0;
+      color: #3A86FF;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Подвал */
+    .footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .social-links a {
+      color: #F0F0F0;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .social-links a:hover {
+      color: #C6A43F;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+
+    .text-blue { color: #3A86FF; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .nav { flex-direction: column; align-items: flex-start; }
+      .article-meta { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="nav">
+        <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
+        <div class="nav-links">
+          <a href="/https-meysternlp.ru-/">Главная</a>
+          <a href="/https-meysternlp.ru-/blog/">Блог</a>
+          <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+          <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+          <a href="/https-meysternlp.ru-/obo-mne/">Обо мне</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <article>
+      <div class="article-header">
+        <div class="article-meta">
+          <span>15 марта 2026</span>
+          <span>👁️ 1 245 просмотров</span>
+          <span>⏱️ 7 мин чтения</span>
+        </div>
+        <h1>Что такое латеральное мышление и чем оно отличается от критического?</h1>
+      </div>
+
+      <div class="article-content">
+        <p>Термин «латеральное мышление» ввел Эдвард де Боно в 1960-х годах. В отличие от вертикального (логического) мышления, которое движется последовательно, латеральное мышление ищет решения «сбоку» — неочевидными путями.</p>
+
+        <h2>Чем латеральное мышление отличается от критического?</h2>
+        <p>Критическое мышление анализирует и оценивает уже существующие идеи. Латеральное — генерирует новые. Это как разница между судьей и изобретателем. Первый говорит: «Здесь ошибка», второй предлагает: «А давайте попробуем вот так».</p>
+
+        <div class="highlight">
+          <p><strong>Пример:</strong> Критическое мышление скажет: «Этот бизнес-план не сработает, потому что рынок переполнен». Латеральное спросит: «А что если сделать продукт бесплатным, а зарабатывать на сервисе?».</p>
+        </div>
+
+        <h2>5 техник латерального мышления</h2>
+        
+        <h3>1. Шесть шляп мышления</h3>
+        <p>Примеряйте разные роли: белая шляпа (факты), красная (эмоции), черная (критика), желтая (оптимизм), зеленая (креатив), синяя (управление процессом).</p>
+
+        <h3>2. Провокационные идеи</h3>
+        <p>Сознательно выдвигайте абсурдные предположения. Например: «А что если продавать обувь по подписке?» Звучит странно, но это работает в некоторых нишах.</p>
+
+        <h3>3. Случайное слово</h3>
+        <p>Откройте словарь на любой странице, возьмите первое слово и попробуйте связать его с вашей задачей.</p>
+
+        <h3>4. Выворачивание наизнанку</h3>
+        <p>Сделайте наоборот тому, что считается нормой. Если все идут налево, подумайте — может, вам направо?</p>
+
+        <h3>5. Мышление от желаемого результата</h3>
+        <p>Представьте, что решение уже найдено. Опишите мир, в котором проблема решена, и работайте назад.</p>
+
+        <h2>Как тренировать латеральное мышление</h2>
+        <p>Вот несколько упражнений:</p>
+        <ul>
+          <li><strong>Задачи-загадки:</strong> «Человек живет на 10 этаже, но в дождливую погоду спускается на лифте до 5, а потом идет пешком. Почему?» (Ответ: он карлик и достает только до кнопки 5).</li>
+          <li><strong>Поиск 100 применений:</strong> Возьмите любой предмет (кирпич, скрепка) и придумайте 100 способов его использования.</li>
+          <li><strong>Смена контекста:</strong> Представьте, как вашу проблему решал бы ребенок, художник, инопланетянин.</li>
+        </ul>
+
+        <p>На моих тренингах мы отрабатываем эти техники на реальных кейсах. Если хотите научиться мыслить нестандартно — приходите на практикум «Разговорный гипноз», где мы используем латеральное мышление для влияния и убеждения.</p>
+      </div>
+
+      <a href="/https-meysternlp.ru-/blog/" class="back-link">← К списку статей</a>
+    </article>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+        <div class="social-links">
+          <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+          <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+          <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+          <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+        </div>
+      </div>
+      <div class="copyright">© Андрей Мейстер · системное мышление · 2026</div>
+    </div>
+  </footer>
+</body>
+</html>
