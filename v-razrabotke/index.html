@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO МЕТА-ТЕГИ -->
+  <title>Проекты в разработке — индивидуальные дидактические упражнения | Андрей Мейстер</title>
+  <meta name="description" content="Разработка персональных дидактических упражнений под ваш запрос. Индивидуальный подход к развитию навыков системного мышления, латерального мышления и когнитивной гибкости.">
+  <meta name="keywords" content="разработка упражнений, дидактические материалы, индивидуальное обучение, развитие навыков, вариатика, системное мышление">
+  <meta name="author" content="Андрей Мейстер">
+  
+  <!-- OPEN GRAPH ДЛЯ СОЦСЕТЕЙ -->
+  <meta property="og:title" content="Проекты в разработке — индивидуальные дидактические упражнения">
+  <meta property="og:description" content="Разработка персональных упражнений под ваш запрос. 5 шагов к идеальной версии себя.">
+  <meta property="og:image" content="/https-meysternlp.ru-/images/razrabotka-preview.jpg">
+  <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/v-razrabotke/">
+  <meta property="og:type" content="website">
+  
+  <!-- КАНОНИЧЕСКАЯ ССЫЛКА -->
+  <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/v-razrabotke/">
+  
+  <style>
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0C0C0C;
+      color: #F0F0F0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== ТИПОГРАФИКА ===== */
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 200;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #3A86FF;
+      letter-spacing: 0.15em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #CCCCCC;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid #3A86FF;
+      background: transparent;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    /* Кнопка в шапке (градиентная) */
+    .btn-header {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      color: white;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
+      border: none;
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      color: white;
+    }
+
+    .btn-header::before {
+      display: none;
+    }
+
+    /* ===== ШАПКА (как на главной) ===== */
+    .header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      position: sticky;
+      top: 0;
+      background-color: #0C0C0C;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+    }
+
+    .logo span {
+      color: #3A86FF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #F0F0F0;
+      font-weight: 400;
+      letter-spacing: normal;
+      font-size: 1rem;
+      text-transform: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
+    }
+
+    /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
+    .page-header {
+      padding: 80px 0 40px;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .page-header h1 {
+      color: #3A86FF;
+      font-size: 2.8rem;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+    }
+
+    /* Герой-блок с иконкой */
+    .hero-block {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 60px;
+      margin: 40px 0;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-icon {
+      font-size: 5rem;
+      color: #3A86FF;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h2 {
+      margin-bottom: 20px;
+    }
+
+    /* Секция с 5 шагами */
+    .steps-section {
+      padding: 60px 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      font-size: 2.5rem;
+      font-weight: 200;
+      color: #3A86FF;
+      min-width: 60px;
+    }
+
+    .step-content h3 {
+      color: #C6A43F;
+      margin-bottom: 10px;
+    }
+
+    /* Процесс разработки */
+    .process-section {
+      padding: 60px 0;
+      background: rgba(58, 134, 255, 0.02);
+      border-top: 1px solid rgba(58, 134, 255, 0.1);
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    /* Что вы получите */
+    .benefits-section {
+      padding: 60px 0;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 20px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover {
+      border-color: #3A86FF;
+      transform: translateX(10px);
+    }
+
+    .benefit-number {
+      font-size: 2rem;
+      font-weight: 200;
+      color: #3A86FF;
+      min-width: 50px;
+    }
+
+    .benefit-text h3 {
+      color: #C6A43F;
+      margin-bottom: 10px;
+    }
+
+    /* Карточка с фото (как на главной) */
+    .photo-card {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), transparent);
+      border: 1px solid rgba(58, 134, 255, 0.3);
+      padding: 40px;
+      margin: 40px 0;
+      border-radius: 8px;
+    }
+
+    .photo-frame {
+      position: relative;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 300px;
+      border: 2px solid #3A86FF;
+    }
+
+    .photo-sticker {
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      background: #C6A43F;
+      color: #0C0C0C;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+    }
+
+    /* Кнопка в конце */
+    .cta-section {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    /* ===== ПОДВАЛ (как на главной) ===== */
+    .footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #F0F0F0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .social-links a:hover {
+      color: #C6A43F;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+    }
+
+    .text-blue { color: #3A86FF; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .nav-links {
+        gap: 15px;
+      }
+      
+      .hero-block {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .steps-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .photo-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .photo-frame {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .step-item,
+      .benefit-item {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ШАПКА (как на главной) -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/https-meysternlp.ru-/">Главная</a>
+        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+        <a href="/https-meysternlp.ru-/igry/">Игры</a>
+        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+        <a href="/https-meysternlp.ru-/v-razrabotke/" class="active">В разработке</a>
+        <a href="/https-meysternlp.ru-/sobytiya/">События</a>
+        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
+        <a href="/https-meysternlp.ru-/obo-mne/">Обо мне</a>
+      </div>
+      <a href="#" class="btn btn-header" onclick="alert('Форма записи появится здесь')">Запись на консультацию</a>
+    </div>
+  </div>
+</header>
+
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<div class="container">
+  <!-- Заголовок страницы -->
+  <div class="page-header">
+    <h1>ПРОЕКТЫ В РАЗРАБОТКЕ</h1>
+    <p>Вы можете узнать, над какими проектами сейчас работает Андрей Мейстер — практикующий психолог, мастер и тренер НЛП.</p>
+  </div>
+
+  <!-- Герой-блок -->
+  <div class="hero-block">
+    <div class="hero-icon">
+      <i class="fas fa-project-diagram" style="font-family: 'Font Awesome 5 Free';"></i>
+    </div>
+    <div class="hero-text">
+      <h2>Разработка дидактических упражнений под запрос</h2>
+      <p>Быстро достичь личных и профессиональных целей можно только с помощью индивидуального подхода к обучению. Андрей Мейстер, кандидат психологических наук, НЛП-тренер международного уровня, разработает для вас комплекс теоретических и практических упражнений, который будет идеально соответствовать вашим потребностям и желаемым результатам.</p>
+    </div>
+  </div>
+
+  <!-- Карточка с фото (как на главной) -->
+  <div class="photo-card">
+    <div class="photo-frame">
+      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер" class="photo" onerror="this.src='https://via.placeholder.com/300x400/0C0C0C/3A86FF?text=Андрей+Мейстер'">
+      <div class="photo-sticker">ЭКСПЕРТ</div>
+    </div>
+    <div>
+      <h2 style="margin-top: 0;">До жизни мечты всего 5 шагов</h2>
+      
+      <!-- Шаг 1 -->
+      <div style="margin: 30px 0;">
+        <h3 style="color: #3A86FF; margin-bottom: 5px;">ШАГ 1</h3>
+        <p>Опишите свой образ жизни с использованием терминов моделей «Вариатика. BASIC»</p>
+      </div>
+      
+      <!-- Шаг 2 -->
+      <div style="margin: 30px 0;">
+        <h3 style="color: #3A86FF; margin-bottom: 5px;">ШАГ 2</h3>
+        <p>Сформулируйте конкретные результаты, к которым должно привести ваше поведение после формирования желаемого навыка.</p>
+      </div>
+      
+      <!-- Шаг 3 -->
+      <div style="margin: 30px 0;">
+        <h3 style="color: #3A86FF; margin-bottom: 5px;">ШАГ 3</h3>
+        <p>Отправьте запрос через форму обратной связи на сайте или по указанным контактам.</p>
+      </div>
+      
+      <!-- Шаг 4 -->
+      <div style="margin: 30px 0;">
+        <h3 style="color: #3A86FF; margin-bottom: 5px;">ШАГ 4</h3>
+        <p>Получите персональный набор дидактических упражнений.</p>
+      </div>
+      
+      <!-- Шаг 5 -->
+      <div style="margin: 30px 0;">
+        <h3 style="color: #3A86FF; margin-bottom: 5px;">ШАГ 5</h3>
+        <p>Пройдите обучение и станьте идеальной версией себя!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Процесс разработки -->
+  <div class="process-section">
+    <h2>Процесс разработки заданий</h2>
+    <p style="font-size: 1.2rem; max-width: 800px;">На основе описания Андрей Мейстер подберет контекст для отработки разработанного упражнения, обеспечивая интеграцию навыка в вашу повседневную жизнь. Каждое задание будет направлено на развитие определенного аспекта поведения или умения.</p>
+  </div>
+
+  <!-- Что вы получите -->
+  <div class="benefits-section">
+    <h2>Что вы получите</h2>
+    
+    <div class="benefits-grid">
+      <!-- 1 -->
+      <div class="benefit-item">
+        <div class="benefit-number">1</div>
+        <div class="benefit-text">
+          <h3>Индивидуальный набор упражнений</h3>
+          <p>Индивидуально разработанный набор упражнений, который будет ориентирован на ваши цели и стиль жизни.</p>
+        </div>
+      </div>
+      
+      <!-- 2 -->
+      <div class="benefit-item">
+        <div class="benefit-number">2</div>
+        <div class="benefit-text">
+          <h3>Сопроводительные материалы</h3>
+          <p>Для каждого упражнения, включая инструкции по выполнению заданий и рекомендации для повышения эффективности обучения.</p>
+        </div>
+      </div>
+      
+      <!-- 3 -->
+      <div class="benefit-item">
+        <div class="benefit-number">3</div>
+        <div class="benefit-text">
+          <h3>План интеграции навыка</h3>
+          <p>План интеграции навыка в повседневную жизнь, гарантирующий плавное внедрение нового скилла без существенных изменений привычного для вас уклада.</p>
+        </div>
+      </div>
+      
+      <!-- 4 -->
+      <div class="benefit-item">
+        <div class="benefit-number">4</div>
+        <div class="benefit-text">
+          <h3>Консультации</h3>
+          <p>Консультации по вопросам применения упражнений.</p>
+        </div>
+      </div>
+      
+      <!-- 5 -->
+      <div class="benefit-item">
+        <div class="benefit-number">5</div>
+        <div class="benefit-text">
+          <h3>Корректировка плана</h3>
+          <p>Корректировку плана развития навыков по мере необходимости.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Заключительный текст -->
+    <div style="margin-top: 60px; padding: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(58,134,255,0.2); text-align: center;">
+      <p style="font-size: 1.2rem;">Для заказа разработки уникального комплекса упражнения свяжитесь с нами через форму обратной связи на сайте или по указанным контактам. Мы готовы начать работу над вашим будущим уже сегодня!</p>
+    </div>
+  </div>
+
+  <!-- Кнопка действия -->
+  <div class="cta-section">
+    <a href="#" class="btn" onclick="alert('Форма связи появится здесь')">Отправить запрос</a>
+  </div>
+</div>
+
+<!-- ПОДВАЛ (как на главной) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">© Андрей Мейстер · системное мышление · 2026</div>
+  </div>
+</footer>
+
+<!-- Font Awesome для иконок (если нужно) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+  // Подсветка активного пункта меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes('v-razrabotke') && href.includes('v-razrabotke')) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
