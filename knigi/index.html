@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Книги — Андрей Мейстер</title>
+  <style>
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0C0C0C;
+      color: #F0F0F0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 200;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #3A86FF;
+      letter-spacing: 0.15em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #CCCCCC;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== АНИМАЦИИ ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+      text-shadow: 0 0 10px #3A86FF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      border: 1px solid #3A86FF;
+      background-color: transparent;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .btn-small {
+      padding: 10px 24px;
+      font-size: 0.8rem;
+    }
+
+    .btn-outline {
+      border-color: #C6A43F;
+    }
+
+    .btn-outline::before {
+      background-color: #C6A43F;
+    }
+
+    /* ===== ШАПКА ===== */
+    .header {
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      position: sticky;
+      top: 0;
+      background-color: #0C0C0C;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+    }
+
+    .logo span {
+      color: #3A86FF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #F0F0F0;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
+    }
+
+    /* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+    .page-header {
+      padding: 80px 0 40px;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      color: #3A86FF;
+      max-width: 700px;
+    }
+
+    /* ===== КНИГИ ===== */
+    .books-section {
+      padding: 80px 0;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .book-card {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 40px 30px;
+      transition: all 0.3s ease;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .book-card:nth-child(1) { animation-delay: 0.1s; }
+    .book-card:nth-child(2) { animation-delay: 0.2s; }
+    .book-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .book-card:hover {
+      border-color: #3A86FF;
+      box-shadow: 0 0 30px rgba(58, 134, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .book-cover {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #3A86FF;
+      text-align: center;
+    }
+
+    .book-number {
+      font-size: 1rem;
+      color: #C6A43F;
+      letter-spacing: 0.2em;
+      margin-bottom: 10px;
+    }
+
+    .book-title {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .book-subtitle {
+      font-size: 1rem;
+      color: #3A86FF;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .book-description {
+      flex-grow: 1;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    .book-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+    }
+
+    .book-price {
+      font-size: 1.5rem;
+      color: #C6A43F;
+    }
+
+    .book-price small {
+      font-size: 0.9rem;
+      color: #666;
+      text-decoration: line-through;
+      margin-right: 10px;
+    }
+
+    /* ===== О ТРИЛОГИИ ===== */
+    .trilogy-section {
+      padding: 80px 0;
+      background-color: rgba(58, 134, 255, 0.02);
+      border-top: 1px solid rgba(58, 134, 255, 0.1);
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .trilogy-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .trilogy-text {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .trilogy-text p {
+      font-size: 1.2rem;
+    }
+
+    .trilogy-highlight {
+      border-left: 3px solid #C6A43F;
+      padding-left: 20px;
+      font-style: italic;
+      color: #F0F0F0;
+      margin: 30px 0;
+    }
+
+    .trilogy-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      text-align: center;
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    .stat-item {
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      color: #3A86FF;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #CCCCCC;
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ ===== */
+    .bonus-section {
+      padding: 80px 0;
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .bonus-item {
+      display: flex;
+      gap: 20px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .bonus-item:hover {
+      border-color: #C6A43F;
+      transform: translateX(10px);
+    }
+
+    .bonus-icon {
+      font-size: 2.5rem;
+      color: #3A86FF;
+    }
+
+    .bonus-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .bonus-content p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .bonus-link {
+      color: #C6A43F;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== ОТЗЫВЫ ===== */
+    .reviews-section {
+      padding: 80px 0;
+      background-color: rgba(58, 134, 255, 0.02);
+      border-top: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .review-card {
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .review-card:hover {
+      border-color: #3A86FF;
+    }
+
+    .review-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #F0F0F0;
+    }
+
+    .review-author {
+      color: #3A86FF;
+      font-weight: 300;
+    }
+
+    .review-author span {
+      color: #C6A43F;
+      font-size: 0.9rem;
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    .footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+      background-color: #0C0C0C;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #F0F0F0;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      border-bottom-color: #C6A43F;
+      color: #C6A43F;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      margin-top: 40px;
+    }
+
+    .text-blue { color: #3A86FF; }
+    .text-gold { color: #C6A43F; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .books-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .trilogy-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .trilogy-stats {
+        grid-template-columns: 1fr;
+      }
+      
+      .bonus-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .bonus-item {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a href="/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/">Главная</a>
+        <a href="/#strategies">Стратегии</a>
+        <a href="/#projects">Проекты</a>
+        <a href="/knigi/" class="active">Книги</a>
+        <a href="/treningi/">Тренинги</a>
+        <a href="/obo-mne/">Обо мне</a>
+      </div>
+      <a href="#kontakt" class="btn" onclick="alert('Форма записи появится здесь')">Запись</a>
+    </div>
+  </div>
+</header>
+
+<!-- ЗАГОЛОВОК -->
+<section class="page-header">
+  <div class="container">
+    <h1>КНИГИ</h1>
+    <p>Трилогия «Теория манипуляции» — бестселлеры по психологии влияния и системному мышлению</p>
+  </div>
+</section>
+
+<!-- КНИГИ -->
+<section class="books-section">
+  <div class="container">
+    <div class="books-grid">
+      <!-- Том 1 -->
+      <div class="book-card">
+        <div class="book-cover">📚</div>
+        <div class="book-number">ТОМ 1</div>
+        <div class="book-title">Теория манипуляции</div>
+        <div class="book-subtitle">Основы</div>
+        <div class="book-description">
+          <p>Как нас обманывают и заставляют делать то, что нужно другим. Механизмы психологического воздействия и способы защиты от манипуляций в повседневной жизни.</p>
+          <p style="margin-top: 15px; color: #999;">• 256 страниц<br>• 50+ техник<br>• Практические упражнения</p>
+        </div>
+        <div class="book-meta">
+          <div class="book-price"><small>₽1 200</small> ₽990</div>
+          <a href="#" class="btn-small btn" onclick="alert('Покупка будет доступна позже')">Купить</a>
+        </div>
+      </div>
+
+      <!-- Том 2 -->
+      <div class="book-card">
+        <div class="book-cover">📖</div>
+        <div class="book-number">ТОМ 2</div>
+        <div class="book-title">Теория манипуляции</div>
+        <div class="book-subtitle">Практика</div>
+        <div class="book-description">
+          <p>Практические техники влияния и противостояния. Разбор реальных кейсов из бизнеса, политики и межличностных отношений.</p>
+          <p style="margin-top: 15px; color: #999;">• 312 страниц<br>• 100+ примеров<br>• Разбор реальных случаев</p>
+        </div>
+        <div class="book-meta">
+          <div class="book-price"><small>₽1 300</small> ₽1 090</div>
+          <a href="#" class="btn-small btn" onclick="alert('Покупка будет доступна позже')">Купить</a>
+        </div>
+      </div>
+
+      <!-- Том 3 -->
+      <div class="book-card">
+        <div class="book-cover">📘</div>
+        <div class="book-number">ТОМ 3</div>
+        <div class="book-title">Теория манипуляции</div>
+        <div class="book-subtitle">Мастерство</div>
+        <div class="book-description">
+          <p>Мастерство системного влияния. Как создавать долгосрочные стратегии и управлять сложными системами коммуникации.</p>
+          <p style="margin-top: 15px; color: #999;">• 288 страниц<br>• Системный подход<br>• Стратегическое мышление</p>
+        </div>
+        <div class="book-meta">
+          <div class="book-price"><small>₽1 400</small> ₽1 190</div>
+          <a href="#" class="btn-small btn" onclick="alert('Покупка будет доступна позже')">Купить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- О ТРИЛОГИИ -->
+<section class="trilogy-section">
+  <div class="container">
+    <div class="trilogy-content">
+      <div class="trilogy-text">
+        <h2>О ТРИЛОГИИ</h2>
+        <p>«Теория манипуляции» — это не просто книги о психологии влияния. Это системный курс, который проведёт вас от понимания базовых механизмов до мастерства управления коммуникацией.</p>
+        
+        <div class="trilogy-highlight">
+          «Манипуляция — это не всегда плохо. Это инструмент. Вопрос в том, кто его использует и с какой целью. Мои книги учат не только распознавать манипуляции, но и использовать эти знания этично.»
+        </div>
+        
+        <p>Трилогия построена по принципу «от простого к сложному»: от базовых техник (Том 1) через практическое применение (Том 2) к системному мастерству (Том 3).</p>
+      </div>
+      
+      <div class="trilogy-stats">
+        <div class="stat-item">
+          <div class="stat-number">15 000+</div>
+          <div class="stat-label">читателей</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4.8</div>
+          <div class="stat-label">средний рейтинг</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">5 лет</div>
+          <div class="stat-label">бестселлер</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ -->
+<section class="bonus-section">
+  <div class="container">
+    <h2>В ПОДАРОК</h2>
+    <div class="bonus-grid">
+      <div class="bonus-item">
+        <div class="bonus-icon">📝</div>
+        <div class="bonus-content">
+          <h3>РАБОЧАЯ ТЕТРАДЬ</h3>
+          <p>Практические задания и упражнения к каждому тому для закрепления материала</p>
+          <a href="#" class="bonus-link" onclick="alert('Скачать рабочие тетради')">Скачать →</a>
+        </div>
+      </div>
+      
+      <div class="bonus-item">
+        <div class="bonus-icon">🎧</div>
+        <div class="bonus-content">
+          <h3>АУДИО-ВЕРСИЯ</h3>
+          <p>Авторское озвучивание ключевых глав. Слушайте в дороге или во время отдыха</p>
+          <a href="#" class="bonus-link" onclick="alert('Аудио-версия')">Слушать →</a>
+        </div>
+      </div>
+      
+      <div class="bonus-item">
+        <div class="bonus-icon">🗺️</div>
+        <div class="bonus-content">
+          <h3>ИНТЕЛЛЕКТ-КАРТЫ</h3>
+          <p>Визуальные схемы всех техник и концепций для быстрого повторения</p>
+          <a href="#" class="bonus-link" onclick="alert('Скачать интеллект-карты')">Скачать →</a>
+        </div>
+      </div>
+      
+      <div class="bonus-item">
+        <div class="bonus-icon">👥</div>
+        <div class="bonus-content">
+          <h3>ЗАКРЫТЫЙ КЛУБ</h3>
+          <p>Доступ в Telegram-чат читателей для обсуждения и практики</p>
+          <a href="#" class="bonus-link" onclick="alert('Вступить в клуб')">Вступить →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="reviews-section">
+  <div class="container">
+    <h2>ЧИТАТЕЛИ О КНИГАХ</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-text">«Прочитал все три тома. Это не просто книги — это учебник по системному мышлению. После прочтения начинаешь замечать манипуляции везде: в рекламе, в новостях, в общении с коллегами.»</div>
+        <div class="review-author">Алексей К. <span>• предприниматель</span></div>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-text">«Очень структурировано и практично. Много примеров из жизни, всё разложено по полочкам. Рабочая тетрадь отдельное спасибо — реально помогает закрепить материал.»</div>
+        <div class="review-author">Елена М. <span>• психолог</span></div>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-text">«Перечитываю второй раз. Том 3 особенно сильный — про системное мышление и долгосрочные стратегии. Рекомендую всем, кто хочет понимать глубинную структуру коммуникации.»</div>
+        <div class="review-author">Дмитрий С. <span>• маркетолог</span></div>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-text">«Купила всю трилогию сразу и не пожалела. Написано живым языком, сложные вещи объясняются просто. После прочтения чувствуешь себя увереннее в переговорах.»</div>
+        <div class="review-author">Анна В. <span>• руководитель отдела продаж</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © Андрей Мейстер · системное мышление · 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+// Подсветка активного пункта меню
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (currentPath === href || currentPath.startsWith(href + '/')) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
