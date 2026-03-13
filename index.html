@@ -294,7 +294,7 @@
       border-bottom-color: #3A86FF;
     }
 
-    /* ===== СИСТЕМНОЕ МЫШЛЕНИЕ - КВАДРАТИКИ ===== */
+    /* ===== СИСТЕМНОЕ МЫШЛЕНИЕ - ПИРАМИДА ===== */
     .system-section {
       padding: 80px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.1);
@@ -303,76 +303,91 @@
     .system-intro {
       text-align: center;
       color: #3A86FF;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       font-size: 1.2rem;
     }
 
-    /* Сетка квадратиков */
-    .system-grid {
+    /* Пирамида */
+    .pyramid {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      margin-bottom: 30px;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
     }
 
-    .grid-row {
+    .row {
       display: flex;
-      gap: 15px;
       justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .grid-item {
-      flex: 1;
-      max-width: 200px;
-      padding: 20px 10px;
+    .top-row .pyramid-item {
+      width: 180px;
+    }
+
+    .bottom-row .pyramid-item {
+      width: 180px;
+    }
+
+    .pyramid-item {
+      padding: 25px 15px;
       background: rgba(255, 255, 255, 0.02);
       border: 2px solid rgba(58, 134, 255, 0.3);
       text-align: center;
       cursor: pointer;
       transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 160px;
+      justify-content: center;
     }
 
-    .grid-item:hover {
+    .pyramid-item:hover {
       border-color: #3A86FF;
       background: rgba(58, 134, 255, 0.05);
     }
 
-    .grid-item.active {
+    .pyramid-item.active {
       border-color: #C6A43F;
       background: rgba(198, 164, 63, 0.1);
     }
 
     .item-icon {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
       color: #3A86FF;
     }
 
     .item-title {
       font-size: 0.9rem;
-      font-weight: 300;
+      font-weight: 500;
       text-transform: uppercase;
       color: #FFFFFF;
+      margin-bottom: 5px;
+      letter-spacing: 0.05em;
     }
 
-    /* Широкий элемент (Мышление) */
-    .grid-item.wide {
-      max-width: 100%;
-      width: 100%;
+    .item-desc {
+      font-size: 0.75rem;
+      color: #999;
+      line-height: 1.3;
     }
 
-    /* Панель с текстом (появляется снизу) */
+    /* Панель с текстом */
     .text-panel {
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid #3A86FF;
-      padding: 25px;
-      margin-top: 20px;
+      padding: 30px;
+      margin: 30px 0;
       border-radius: 4px;
     }
 
     .panel-title {
       color: #C6A43F;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       margin-bottom: 15px;
       text-transform: uppercase;
     }
@@ -388,6 +403,18 @@
       font-style: italic;
       padding-left: 15px;
       border-left: 2px solid #C6A43F;
+    }
+
+    .about-author {
+      margin-top: 40px;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      text-align: center;
+    }
+
+    .about-author strong {
+      color: #3A86FF;
     }
 
     /* ===== ПОДВАЛ ===== */
@@ -430,7 +457,7 @@
 
     .text-blue { color: #3A86FF; }
 
-    /* ===== АДАПТИВНОСТЬ (ТЕЛЕФОНЫ) ===== */
+    /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 768px) {
       h1 { font-size: 3rem; }
       h2 { font-size: 1.8rem; }
@@ -450,23 +477,19 @@
         align-items: flex-start;
       }
       
-      .grid-row {
+      .row {
         flex-direction: column;
         align-items: center;
       }
       
-      .grid-item {
-        max-width: 100%;
+      .top-row .pyramid-item,
+      .bottom-row .pyramid-item {
         width: 100%;
-        padding: 25px; /* Больше места для нажатия пальцем */
+        max-width: 300px;
       }
       
-      .item-icon {
-        font-size: 2.5rem;
-      }
-      
-      .text-panel {
-        padding: 20px;
+      .pyramid-item {
+        min-height: 140px;
       }
     }
   </style>
@@ -575,64 +598,67 @@
   </div>
 </section>
 
-<!-- СИСТЕМНОЕ МЫШЛЕНИЕ - КВАДРАТИКИ -->
+<!-- СИСТЕМНОЕ МЫШЛЕНИЕ - ПИРАМИДА -->
 <section class="system-section">
   <div class="container">
     <h2>СИСТЕМНОЕ МЫШЛЕНИЕ</h2>
     <p class="system-intro">Всё взаимосвязано. Изменение одного элемента влияет на все остальные.</p>
     
-    <!-- СЕТКА КВАДРАТИКОВ -->
-    <div class="system-grid" id="systemGrid">
-      <!-- Первый ряд - 3 квадратика -->
-      <div class="grid-row">
-        <div class="grid-item" data-id="hormones">
+    <!-- ПИРАМИДА: 3 СВЕРХУ, 4 СНИЗУ -->
+    <div class="pyramid" id="pyramid">
+      <!-- Верхний ряд - 3 элемента -->
+      <div class="row top-row">
+        <div class="pyramid-item" data-id="hormones">
           <div class="item-icon">🧬</div>
           <div class="item-title">ГОРМОНАЛЬНЫЙ ФОН</div>
+          <div class="item-desc">Определяет поведение и решения</div>
         </div>
-        <div class="grid-item" data-id="architecture">
+        <div class="pyramid-item" data-id="architecture">
           <div class="item-icon">⚙️</div>
           <div class="item-title">АРХИТЕКТУРА ПРОГРЕССИИ</div>
+          <div class="item-desc">Процессы деятельности</div>
         </div>
-        <div class="grid-item" data-id="quality">
+        <div class="pyramid-item" data-id="quality">
           <div class="item-icon">🏆</div>
           <div class="item-title">КАЧЕСТВО ЖИЗНИ</div>
+          <div class="item-desc">Влияет на гормональный фон</div>
         </div>
       </div>
       
-      <!-- Второй ряд - 3 квадратика -->
-      <div class="grid-row">
-        <div class="grid-item" data-id="opportunities">
+      <!-- Нижний ряд - 4 элемента -->
+      <div class="row bottom-row">
+        <div class="pyramid-item" data-id="opportunities">
           <div class="item-icon">🔑</div>
           <div class="item-title">ВОЗМОЖНОСТИ</div>
+          <div class="item-desc">Определяют качество жизни</div>
         </div>
-        <div class="grid-item" data-id="social">
+        <div class="pyramid-item" data-id="social">
           <div class="item-icon">🤝</div>
           <div class="item-title">СОЦИАЛЬНЫЕ СВЯЗИ</div>
+          <div class="item-desc">Определяют возможности</div>
         </div>
-        <div class="grid-item" data-id="speech">
+        <div class="pyramid-item" data-id="speech">
           <div class="item-icon">🗣️</div>
           <div class="item-title">РЕЧЬ</div>
+          <div class="item-desc">Влияет на социальные связи</div>
         </div>
-      </div>
-      
-      <!-- Третий ряд - 1 широкий квадратик -->
-      <div class="grid-row">
-        <div class="grid-item wide" data-id="thinking">
+        <div class="pyramid-item" data-id="thinking">
           <div class="item-icon">🧠</div>
           <div class="item-title">МЫШЛЕНИЕ</div>
+          <div class="item-desc">Влияет на гормональный фон</div>
         </div>
       </div>
     </div>
 
-    <!-- ПАНЕЛЬ С ТЕКСТОМ (ПОЯВЛЯЕТСЯ ПРИ КЛИКЕ) -->
+    <!-- ПАНЕЛЬ С ТЕКСТОМ -->
     <div class="text-panel" id="textPanel">
       <div class="panel-title" id="panelTitle">ГОРМОНАЛЬНЫЙ ФОН</div>
       <div class="panel-desc" id="panelDesc">Гормональный фон — это фундамент, на котором строится наше поведение, эмоции и решения. Он определяет, как мы воспринимаем мир и реагируем на события.</div>
       <div class="panel-example" id="panelExample">Пример: Высокий уровень кортизола (гормон стресса) заставляет нас видеть угрозы там, где их нет.</div>
     </div>
     
-    <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(58,134,255,0.2); text-align: center;">
-      <p><strong style="color: #3A86FF;">Андрей Мейстер</strong> — психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика».</p>
+    <div class="about-author">
+      <p><strong>Андрей Мейстер</strong> — психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика».</p>
     </div>
   </div>
 </section>
@@ -693,9 +719,6 @@
     }
   };
 
-  // Текущий активный элемент
-  let activeId = 'hormones';
-
   // Функция обновления текста
   function updateText(id) {
     const data = texts[id];
@@ -703,29 +726,27 @@
     document.getElementById('panelDesc').textContent = data.desc;
     document.getElementById('panelExample').textContent = data.example;
     
-    // Подсветка активного квадратика
-    document.querySelectorAll('.grid-item').forEach(item => {
+    // Подсветка активного элемента
+    document.querySelectorAll('.pyramid-item').forEach(item => {
       item.classList.remove('active');
     });
     document.querySelector(`[data-id="${id}"]`).classList.add('active');
-    
-    activeId = id;
   }
 
   // Назначаем обработчики кликов
-  document.querySelectorAll('.grid-item').forEach(item => {
+  document.querySelectorAll('.pyramid-item').forEach(item => {
     item.addEventListener('click', function() {
       const id = this.getAttribute('data-id');
       updateText(id);
     });
   });
 
-  // Подсветка меню
+  // Подсветка меню и начальный текст
   document.addEventListener('DOMContentLoaded', function() {
     const path = window.location.pathname;
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (path === link.getAttribute('href') || 
-          (path === '/https-meysternlp.ru-/' && link.getAttribute('href') === '/https-meysternlp.ru-/')) {
+      const href = link.getAttribute('href');
+      if (path === href || (href === '/https-meysternlp.ru-/' && path === '/https-meysternlp.ru-/')) {
         link.classList.add('active');
       }
     });
