@@ -14,8 +14,8 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: #0C0C0C;
-      color: #F0F0F0;
+      background-color: #FFFFFF; /* БЕЛЫЙ ФОН */
+      color: #1D1D1F; /* Тёмный текст Apple */
       line-height: 1.6;
     }
 
@@ -27,16 +27,16 @@
 
     h1 {
       font-size: 3.5rem;
-      font-weight: 200;
+      font-weight: 600;
       margin: 60px 0 20px;
-      color: #FFFFFF;
+      color: #1D1D1F;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
     h2 {
       font-size: 2.2rem;
-      font-weight: 300;
+      font-weight: 500;
       margin-bottom: 2rem;
       color: #3A86FF;
       letter-spacing: 0.15em;
@@ -50,7 +50,7 @@
     }
 
     a:hover {
-      color: #FFFFFF;
+      color: #1D1D1F;
     }
 
     .btn {
@@ -58,19 +58,20 @@
       padding: 14px 32px;
       border: 1px solid #3A86FF;
       background: transparent;
-      color: #FFFFFF;
+      color: #3A86FF;
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.3s ease;
+      border-radius: 30px;
     }
 
     .btn:hover {
       background: #3A86FF;
-      color: #0C0C0C;
-      box-shadow: 0 0 20px #3A86FF;
+      color: #FFFFFF;
+      box-shadow: 0 0 20px rgba(58, 134, 255, 0.3);
     }
 
     /* Кнопка в шапке (градиентная) */
@@ -146,15 +147,15 @@
       color: #3A86FF;
     }
 
-    /* Список статей */
+    /* Список статей в стиле Apple */
     .blog-header {
       padding: 40px 0 20px;
-      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+      border-bottom: 1px solid #E0E0E0;
       margin-bottom: 40px;
     }
 
     .blog-description {
-      color: #C6A43F;
+      color: #6E6E73;
       font-size: 1.2rem;
       max-width: 700px;
     }
@@ -171,19 +172,20 @@
       grid-template-columns: 1fr 3fr;
       gap: 30px;
       padding: 30px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(58, 134, 255, 0.2);
+      background: #F5F5F7;
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
       transition: all 0.3s ease;
     }
 
     .article-preview:hover {
       border-color: #3A86FF;
       transform: translateX(10px);
-      box-shadow: 0 0 30px rgba(58, 134, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     .article-meta {
-      color: #C6A43F;
+      color: #6E6E73;
       font-size: 0.9rem;
       letter-spacing: 0.1em;
     }
@@ -195,13 +197,15 @@
 
     .article-content h3 {
       font-size: 1.8rem;
-      color: #FFFFFF;
+      color: #1D1D1F;
       margin-bottom: 15px;
-      font-weight: 300;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
     }
 
     .article-content p {
-      color: #CCCCCC;
+      color: #3A3A3C;
       margin-bottom: 20px;
     }
 
@@ -218,7 +222,7 @@
       border-bottom-color: #3A86FF;
     }
 
-    /* Пагинация */
+    /* Пагинация в стиле Apple */
     .pagination {
       display: flex;
       justify-content: center;
@@ -229,23 +233,29 @@
     .pagination a {
       display: inline-block;
       padding: 10px 15px;
-      border: 1px solid rgba(58, 134, 255, 0.3);
-      color: #FFFFFF;
+      border: 1px solid #E0E0E0;
+      color: #1D1D1F;
       transition: all 0.3s ease;
+      border-radius: 8px;
     }
 
     .pagination a:hover,
     .pagination a.active {
       background: #3A86FF;
       border-color: #3A86FF;
-      color: #0C0C0C;
+      color: #FFFFFF;
     }
 
-    /* Подвал */
+    /* Подвал (оставляем тёмным, как на всём сайте) */
     .footer {
       padding: 60px 0 30px;
       border-top: 1px solid rgba(58, 134, 255, 0.2);
+      background-color: #0C0C0C;
       margin-top: 60px;
+    }
+
+    .footer .container {
+      max-width: 1200px;
     }
 
     .footer-content {
@@ -259,6 +269,7 @@
     .footer-logo {
       font-size: 1.2rem;
       letter-spacing: 0.3em;
+      color: #F0F0F0;
     }
 
     .social-links {
@@ -283,6 +294,7 @@
       margin-top: 40px;
       font-size: 0.8rem;
       opacity: 0.5;
+      color: #F0F0F0;
     }
 
     .text-blue { color: #3A86FF; }
@@ -323,7 +335,7 @@
       // Запасной вариант на случай ошибки
       document.getElementById('header-placeholder').innerHTML = `
         <header class="header">
-          <div class="container">
+          <div class="container" style="max-width: 1200px;">
             <div class="nav">
               <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
               <div class="nav-links">
@@ -343,7 +355,7 @@
     });
 </script>
 
-<!-- ОСНОВНОЙ КОНТЕНТ -->
+<!-- ОСНОВНОЙ КОНТЕНТ (теперь на белом фоне) -->
 <div class="container">
   <div class="blog-header">
     <h1>БЛОГ</h1>
