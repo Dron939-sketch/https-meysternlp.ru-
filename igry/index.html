@@ -1,48 +1,73 @@
-<!-- ===== ШАПКА (общий файл для всех страниц) ===== -->
-<header class="header">
-  <div class="container">
-    <div class="nav">
-      <!-- Логотип ведёт на страницу "Обо мне" -->
-      <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
-      <div class="nav-links" id="main-nav">
-        <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
-        <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
-        <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
-        <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
-        <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
-        <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">События</a>
-        <a href="/https-meysternlp.ru-/blog/" class="nav-link">Статьи</a>
-        <!-- Пункт "Обо мне" УДАЛЁН -->
-      </div>
-      <!-- Кнопка "Виртуальный психолог" -->
-      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
-    </div>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дидактические игры — Андрей Мейстер</title>
+  <style>
+    /* Все стили */
+  </style>
+</head>
+<body>
+
+<!-- ПОДКЛЮЧАЕМ ШАПКУ -->
+<div id="header-placeholder"></div>
 
 <script>
-// Функция для подсветки активного пункта меню
-function highlightCurrentPage() {
-  const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.nav-link');
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    // Убираем базовый путь для сравнения
-    const cleanHref = href.replace('/https-meysternlp.ru-', '');
-    const cleanPath = currentPath.replace('/https-meysternlp.ru-', '');
-    
-    // Проверяем точное совпадение или начало пути
-    if (cleanPath === cleanHref || 
-        (cleanHref !== '/' && cleanPath.startsWith(cleanHref + '/')) ||
-        (cleanHref === '/' && cleanPath === '/')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-}
-
-// Запускаем после загрузки страницы
-document.addEventListener('DOMContentLoaded', highlightCurrentPage);
+  // Загружаем шапку из header.html
+  fetch('/https-meysternlp.ru-/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки шапки:', error);
+    });
 </script>
+
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<div class="container">
+  <h1>ДИДАКТИЧЕСКИЕ ИГРЫ</h1>
+  <p style="color: #3A86FF; margin-bottom: 40px;">Учимся мыслить системно через игру</p>
+
+  <div class="games-grid">
+    <!-- Маркетолог -->
+    <div class="game-card">
+      <img src="/https-meysternlp.ru-/didakticheskaya-igra-marketolog-andreya-mejstera.png" alt="Маркетолог" class="game-image" onerror="this.src='https://via.placeholder.com/600x400/0C0C0C/3A86FF?text=Маркетолог'">
+      <div class="game-title">Маркетолог</div>
+      <div class="game-description">Настольная игра, которая учит системному мышлению и маркетингу через практические ситуации. 2-6 игроков, 60-90 минут.</div>
+      <div class="game-price">3 900 ₽</div>
+      <a href="#" class="btn" onclick="alert('Заказ игры')">Заказать</a>
+    </div>
+
+    <!-- Вариатика Базовый -->
+    <div class="game-card">
+      <img src="/https-meysternlp.ru-/didaktivnaya-igra-variatika-basic-anderj-mejster.webp" alt="Вариатика Базовый" class="game-image" onerror="this.src='https://via.placeholder.com/600x400/0C0C0C/3A86FF?text=Вариатика+Базовый'">
+      <div class="game-title">Вариатика Базовый</div>
+      <div class="game-description">Базовая версия игры для развития системного мышления. Освойте ключевые принципы и закономерности.</div>
+      <div class="game-price">2 900 ₽</div>
+      <a href="#" class="btn" onclick="alert('Заказ игры')">Заказать</a>
+    </div>
+  </div>
+</div>
+
+<!-- ПОДКЛЮЧАЕМ ПОДВАЛ -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Загружаем подвал из footer.html
+  fetch('/https-meysternlp.ru-/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки подвала:', error);
+    });
+</script>
+
+<!-- Font Awesome для иконок -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</body>
+</html>
