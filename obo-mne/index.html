@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO МЕТА-ТЕГИ -->
   <title>Обо мне — Андрей Мейстер</title>
+  <meta name="description" content="Андрей Мейстер — психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика». Кандидат наук, автор трилогии «Теория манипуляции».">
+  <meta name="keywords" content="андрей мейстер, психолог, когнитивный тренер, системное мышление, вариатика">
+  <meta name="author" content="Андрей Мейстер">
+  
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Обо мне — Андрей Мейстер">
+  <meta property="og:description" content="Психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика»">
+  <meta property="og:image" content="/https-meysternlp.ru-/Андрей%20Мейстер.jpg">
+  <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/obo-mne/">
+  <meta property="og:type" content="profile">
+  
+  <!-- КАНОНИЧЕСКАЯ ССЫЛКА -->
+  <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/obo-mne/">
+  
   <style>
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #0C0C0C;
       color: #F0F0F0;
       line-height: 1.6;
@@ -24,13 +45,18 @@
       padding: 0 20px;
     }
 
+    /* ===== ТИПОГРАФИКА ===== */
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
     h1 {
       font-size: 3.5rem;
       font-weight: 200;
       margin-bottom: 1rem;
       color: #FFFFFF;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
 
     h2 {
@@ -39,7 +65,6 @@
       margin-bottom: 2rem;
       color: #3A86FF;
       letter-spacing: 0.15em;
-      text-transform: uppercase;
     }
 
     h3 {
@@ -57,13 +82,87 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ===== ШАПКА ===== */
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid #3A86FF;
+      background: transparent;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    /* Кнопка в шапке (градиентная) */
+    .btn-header {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      color: white;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
+      border: none;
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      color: white;
+    }
+
+    .btn-header::before {
+      display: none;
+    }
+
+    /* ===== ШАПКА (НОВЫЙ СТИЛЬ) ===== */
     .header {
-      padding: 30px 0;
+      padding: 20px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
-      background-color: #0C0C0C;
       position: sticky;
       top: 0;
+      background-color: #0C0C0C;
       z-index: 100;
     }
 
@@ -80,7 +179,6 @@
       font-weight: 300;
       letter-spacing: 0.3em;
       color: #FFFFFF;
-      text-decoration: none;
     }
 
     .logo span {
@@ -89,19 +187,19 @@
 
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
       color: #F0F0F0;
-      text-decoration: none;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      border-bottom: 1px solid transparent;
+      font-weight: 400;
+      letter-spacing: normal;
+      font-size: 1rem;
+      text-transform: none;
+      border-bottom: 2px solid transparent;
       padding-bottom: 5px;
+      transition: all 0.2s ease;
     }
 
     .nav-links a:hover,
@@ -110,31 +208,15 @@
       color: #3A86FF;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      border: 1px solid #3A86FF;
-      background: transparent;
-      color: #FFFFFF;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #3A86FF;
-      color: #0C0C0C;
-      box-shadow: 0 0 20px #3A86FF;
-    }
-
     /* ===== СТРАНИЦА ОБО МНЕ ===== */
     .page-header {
-      padding: 80px 0 40px;
+      padding: 60px 0 30px;
       border-bottom: 1px solid rgba(58, 134, 255, 0.1);
       text-align: center;
+    }
+
+    .page-header h1 {
+      margin-bottom: 15px;
     }
 
     .page-header p {
@@ -145,7 +227,7 @@
 
     /* Секция с фото и био */
     .about-section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
 
     .about-grid {
@@ -228,7 +310,7 @@
 
     /* Образование */
     .education-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background-color: rgba(58, 134, 255, 0.02);
       border-top: 1px solid rgba(58, 134, 255, 0.1);
       border-bottom: 1px solid rgba(58, 134, 255, 0.1);
@@ -274,7 +356,7 @@
 
     /* Экспертиза */
     .expertise-section {
-      padding: 80px 0;
+      padding: 60px 0;
     }
 
     .expertise-grid {
@@ -316,7 +398,7 @@
 
     /* Публикации */
     .publications-section {
-      padding: 80px 0;
+      padding: 60px 0;
       background-color: rgba(58, 134, 255, 0.02);
       border-top: 1px solid rgba(58, 134, 255, 0.1);
     }
@@ -356,7 +438,7 @@
       color: #999;
     }
 
-    /* Подвал */
+    /* ===== ПОДВАЛ ===== */
     .footer {
       padding: 60px 0 30px;
       border-top: 1px solid rgba(58, 134, 255, 0.2);
@@ -367,7 +449,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 40px;
       flex-wrap: wrap;
       gap: 20px;
     }
@@ -385,10 +466,9 @@
 
     .social-links a {
       color: #F0F0F0;
-      text-decoration: none;
       font-size: 1rem;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     .social-links a:hover {
@@ -397,42 +477,43 @@
 
     .copyright {
       text-align: center;
+      margin-top: 40px;
       font-size: 0.8rem;
       opacity: 0.5;
-      margin-top: 40px;
     }
 
-    .text-blue {
-      color: #3A86FF;
-    }
+    .text-blue { color: #3A86FF; }
 
-    /* Адаптивность */
+    /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      
       .nav {
         flex-direction: column;
         align-items: flex-start;
       }
-
+      
+      .nav-links {
+        gap: 15px;
+      }
+      
       .about-grid {
         grid-template-columns: 1fr;
       }
-
+      
       .education-grid {
         grid-template-columns: 1fr;
       }
-
+      
       .expertise-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-
+      
       .publications-grid {
         grid-template-columns: 1fr;
       }
-
+      
       .education-item {
         flex-direction: column;
       }
@@ -440,179 +521,182 @@
   </style>
 </head>
 <body>
-  <!-- ШАПКА -->
-  <header class="header">
-    <div class="container">
-      <div class="nav">
-        <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
-        <div class="nav-links">
-          <a href="/https-meysternlp.ru-/">Главная</a>
-          <a href="/https-meysternlp.ru-/#strategies">Стратегии</a>
-          <a href="/https-meysternlp.ru-/#projects">Проекты</a>
-          <a href="/https-meysternlp.ru-/knigi/">Книги</a>
-          <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
-          <a href="/https-meysternlp.ru-/obo-mne/" class="active">Обо мне</a>
+
+<!-- ШАПКА (НОВЫЙ СТИЛЬ) -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/https-meysternlp.ru-/">Главная</a>
+        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+        <a href="/https-meysternlp.ru-/igry/">Игры</a>
+        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+        <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
+        <a href="/https-meysternlp.ru-/sobytiya/">События</a>
+        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
+        <a href="/https-meysternlp.ru-/obo-mne/" class="active">Обо мне</a>
+      </div>
+      <a href="#" class="btn-header" onclick="alert('Форма записи появится здесь')">Запись на консультацию</a>
+    </div>
+  </div>
+</header>
+
+<!-- ЗАГОЛОВОК -->
+<section class="page-header">
+  <div class="container">
+    <h1>АНДРЕЙ МЕЙСТЕР</h1>
+    <p>ПСИХОЛОГ · КОГНИТИВНЫЙ ТРЕНЕР · СИСТЕМНЫЙ АНАЛИТИК</p>
+  </div>
+</section>
+
+<!-- ОСНОВНОЙ БЛОК С ФОТО -->
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Фото -->
+      <div class="photo-frame">
+        <img src="/https-meysternlp.ru-/Андрей%20Мейстер.jpg" alt="Андрей Мейстер" class="photo" onerror="this.src='https://via.placeholder.com/400x500/0C0C0C/3A86FF?text=Андрей+Мейстер'">
+        <div class="photo-sticker">СИСТЕМНО</div>
+      </div>
+
+      <!-- Текст -->
+      <div class="about-text">
+        <p>Я помогаю людям видеть закономерности там, где другие видят хаос. Моя специализация — развитие системного и латерального мышления, навыков влияния и когнитивной гибкости.</p>
+        
+        <div class="about-highlight">
+          "Мышление — это не то, что мы имеем, а то, что мы делаем. Его можно тренировать, развивать и совершенствовать, как любой другой навык."
         </div>
-        <a href="#" class="btn" onclick="alert('Форма записи появится здесь')">Запись</a>
+        
+        <p>Кандидат психологических наук. Автор бестселлера «Теория манипуляции» (трилогия), разработчик технологии системного мышления «Вариатика». Мои методы сочетают академическую фундаментальность с практической применимостью в бизнесе и повседневной жизни.</p>
+        
+        <p>За 15 лет практики провёл более 200 тренингов и консультаций для руководителей компаний, предпринимателей и специалистов, желающих вывести своё мышление на новый уровень.</p>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- ЗАГОЛОВОК -->
-  <section class="page-header">
-    <div class="container">
-      <h1>АНДРЕЙ МЕЙСТЕР</h1>
-      <p>ПСИХОЛОГ · КОГНИТИВНЫЙ ТРЕНЕР · СИСТЕМНЫЙ АНАЛИТИК</p>
-    </div>
-  </section>
-
-  <!-- ОСНОВНОЙ БЛОК С ФОТО -->
-  <section class="about-section">
-    <div class="container">
-      <div class="about-grid">
-        <!-- Фото -->
-        <div class="photo-frame">
-          <img src="/https-meysternlp.ru-/Андрей%20Мейстер.jpg" alt="Андрей Мейстер" class="photo" onerror="this.src='https://via.placeholder.com/400x500/0C0C0C/3A86FF?text=Андрей+Мейстер'">
-          <div class="photo-sticker">СИСТЕМНО</div>
-        </div>
-
-        <!-- Текст -->
-        <div class="about-text">
-          <p>Я помогаю людям видеть закономерности там, где другие видят хаос. Моя специализация — развитие системного и латерального мышления, навыков влияния и когнитивной гибкости.</p>
-          
-          <div class="about-highlight">
-            "Мышление — это не то, что мы имеем, а то, что мы делаем. Его можно тренировать, развивать и совершенствовать, как любой другой навык."
-          </div>
-          
-          <p>Кандидат психологических наук. Автор бестселлера «Теория манипуляции» (трилогия), разработчик технологии системного мышления «Вариатика». Мои методы сочетают академическую фундаментальность с практической применимостью в бизнесе и повседневной жизни.</p>
-          
-          <p>За 15 лет практики провёл более 200 тренингов и консультаций для руководителей компаний, предпринимателей и специалистов, желающих вывести своё мышление на новый уровень.</p>
+<!-- ОБРАЗОВАНИЕ -->
+<section class="education-section">
+  <div class="container">
+    <h2>ОБРАЗОВАНИЕ И КВАЛИФИКАЦИЯ</h2>
+    <div class="education-grid">
+      <div class="education-item">
+        <div class="education-year">2005-2010</div>
+        <div class="education-content">
+          <h3>МГУ им. Ломоносова</h3>
+          <p>Факультет психологии, кафедра общей психологии</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ОБРАЗОВАНИЕ -->
-  <section class="education-section">
-    <div class="container">
-      <h2>ОБРАЗОВАНИЕ И КВАЛИФИКАЦИЯ</h2>
-      <div class="education-grid">
-        <div class="education-item">
-          <div class="education-year">2005-2010</div>
-          <div class="education-content">
-            <h3>МГУ им. Ломоносова</h3>
-            <p>Факультет психологии, кафедра общей психологии</p>
-          </div>
-        </div>
-        <div class="education-item">
-          <div class="education-year">2010-2013</div>
-          <div class="education-content">
-            <h3>Аспирантура МГУ</h3>
-            <p>Кандидат психологических наук</p>
-          </div>
-        </div>
-        <div class="education-item">
-          <div class="education-year">2014</div>
-          <div class="education-content">
-            <h3>Эриксоновский гипноз</h3>
-            <p>Международная сертификация</p>
-          </div>
-        </div>
-        <div class="education-item">
-          <div class="education-year">2015-2016</div>
-          <div class="education-content">
-            <h3>Системное мышление</h3>
-            <p>MIT Sloan Executive Education</p>
-          </div>
+      <div class="education-item">
+        <div class="education-year">2010-2013</div>
+        <div class="education-content">
+          <h3>Аспирантура МГУ</h3>
+          <p>Кандидат психологических наук</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ЭКСПЕРТИЗА -->
-  <section class="expertise-section">
-    <div class="container">
-      <h2>КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ</h2>
-      <div class="expertise-grid">
-        <div class="expertise-item">
-          <div class="expertise-icon">🧩</div>
+      <div class="education-item">
+        <div class="education-year">2014</div>
+        <div class="education-content">
+          <h3>Эриксоновский гипноз</h3>
+          <p>Международная сертификация</p>
+        </div>
+      </div>
+      <div class="education-item">
+        <div class="education-year">2015-2016</div>
+        <div class="education-content">
           <h3>Системное мышление</h3>
-          <p>Понимание сложных систем и их взаимосвязей</p>
-        </div>
-        <div class="expertise-item">
-          <div class="expertise-icon">💭</div>
-          <h3>Латеральное мышление</h3>
-          <p>Нестандартные решения и креативные подходы</p>
-        </div>
-        <div class="expertise-item">
-          <div class="expertise-icon">🎯</div>
-          <h3>Когнитивная гибкость</h3>
-          <p>Адаптивность мышления к разным задачам</p>
-        </div>
-        <div class="expertise-item">
-          <div class="expertise-icon">🗣️</div>
-          <h3>Психология влияния</h3>
-          <p>Понимание механизмов убеждения</p>
+          <p>MIT Sloan Executive Education</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ПУБЛИКАЦИИ -->
-  <section class="publications-section">
-    <div class="container">
-      <h2>ПУБЛИКАЦИИ</h2>
-      <div class="publications-grid">
-        <div class="publication-item">
-          <div class="publication-year">2020</div>
-          <div class="publication-title">Теория манипуляции. Том 1</div>
-          <div class="publication-desc">Основы психологического влияния</div>
-        </div>
-        <div class="publication-item">
-          <div class="publication-year">2021</div>
-          <div class="publication-title">Теория манипуляции. Том 2</div>
-          <div class="publication-desc">Практические техники</div>
-        </div>
-        <div class="publication-item">
-          <div class="publication-year">2022</div>
-          <div class="publication-title">Теория манипуляции. Том 3</div>
-          <div class="publication-desc">Мастерство влияния</div>
-        </div>
+<!-- ЭКСПЕРТИЗА -->
+<section class="expertise-section">
+  <div class="container">
+    <h2>КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ</h2>
+    <div class="expertise-grid">
+      <div class="expertise-item">
+        <div class="expertise-icon">🧩</div>
+        <h3>Системное мышление</h3>
+        <p>Понимание сложных систем и их взаимосвязей</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">💭</div>
+        <h3>Латеральное мышление</h3>
+        <p>Нестандартные решения и креативные подходы</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">🎯</div>
+        <h3>Когнитивная гибкость</h3>
+        <p>Адаптивность мышления к разным задачам</p>
+      </div>
+      <div class="expertise-item">
+        <div class="expertise-icon">🗣️</div>
+        <h3>Психология влияния</h3>
+        <p>Понимание механизмов убеждения</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ПОДВАЛ -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
-        <div class="social-links">
-          <a href="https://t.me/meysternlp" target="_blank">Tg</a>
-          <a href="https://vk.com/meysternlp" target="_blank">VK</a>
-          <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
-          <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
-        </div>
+<!-- ПУБЛИКАЦИИ -->
+<section class="publications-section">
+  <div class="container">
+    <h2>ПУБЛИКАЦИИ</h2>
+    <div class="publications-grid">
+      <div class="publication-item">
+        <div class="publication-year">2020</div>
+        <div class="publication-title">Теория манипуляции. Том 1</div>
+        <div class="publication-desc">Основы психологического влияния</div>
       </div>
-      <div class="copyright">
-        © Андрей Мейстер · системное мышление · 2026
+      <div class="publication-item">
+        <div class="publication-year">2021</div>
+        <div class="publication-title">Теория манипуляции. Том 2</div>
+        <div class="publication-desc">Практические техники</div>
+      </div>
+      <div class="publication-item">
+        <div class="publication-year">2022</div>
+        <div class="publication-title">Теория манипуляции. Том 3</div>
+        <div class="publication-desc">Мастерство влияния</div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // Подсветка активного пункта меню
-    document.addEventListener('DOMContentLoaded', function() {
-      const currentPath = window.location.pathname;
-      const navLinks = document.querySelectorAll('.nav-links a');
-      
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (currentPath === href || currentPath.startsWith(href + '/')) {
-          link.classList.add('active');
-        }
-      });
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">© Андрей Мейстер · системное мышление · 2026</div>
+  </div>
+</footer>
+
+<!-- Font Awesome для иконок соцсетей -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+  // Подсветка активного пункта меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes('obo-mne') && href.includes('obo-mne')) {
+        link.classList.add('active');
+      }
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
