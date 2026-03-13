@@ -95,7 +95,7 @@
       box-shadow: 0 0 20px #3A86FF;
     }
 
-    /* ===== ШАПКА (как на оригинальном сайте) ===== */
+    /* ===== ШАПКА (обновлённая) ===== */
     .header {
       padding: 20px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
@@ -147,7 +147,7 @@
       color: #3A86FF;
     }
 
-    /* Кнопка "Запись на консультацию" */
+    /* Кнопка "Виртуальный психолог" */
     .btn-header {
       display: inline-block;
       padding: 10px 24px;
@@ -440,18 +440,18 @@
     /* ===== ПОСЛЕДНИЕ СТАТЬИ (В СТИЛЕ APPLE) ===== */
     .blog-preview-section {
       padding: 80px 0;
-      background-color: #F5F5F7; /* Светлый фон как у Apple */
+      background-color: #F5F5F7;
       border-top: 1px solid #E0E0E0;
       border-bottom: 1px solid #E0E0E0;
     }
 
     .blog-preview-section h2 {
-      color: #1D1D1F; /* Тёмный текст */
+      color: #1D1D1F;
     }
 
     .blog-preview-intro {
       text-align: center;
-      color: #6E6E73; /* Серый текст как у Apple */
+      color: #6E6E73;
       margin-bottom: 50px;
       font-size: 1.2rem;
       font-weight: 400;
@@ -465,9 +465,9 @@
     }
 
     .blog-preview-card {
-      background: #FFFFFF; /* Белый фон карточек */
+      background: #FFFFFF;
       border: none;
-      border-radius: 18px; /* Скругления как у Apple */
+      border-radius: 18px;
       padding: 30px;
       transition: all 0.3s ease;
       display: flex;
@@ -481,7 +481,7 @@
     }
 
     .card-date {
-      color: #6E6E73; /* Серый Apple */
+      color: #6E6E73;
       font-size: 0.85rem;
       letter-spacing: normal;
       margin-bottom: 15px;
@@ -490,7 +490,7 @@
 
     .card-title {
       font-size: 1.3rem;
-      color: #1D1D1F; /* Чёрный текст */
+      color: #1D1D1F;
       margin-bottom: 15px;
       line-height: 1.4;
       font-weight: 500;
@@ -499,7 +499,7 @@
     }
 
     .card-excerpt {
-      color: #3A3A3C; /* Тёмно-серый */
+      color: #3A3A3C;
       font-size: 0.95rem;
       margin-bottom: 20px;
       line-height: 1.6;
@@ -640,11 +640,12 @@
 </head>
 <body>
 
-<!-- ШАПКА (как на оригинальном сайте) -->
+<!-- ШАПКА (ОБНОВЛЁННАЯ) -->
 <header class="header">
   <div class="container">
     <div class="nav">
-      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <!-- Логотип теперь ведёт на страницу "Обо мне" -->
+      <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
       <div class="nav-links">
         <a href="/https-meysternlp.ru-/" class="active">Главная</a>
         <a href="/https-meysternlp.ru-/knigi/">Книги</a>
@@ -653,9 +654,10 @@
         <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
         <a href="/https-meysternlp.ru-/sobytiya/">События</a>
         <a href="/https-meysternlp.ru-/blog/">Статьи</a>
-        <a href="/https-meysternlp.ru-/obo-mne/">Обо мне</a>
+        <!-- Пункт "Обо мне" УДАЛЁН -->
       </div>
-      <a href="#" class="btn btn-header" onclick="alert('Форма записи появится здесь')">Запись на консультацию</a>
+      <!-- Кнопка изменена на "Виртуальный психолог" -->
+      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
     </div>
   </div>
 </header>
@@ -809,7 +811,7 @@
   </div>
 </section>
 
-<!-- ПОСЛЕДНИЕ СТАТЬИ В БЛОГЕ (В СТИЛЕ APPLE) -->
+<!-- ПОСЛЕДНИЕ СТАТЬИ В БЛОГЕ -->
 <section class="blog-preview-section">
   <div class="container">
     <h2>ПОСЛЕДНИЕ СТАТЬИ</h2>
