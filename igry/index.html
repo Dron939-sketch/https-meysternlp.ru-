@@ -3,78 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Игры — Андрей Мейстер</title>
+  <title>Дидактические игры — Андрей Мейстер</title>
   <style>
-    /* Стили аналогичные тренингам */
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #0C0C0C;
       color: #F0F0F0;
       line-height: 1.6;
     }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
+
+    /* ===== ТИПОГРАФИКА ===== */
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
     h1 {
       font-size: 3.5rem;
       font-weight: 200;
-      margin: 80px 0 20px;
+      margin: 60px 0 20px;
       color: #FFFFFF;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
-    .header {
-      padding: 30px 0;
-      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
-      background-color: #0C0C0C;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .logo {
-      font-size: 1.5rem;
+
+    p {
+      font-size: 1.1rem;
       font-weight: 300;
-      letter-spacing: 0.3em;
+      color: #CCCCCC;
+    }
+
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
       color: #FFFFFF;
-      text-decoration: none;
     }
-    .logo span {
-      color: #3A86FF;
-    }
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .nav-links a {
-      color: #F0F0F0;
-      text-decoration: none;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 5px;
-    }
-    .nav-links a:hover,
-    .nav-links a.active {
-      border-bottom-color: #3A86FF;
-      color: #3A86FF;
-    }
+
     .btn {
       display: inline-block;
       padding: 14px 32px;
@@ -87,55 +72,142 @@
       font-size: 0.9rem;
       cursor: pointer;
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
+
     .btn:hover {
       background: #3A86FF;
       color: #0C0C0C;
       box-shadow: 0 0 20px #3A86FF;
     }
+
+    /* Кнопка в шапке (градиентная) */
+    .btn-header {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      color: white;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
+      border: none;
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      color: white;
+    }
+
+    /* ===== ШАПКА (НОВЫЙ СТИЛЬ) ===== */
+    .header {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      position: sticky;
+      top: 0;
+      background-color: #0C0C0C;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+    }
+
+    .logo span {
+      color: #3A86FF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #F0F0F0;
+      font-weight: 400;
+      letter-spacing: normal;
+      font-size: 1rem;
+      text-transform: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
+    }
+
+    /* ===== СЕТКА ИГР ===== */
     .games-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
       margin: 60px 0;
     }
+
     .game-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(58, 134, 255, 0.2);
       padding: 30px;
       transition: all 0.3s ease;
     }
+
     .game-card:hover {
       border-color: #3A86FF;
       transform: translateY(-5px);
       box-shadow: 0 0 30px rgba(58, 134, 255, 0.2);
     }
+
     .game-image {
       width: 100%;
       height: 250px;
       object-fit: contain;
       margin-bottom: 20px;
     }
+
     .game-title {
       font-size: 1.8rem;
       color: #FFFFFF;
       margin-bottom: 10px;
       font-weight: 300;
     }
+
     .game-description {
       color: #CCCCCC;
       margin-bottom: 20px;
     }
+
     .game-price {
       font-size: 1.5rem;
       color: #C6A43F;
       margin-bottom: 20px;
     }
+
+    /* ===== ПОДВАЛ ===== */
     .footer {
       padding: 60px 0 30px;
       border-top: 1px solid rgba(58, 134, 255, 0.2);
       margin-top: 60px;
     }
+
     .footer-content {
       display: flex;
       justify-content: space-between;
@@ -143,88 +215,136 @@
       flex-wrap: wrap;
       gap: 20px;
     }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
     .social-links {
       display: flex;
       gap: 30px;
+      flex-wrap: wrap;
     }
+
     .social-links a {
       color: #F0F0F0;
-      text-decoration: none;
       font-size: 1rem;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
+
     .social-links a:hover {
       color: #C6A43F;
     }
+
     .copyright {
       text-align: center;
       margin-top: 40px;
       font-size: 0.8rem;
       opacity: 0.5;
     }
+
+    .text-blue { color: #3A86FF; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
-      .games-grid { grid-template-columns: 1fr; }
+      
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .nav-links {
+        gap: 15px;
+      }
+      
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <div class="container">
-      <div class="nav">
-        <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
-        <div class="nav-links">
-          <a href="/https-meysternlp.ru-/">Главная</a>
-          <a href="/https-meysternlp.ru-/#strategies">Стратегии</a>
-          <a href="/https-meysternlp.ru-/#projects">Проекты</a>
-          <a href="/https-meysternlp.ru-/knigi/">Книги</a>
-          <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
-          <a href="/https-meysternlp.ru-/obo-mne/">Обо мне</a>
-        </div>
-        <a href="#" class="btn" onclick="alert('Форма записи появится здесь')">Запись</a>
-      </div>
-    </div>
-  </header>
 
+<!-- ШАПКА (НОВЫЙ СТИЛЬ) -->
+<header class="header">
   <div class="container">
-    <h1>ДИДАКТИЧЕСКИЕ ИГРЫ</h1>
-    <p style="color: #3A86FF; margin-bottom: 40px;">Учимся мыслить системно через игру</p>
-
-    <div class="games-grid">
-      <!-- Маркетолог -->
-      <div class="game-card">
-        <img src="/https-meysternlp.ru-/didakticheskaya-igra-marketolog-andreya-mejstera.png" alt="Маркетолог" class="game-image" onerror="this.src='https://via.placeholder.com/600x400/0C0C0C/3A86FF?text=Маркетолог'">
-        <div class="game-title">Маркетолог</div>
-        <div class="game-description">Настольная игра, которая учит системному мышлению и маркетингу через практические ситуации. 2-6 игроков, 60-90 минут.</div>
-        <div class="game-price">3 900 ₽</div>
-        <a href="#" class="btn" onclick="alert('Заказ игры')">Заказать</a>
+    <div class="nav">
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/https-meysternlp.ru-/">Главная</a>
+        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+        <a href="/https-meysternlp.ru-/igry/" class="active">Игры</a>
+        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+        <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
+        <a href="/https-meysternlp.ru-/sobytiya/">События</a>
+        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
+        <a href="/https-meysternlp.ru-/obo-mne/">Обо мне</a>
       </div>
-
-      <!-- Вариатика Базовый -->
-      <div class="game-card">
-        <img src="/https-meysternlp.ru-/didaktivnaya-igra-variatika-basic-anderj-mejster.webp" alt="Вариатика Базовый" class="game-image" onerror="this.src='https://via.placeholder.com/600x400/0C0C0C/3A86FF?text=Вариатика+Базовый'">
-        <div class="game-title">Вариатика Базовый</div>
-        <div class="game-description">Базовая версия игры для развития системного мышления. Освойте ключевые принципы и закономерности.</div>
-        <div class="game-price">2 900 ₽</div>
-        <a href="#" class="btn" onclick="alert('Заказ игры')">Заказать</a>
-      </div>
+      <a href="#" class="btn-header" onclick="alert('Форма записи появится здесь')">Запись на консультацию</a>
     </div>
   </div>
+</header>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
-        <div class="social-links">
-          <a href="https://t.me/meysternlp" target="_blank">Tg</a>
-          <a href="https://vk.com/meysternlp" target="_blank">VK</a>
-          <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
-          <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
-        </div>
-      </div>
-      <div class="copyright">© Андрей Мейстер · системное мышление · 2026</div>
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<div class="container">
+  <h1>ДИДАКТИЧЕСКИЕ ИГРЫ</h1>
+  <p style="color: #3A86FF; margin-bottom: 40px;">Учимся мыслить системно через игру</p>
+
+  <div class="games-grid">
+    <!-- Маркетолог -->
+    <div class="game-card">
+      <img src="/https-meysternlp.ru-/didakticheskaya-igra-marketolog-andreya-mejstera.png" alt="Маркетолог" class="game-image" onerror="this.src='https://via.placeholder.com/600x400/0C0C0C/3A86FF?text=Маркетолог'">
+      <div class="game-title">Маркетолог</div>
+      <div class="game-description">Настольная игра, которая учит системному мышлению и маркетингу через практические ситуации. 2-6 игроков, 60-90 минут.</div>
+      <div class="game-price">3 900 ₽</div>
+      <a href="#" class="btn" onclick="alert('Заказ игры')">Заказать</a>
     </div>
-  </footer>
+
+    <!-- Вариатика Базовый -->
+    <div class="game-card">
+      <img src="/https-meysternlp.ru-/didaktivnaya-igra-variatika-basic-anderj-mejster.webp" alt="Вариатика Базовый" class="game-image" onerror="this.src='https://via.placeholder.com/600x400/0C0C0C/3A86FF?text=Вариатика+Базовый'">
+      <div class="game-title">Вариатика Базовый</div>
+      <div class="game-description">Базовая версия игры для развития системного мышления. Освойте ключевые принципы и закономерности.</div>
+      <div class="game-price">2 900 ₽</div>
+      <a href="#" class="btn" onclick="alert('Заказ игры')">Заказать</a>
+    </div>
+  </div>
+</div>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">© Андрей Мейстер · системное мышление · 2026</div>
+  </div>
+</footer>
+
+<!-- Font Awesome для иконок (если понадобятся) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+  // Подсветка активного пункта меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (path.includes('igry') && href.includes('igry')) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
