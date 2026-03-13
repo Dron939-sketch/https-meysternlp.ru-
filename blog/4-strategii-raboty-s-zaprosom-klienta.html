@@ -30,40 +30,38 @@
   <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/blog/4-strategii-raboty-s-zaprosom-klienta.html">
   
   <style>
-    /* СТИЛИ - как в предыдущих статьях */
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #0C0C0C;
-      color: #F0F0F0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #FFFFFF; /* БЕЛЫЙ ФОН */
+      color: #1D1D1F; /* Тёмный текст Apple */
       line-height: 1.6;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 800px; /* Узкая колонка для удобного чтения */
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 200;
-      margin: 60px 0 20px;
-      color: #FFFFFF;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    /* ШАПКА */
+    /* ===== ШАПКА (тёмная) - стили для резерва ===== */
     .header {
-      padding: 30px 0;
+      padding: 20px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      position: sticky;
+      top: 0;
       background-color: #0C0C0C;
+      z-index: 100;
     }
 
     .nav {
@@ -79,7 +77,6 @@
       font-weight: 300;
       letter-spacing: 0.3em;
       color: #FFFFFF;
-      text-decoration: none;
     }
 
     .logo span {
@@ -88,86 +85,104 @@
 
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
       color: #F0F0F0;
-      text-decoration: none;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      border-bottom: 1px solid transparent;
+      font-weight: 400;
+      letter-spacing: normal;
+      font-size: 1rem;
+      text-transform: none;
+      border-bottom: 2px solid transparent;
       padding-bottom: 5px;
+      transition: all 0.2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       border-bottom-color: #3A86FF;
       color: #3A86FF;
     }
 
-    .btn {
+    .btn-header {
       display: inline-block;
-      padding: 14px 32px;
-      border: 1px solid #3A86FF;
-      background: transparent;
-      color: #FFFFFF;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
+      padding: 10px 24px;
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      color: white;
+      border-radius: 30px;
       font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
+      border: none;
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
     }
 
-    .btn:hover {
-      background: #3A86FF;
-      color: #0C0C0C;
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      color: white;
     }
 
-    /* СТАТЬЯ */
+    /* ===== СТАТЬЯ (Apple-стиль) ===== */
     .article-header {
-      margin: 40px 0;
+      margin: 60px 0 30px;
       padding-bottom: 30px;
-      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+      border-bottom: 1px solid #E0E0E0;
     }
 
     .article-meta {
       display: flex;
       gap: 30px;
-      color: #C6A43F;
+      color: #6E6E73;
       margin-bottom: 20px;
       font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #1D1D1F;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      text-transform: none;
     }
 
     .article-content {
       font-size: 1.1rem;
       line-height: 1.8;
+      color: #1D1D1F;
     }
 
     .article-content h2 {
-      color: #3A86FF;
-      font-size: 1.8rem;
+      font-size: 2rem;
+      font-weight: 500;
       margin: 40px 0 20px;
-      font-weight: 300;
+      color: #1D1D1F;
+      letter-spacing: -0.01em;
+      text-transform: none;
     }
 
     .article-content h3 {
-      color: #FFFFFF;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      font-weight: 500;
       margin: 30px 0 15px;
+      color: #1D1D1F;
+      text-transform: none;
     }
 
     .article-content p {
       margin-bottom: 20px;
+      color: #1D1D1F;
     }
 
     .article-content ul, 
     .article-content ol {
       margin: 20px 0 20px 30px;
-      color: #CCCCCC;
+      color: #1D1D1F;
     }
 
     .article-content li {
@@ -175,41 +190,90 @@
     }
 
     .highlight {
-      background: rgba(58, 134, 255, 0.1);
-      border-left: 3px solid #C6A43F;
+      background: #F5F5F7;
+      border-left: 4px solid #3A86FF;
       padding: 20px;
       margin: 30px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .highlight p {
+      margin-bottom: 0;
+      color: #1D1D1F;
     }
 
     .strategy-block {
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid rgba(58, 134, 255, 0.2);
+      background: #F5F5F7;
+      border: 1px solid #E0E0E0;
       padding: 30px;
       margin: 30px 0;
-      border-radius: 8px;
+      border-radius: 12px;
     }
 
     .strategy-number {
       font-size: 2rem;
       color: #3A86FF;
       margin-bottom: 10px;
-      font-weight: 200;
+      font-weight: 500;
     }
 
     .back-link {
       display: inline-block;
-      margin: 40px 0;
+      margin: 40px 0 60px;
       color: #3A86FF;
       font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-weight: 500;
+      text-decoration: none;
     }
 
-    /* ПОДВАЛ */
+    .back-link:hover {
+      color: #1D1D1F;
+    }
+
+    /* Блок "Читайте также" в стиле Apple */
+    .related-articles {
+      margin: 40px 0;
+      padding: 30px;
+      background: #F5F5F7;
+      border-radius: 12px;
+    }
+
+    .related-articles h3 {
+      color: #1D1D1F;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .related-articles ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .related-articles li {
+      margin-bottom: 10px;
+    }
+
+    .related-articles a {
+      color: #3A86FF;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .related-articles a:hover {
+      color: #1D1D1F;
+    }
+
+    /* ===== ПОДВАЛ (тёмный) - стили для резерва ===== */
     .footer {
       padding: 60px 0 30px;
       border-top: 1px solid rgba(58, 134, 255, 0.2);
+      background-color: #0C0C0C;
       margin-top: 60px;
+    }
+
+    .footer .container {
+      max-width: 1200px;
     }
 
     .footer-content {
@@ -220,17 +284,23 @@
       gap: 20px;
     }
 
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+      color: #F0F0F0;
+    }
+
     .social-links {
       display: flex;
       gap: 30px;
+      flex-wrap: wrap;
     }
 
     .social-links a {
       color: #F0F0F0;
-      text-decoration: none;
       font-size: 1rem;
-      letter-spacing: 0.1em;
       text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     .social-links a:hover {
@@ -242,129 +312,171 @@
       margin-top: 40px;
       font-size: 0.8rem;
       opacity: 0.5;
+      color: #F0F0F0;
     }
 
     .text-blue { color: #3A86FF; }
 
+    /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      .nav { flex-direction: column; align-items: flex-start; }
-      .article-meta { flex-direction: column; gap: 10px; }
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.6rem; }
+      
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .nav-links {
+        gap: 15px;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .strategy-block {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- ШАПКА -->
-  <header class="header">
-    <div class="container">
-      <div class="nav">
-        <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
-        <div class="nav-links">
-          <a href="/https-meysternlp.ru-/">Главная</a>
-          <a href="/https-meysternlp.ru-/blog/">Блог</a>
-          <a href="/https-meysternlp.ru-/knigi/">Книги</a>
-          <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
-          <a href="/https-meysternlp.ru-/obo-mne/">Обо мне</a>
-        </div>
+
+<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
+<div id="header-placeholder"></div>
+
+<script>
+  // Загружаем шапку из header.html
+  fetch('/https-meysternlp.ru-/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки шапки:', error);
+      // Запасной вариант на случай ошибки
+      document.getElementById('header-placeholder').innerHTML = `
+        <header class="header">
+          <div class="container" style="max-width: 1200px;">
+            <div class="nav">
+              <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
+              <div class="nav-links">
+                <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
+                <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
+                <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
+                <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
+                <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
+                <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">События</a>
+                <a href="/https-meysternlp.ru-/blog/" class="nav-link active">Статьи</a>
+              </div>
+              <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
+            </div>
+          </div>
+        </header>
+      `;
+    });
+</script>
+
+<!-- ОСНОВНОЙ КОНТЕНТ СТАТЬИ (белый фон) -->
+<div class="container">
+  <article>
+    <div class="article-header">
+      <div class="article-meta">
+        <span>15 марта 2026</span>
+        <span>👁️ 2 847 просмотров</span>
+        <span>⏱️ 8 мин чтения</span>
       </div>
+      <h1>4 стратегии работы с запросом клиента</h1>
     </div>
-  </header>
 
-  <div class="container">
-    <article>
-      <div class="article-header">
-        <div class="article-meta">
-          <span>15 марта 2026</span>
-          <span>👁️ 2 847 просмотров</span>
-          <span>⏱️ 8 мин чтения</span>
-        </div>
-        <h1>4 стратегии работы с запросом клиента</h1>
+    <div class="article-content">
+      <p>Когда человек сталкивается с тем, что его самоощущение и качество взаимоотношений с окружающими не совпадают с ожиданиями, у него есть несколько вариантов развития событий. Как психолог и когнитивный тренер, я выделяю 4 основные стратегии, каждая из которых требует своего подхода.</p>
+
+      <div class="highlight">
+        <p><strong>Важно понимать:</strong> Консультация специалиста — это лишь шаг к появлению у вас инструмента. Инструмент станет бесполезен, если не будет использован в вашей жизни. Только практическое применение определит, приближает ли он вас к желаемому результату.</p>
       </div>
 
-      <div class="article-content">
-        <p>Когда человек сталкивается с тем, что его самоощущение и качество взаимоотношений с окружающими не совпадают с ожиданиями, у него есть несколько вариантов развития событий. Как психолог и когнитивный тренер, я выделяю 4 основные стратегии, каждая из которых требует своего подхода [citation:2].</p>
-
-        <div class="highlight">
-          <p><strong>Важно понимать:</strong> Консультация специалиста — это лишь шаг к появлению у вас инструмента. Инструмент станет бесполезен, если не будет использован в вашей жизни. Только практическое применение определит, приближает ли он вас к желаемому результату [citation:2].</p>
-        </div>
-
-        <h2>Стратегия 1: Принятие</h2>
-        <div class="strategy-block">
-          <div class="strategy-number">01</div>
-          <p><strong>Суть:</strong> Снизить свои ожидания, смириться, принять обратную связь как константу [citation:2].</p>
-          <p><strong>Как я могу быть полезен:</strong> В этом варианте я могу быть полезен только с точки зрения своего опыта. Я помогу сравнить ваши ожидания и возможности, сообщу свою точку зрения: что можно предпринять и реально ли это вообще. Подчеркну — с моей точки зрения [citation:2].</p>
-          <p><strong>Кому подходит:</strong> Тем, кто готов реалистично оценить ситуацию и понять границы возможного.</p>
-        </div>
-
-        <h2>Стратегия 2: Магия (Самогипноз)</h2>
-        <div class="strategy-block">
-          <div class="strategy-number">02</div>
-          <p><strong>Суть:</strong> Лечь спать и проснувшись проверить, не наступили ли какие-нибудь ожидаемые изменения. Повторить необходимое количество раз [citation:2].</p>
-          <p><strong>Как я могу быть полезен:</strong> Могу научить самогипнозу, или как сейчас модно говорить, как «посылать свои сообщения Вселенной». Научный подход к работе с подсознанием без эзотерики [citation:2].</p>
-          <p><strong>Кому подходит:</strong> Тем, кто хочет научиться работать с бессознательными процессами и использовать ресурсы собственной психики.</p>
-        </div>
-
-        <h2>Стратегия 3: Масштаб</h2>
-        <div class="strategy-block">
-          <div class="strategy-number">03</div>
-          <p><strong>Суть:</strong> Уйти от тех людей, которые противоречат ожиданиям, окружить себя другими, которые говорят и делают то, что хочется слышать и видеть. Возможно, придется для этого создать компанию и платить своим сотрудникам чуть больше, чем платят другие [citation:2].</p>
-          <p><strong>Как я могу быть полезен:</strong> Здесь я использую свои навыки маркетинга и системного мышления, чтобы проанализировать бизнес с точки зрения увеличения масштабов или монополизации ниши. Помогу определить структуру сегмента или ниши, чтобы «империя» выросла до больших размеров [citation:2].</p>
-          <p><strong>Кому подходит:</strong> Собственникам бизнеса, руководителям, тем, кто готов масштабироваться.</p>
-        </div>
-
-        <h2>Стратегия 4: Изменение поведения</h2>
-        <div class="strategy-block">
-          <div class="strategy-number">04</div>
-          <p><strong>Суть:</strong> Изменить свое поведение и продолжать совершенствовать его, пока обратная связь не начнет двигаться в нужном направлении. Как только направление будет найдено — увеличить усилия для достижения желаемых результатов [citation:2].</p>
-          <p><strong>Как я могу быть полезен:</strong> Это моя любимая стратегия. Как незаинтересованное лицо, я эмоционально не вовлечен в вашу ситуацию, поэтому могу мыслить критически и рационально. В моем арсенале [citation:2]:</p>
-          <ul>
-            <li>Формирование мыслительных и поведенческих навыков, которые помогают шагать к цели увереннее</li>
-            <li>Коллекция навыков, собранная несколькими поколениями НЛП-мастеров</li>
-            <li>Знание социальной психологии и понимание причин социальных явлений</li>
-          </ul>
-        </div>
-
-        <h2>Важное напоминание</h2>
-        <p>То, что вы прочитали выше — не в духе мейнстрима. Здесь нет универсальных рецептов счастья и обещаний дать волшебную таблетку от всех проблем [citation:2].</p>
-
-        <div class="highlight">
-          <p><strong>Ключевая мысль:</strong> Целая индустрия направлена на создание того, что большинством будет переживаться как проблема. Это игра, и играют в нее люди, которые не ищут проблем в себе, а создают их в головах других. Такой процесс называется манипуляцией [citation:2].</p>
-        </div>
-
-        <p>Нас ежедневно кто-то воздействует, нам внушают нормы и ценности, наше поведение меняют так, как выгодно другим. Обычно такое влияние скрыто. В большинстве случаев человек не осознает, что его действия подчиняются воле манипулятора [citation:2].</p>
-
-        <p>Этот сайт и блог посвящены инструментам воздействия на одного человека или ограниченную аудиторию при непосредственном взаимодействии — как беспристрастный инструмент, владея которым можно создавать проблемы точно так же, как и решать их [citation:2].</p>
-
-        <p><strong>Хотите глубже разобраться в этих стратегиях?</strong> Приходите на мои тренинги или читайте трилогию «Теория манипуляции», где каждая стратегия раскрывается с практической стороны.</p>
+      <h2>Стратегия 1: Принятие</h2>
+      <div class="strategy-block">
+        <div class="strategy-number">01</div>
+        <p><strong>Суть:</strong> Снизить свои ожидания, смириться, принять обратную связь как константу.</p>
+        <p><strong>Как я могу быть полезен:</strong> В этом варианте я могу быть полезен только с точки зрения своего опыта. Я помогу сравнить ваши ожидания и возможности, сообщу свою точку зрения: что можно предпринять и реально ли это вообще. Подчеркну — с моей точки зрения.</p>
+        <p><strong>Кому подходит:</strong> Тем, кто готов реалистично оценить ситуацию и понять границы возможного.</p>
       </div>
 
-      <!-- ССЫЛКИ НА СВЯЗАННЫЕ СТАТЬИ (ДЛЯ ПЕРЕЛИНКОВКИ) -->
-      <div style="margin: 40px 0; padding: 20px; background: rgba(58,134,255,0.05); border: 1px solid rgba(58,134,255,0.2);">
-        <h3 style="color: #C6A43F; margin-bottom: 15px;">Читайте также:</h3>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 10px;">→ <a href="/https-meysternlp.ru-/blog/samogipnoz-dlya-nachinayushih.html">Самогипноз для начинающих: пошаговая инструкция</a></li>
-          <li style="margin-bottom: 10px;">→ <a href="/https-meysternlp.ru-/blog/chto-takoe-manipulyaciya.html">Что такое манипуляция и как ее распознать</a></li>
-          <li style="margin-bottom: 10px;">→ <a href="/https-meysternlp.ru-/blog/sistemnoe-myshlenie-v-biznese.html">Системное мышление в бизнесе</a></li>
+      <h2>Стратегия 2: Магия (Самогипноз)</h2>
+      <div class="strategy-block">
+        <div class="strategy-number">02</div>
+        <p><strong>Суть:</strong> Лечь спать и проснувшись проверить, не наступили ли какие-нибудь ожидаемые изменения. Повторить необходимое количество раз.</p>
+        <p><strong>Как я могу быть полезен:</strong> Могу научить самогипнозу, или как сейчас модно говорить, как «посылать свои сообщения Вселенной». Научный подход к работе с подсознанием без эзотерики.</p>
+        <p><strong>Кому подходит:</strong> Тем, кто хочет научиться работать с бессознательными процессами и использовать ресурсы собственной психики.</p>
+      </div>
+
+      <h2>Стратегия 3: Масштаб</h2>
+      <div class="strategy-block">
+        <div class="strategy-number">03</div>
+        <p><strong>Суть:</strong> Уйти от тех людей, которые противоречат ожиданиям, окружить себя другими, которые говорят и делают то, что хочется слышать и видеть. Возможно, придется для этого создать компанию и платить своим сотрудникам чуть больше, чем платят другие.</p>
+        <p><strong>Как я могу быть полезен:</strong> Здесь я использую свои навыки маркетинга и системного мышления, чтобы проанализировать бизнес с точки зрения увеличения масштабов или монополизации ниши. Помогу определить структуру сегмента или ниши, чтобы «империя» выросла до больших размеров.</p>
+        <p><strong>Кому подходит:</strong> Собственникам бизнеса, руководителям, тем, кто готов масштабироваться.</p>
+      </div>
+
+      <h2>Стратегия 4: Изменение поведения</h2>
+      <div class="strategy-block">
+        <div class="strategy-number">04</div>
+        <p><strong>Суть:</strong> Изменить свое поведение и продолжать совершенствовать его, пока обратная связь не начнет двигаться в нужном направлении. Как только направление будет найдено — увеличить усилия для достижения желаемых результатов.</p>
+        <p><strong>Как я могу быть полезен:</strong> Это моя любимая стратегия. Как незаинтересованное лицо, я эмоционально не вовлечен в вашу ситуацию, поэтому могу мыслить критически и рационально. В моем арсенале:</p>
+        <ul>
+          <li>Формирование мыслительных и поведенческих навыков, которые помогают шагать к цели увереннее</li>
+          <li>Коллекция навыков, собранная несколькими поколениями НЛП-мастеров</li>
+          <li>Знание социальной психологии и понимание причин социальных явлений</li>
         </ul>
       </div>
 
-      <a href="/https-meysternlp.ru-/blog/" class="back-link">← К списку статей</a>
-    </article>
-  </div>
+      <h2>Важное напоминание</h2>
+      <p>То, что вы прочитали выше — не в духе мейнстрима. Здесь нет универсальных рецептов счастья и обещаний дать волшебную таблетку от всех проблем.</p>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
-        <div class="social-links">
-          <a href="https://t.me/meysternlp" target="_blank">Tg</a>
-          <a href="https://vk.com/meysternlp" target="_blank">VK</a>
-          <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
-          <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
-        </div>
+      <div class="highlight">
+        <p><strong>Ключевая мысль:</strong> Целая индустрия направлена на создание того, что большинством будет переживаться как проблема. Это игра, и играют в нее люди, которые не ищут проблем в себе, а создают их в головах других. Такой процесс называется манипуляцией.</p>
       </div>
-      <div class="copyright">© Андрей Мейстер · системное мышление · 2026</div>
+
+      <p>Нас ежедневно кто-то воздействует, нам внушают нормы и ценности, наше поведение меняют так, как выгодно другим. Обычно такое влияние скрыто. В большинстве случаев человек не осознает, что его действия подчиняются воле манипулятора.</p>
+
+      <p>Этот сайт и блог посвящены инструментам воздействия на одного человека или ограниченную аудиторию при непосредственном взаимодействии — как беспристрастный инструмент, владея которым можно создавать проблемы точно так же, как и решать их.</p>
+
+      <p><strong>Хотите глубже разобраться в этих стратегиях?</strong> Приходите на мои тренинги или читайте трилогию «Теория манипуляции», где каждая стратегия раскрывается с практической стороны.</p>
     </div>
-  </footer>
+
+    <!-- ССЫЛКИ НА СВЯЗАННЫЕ СТАТЬИ -->
+    <div class="related-articles">
+      <h3>Читайте также:</h3>
+      <ul>
+        <li>→ <a href="/https-meysternlp.ru-/blog/samogipnoz-dlya-nachinayushih.html">Самогипноз для начинающих: пошаговая инструкция</a></li>
+        <li>→ <a href="/https-meysternlp.ru-/blog/chto-takoe-manipulyaciya.html">Что такое манипуляция и как ее распознать</a></li>
+        <li>→ <a href="/https-meysternlp.ru-/blog/sistemnoe-myshlenie-v-biznese.html">Системное мышление в бизнесе</a></li>
+      </ul>
+    </div>
+
+    <!-- Ссылка назад к списку статей -->
+    <a href="/https-meysternlp.ru-/blog/" class="back-link">← К списку статей</a>
+  </article>
+</div>
+
+<!-- ПОДКЛЮЧАЕМ ПОДВАЛ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Загружаем подвал из footer.html
+  fetch('/https-meysternlp.ru-/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки подвала:', error);
+    });
+</script>
+
 </body>
 </html>
