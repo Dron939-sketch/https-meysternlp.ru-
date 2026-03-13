@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дидактические игры — Андрей Мейстер</title>
+  <style>
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0C0C0C;
+      color: #F0F0F0;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 200;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #3A86FF;
+      letter-spacing: 0.15em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #CCCCCC;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== АНИМАЦИИ ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes roll {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+      text-shadow: 0 0 10px #3A86FF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      text-decoration: none;
+      border: 1px solid #3A86FF;
+      background-color: transparent;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .btn-small {
+      padding: 10px 24px;
+      font-size: 0.8rem;
+    }
+
+    /* ===== ШАПКА ===== */
+    .header {
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+      position: sticky;
+      top: 0;
+      background-color: #0C0C0C;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: #FFFFFF;
+    }
+
+    .logo span {
+      color: #3A86FF;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #F0F0F0;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
+    }
+
+    /* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+    .page-header {
+      padding: 80px 0 40px;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+      text-align: center;
+    }
+
+    /* ===== ОСНОВНАЯ ИГРА ===== */
+    .featured-game {
+      padding: 80px 0;
+    }
+
+    .game-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(58, 134, 255, 0.1) 0%, transparent 100%);
+      padding: 60px;
+      border: 1px solid rgba(58, 134, 255, 0.3);
+    }
+
+    .game-image {
+      font-size: 10rem;
+      text-align: center;
+      color: #3A86FF;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .game-details h2 {
+      margin-bottom: 1rem;
+    }
+
+    .game-tagline {
+      color: #C6A43F;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 30px;
+    }
+
+    .game-features {
+      margin: 30px 0;
+    }
+
+    .game-feature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+    }
+
+    .game-feature::before {
+      content: "🎲";
+      color: #C6A43F;
+    }
+
+    .game-price {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      color: #C6A43F;
+    }
+
+    .old-price {
+      font-size: 1.2rem;
+      color: #666;
+      text-decoration: line-through;
+    }
+
+    /* ===== ДРУГИЕ ИГРЫ ===== */
+    .other-games {
+      padding: 80px 0;
+      background-color: rgba(58, 134, 255, 0.02);
+      border-top: 1px solid rgba(58, 134, 255, 0.1);
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .game-card {
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 40px 30px;
+      transition: all 0.3s ease;
+      text-align: center;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .game-card:nth-child(1) { animation-delay: 0.1s; }
+    .game-card:nth-child(2) { animation-delay: 0.2s; }
+    .game-card:nth-child(3) { animation-delay: 0.3s; }
+
+    .game-card:hover {
+      border-color: #3A86FF;
+      box-shadow: 0 0 40px rgba(58, 134, 255, 0.15);
+      transform: translateY(-10px);
+    }
+
+    .card-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      color: #3A86FF;
+      animation: roll 10s linear infinite;
+    }
+
+    .game-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: #FFFFFF;
+    }
+
+    .game-card .price-small {
+      font-size: 1.5rem;
+      color: #C6A43F;
+      margin: 20px 0;
+    }
+
+    /* ===== КАК ИГРАТЬ ===== */
+    .how-to-play {
+      padding: 80px 0;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      border: 2px solid #3A86FF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #3A86FF;
+      margin: 0 auto 20px;
+      transition: all 0.3s ease;
+    }
+
+    .step:hover .step-number {
+      background-color: #3A86FF;
+      color: #0C0C0C;
+      box-shadow: 0 0 30px #3A86FF;
+    }
+
+    .step p {
+      font-size: 1rem;
+    }
+
+    /* ===== ОТЗЫВЫ ===== */
+    .testimonials {
+      padding: 80px 0;
+      background-color: rgba(58, 134, 255, 0.02);
+      border-top: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial {
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .testimonial:hover {
+      border-color: #C6A43F;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      color: #F0F0F0;
+    }
+
+    .testimonial-author {
+      color: #3A86FF;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    .footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+      background-color: #0C0C0C;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #F0F0F0;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      border-bottom-color: #C6A43F;
+      color: #C6A43F;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      margin-top: 40px;
+    }
+
+    .text-blue { color: #3A86FF; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .game-showcase {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+      
+      .game-image {
+        font-size: 6rem;
+      }
+      
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .game-price {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a href="/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/">Главная</a>
+        <a href="/#strategies">Стратегии</a>
+        <a href="/#projects">Проекты</a>
+        <a href="/knigi/">Книги</a>
+        <a href="/treningi/">Тренинги</a>
+        <a href="/obo-mne/">Обо мне</a>
+      </div>
+      <a href="#kontakt" class="btn" onclick="alert('Форма записи появится здесь')">Запись</a>
+    </div>
+  </div>
+</header>
+
+<!-- ЗАГОЛОВОК -->
+<section class="page-header">
+  <div class="container">
+    <h1>ДИДАКТИЧЕСКИЕ ИГРЫ</h1>
+    <p class="text-blue" style="font-size: 1.2rem;">Учимся мыслить системно через игру</p>
+  </div>
+</section>
+
+<!-- ОСНОВНАЯ ИГРА -->
+<section class="featured-game">
+  <div class="container">
+    <div class="game-showcase">
+      <div class="game-image">
+        🎲
+      </div>
+      <div class="game-details">
+        <h2>МАРКЕТОЛОГ</h2>
+        <div class="game-tagline">дидактическая игра</div>
+        <p>Настольная игра, которая учит системному мышлению и маркетингу через практические ситуации. Вы будете принимать решения, видеть их последствия и учиться на своих ошибках в безопасной среде.</p>
+        
+        <div class="game-features">
+          <div class="game-feature">2-6 игроков</div>
+          <div class="game-feature">60-90 минут</div>
+          <div class="game-feature">от 16 лет</div>
+          <div class="game-feature">100+ сценариев</div>
+        </div>
+        
+        <div class="game-price">
+          <span class="price">₽3 900</span>
+          <span class="old-price">₽4 900</span>
+          <a href="#" class="btn btn-small" onclick="alert('Заказ игры')">Заказать</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ДРУГИЕ ИГРЫ -->
+<section class="other-games">
+  <div class="container">
+    <h2>ДРУГИЕ ИГРЫ</h2>
+    <div class="games-grid">
+      <div class="game-card">
+        <div class="card-icon">🧩</div>
+        <h3>СИСТЕМНЫЙ АНАЛИТИК</h3>
+        <p>Игра для развития системного мышления и понимания сложных взаимосвязей</p>
+        <div class="price-small">₽3 500</div>
+        <a href="#" class="btn btn-small" style="margin-top: 20px;" onclick="alert('Скоро в продаже')">Скоро</a>
+      </div>
+      
+      <div class="game-card">
+        <div class="card-icon">🗣️</div>
+        <h3>МАНИПУЛЯТОР</h3>
+        <p>Игра о психологии влияния и распознавании манипуляций</p>
+        <div class="price-small">₽3 500</div>
+        <a href="#" class="btn btn-small" style="margin-top: 20px;" onclick="alert('Скоро в продаже')">Скоро</a>
+      </div>
+      
+      <div class="game-card">
+        <div class="card-icon">💡</div>
+        <h3>ЛАТЕРАЛЬНОЕ МЫШЛЕНИЕ</h3>
+        <p>Задачи и головоломки для развития нестандартного мышления</p>
+        <div class="price-small">₽2 900</div>
+        <a href="#" class="btn btn-small" style="margin-top: 20px;" onclick="alert('Скоро в продаже')">Скоро</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КАК ИГРАТЬ -->
+<section class="how-to-play">
+  <div class="container">
+    <h2>КАК ИГРАТЬ</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <p>Соберите компанию от 2 до 6 человек</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <p>Выберите сценарий игры</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <p>Принимайте решения и наблюдайте последствия</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <p>Анализируйте результаты и обсуждайте стратегии</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="testimonials">
+  <div class="container">
+    <h2>ЧТО ГОВОРЯТ</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-text">"Игра «Маркетолог» помогла моей команде понять, как работают маркетинговые стратегии на практике. За один вечер мы получили опыт, который в реальности нарабатывается годами."</div>
+        <div class="testimonial-author">— Екатерина, CEO маркетингового агентства</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-text">"Очень увлекательно и полезно. Игра показывает, как одно решение может повлиять на всю систему. Рекомендую всем, кто хочет развить системное мышление."</div>
+        <div class="testimonial-author">— Михаил, предприниматель</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © Андрей Мейстер · системное мышление · 2026
+    </div>
+  </div>
+</footer>
+
+<script>
+// Подсветка активного пункта меню
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (currentPath === href || currentPath.startsWith(href + '/')) {
+      link.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
