@@ -156,7 +156,7 @@
       display: none;
     }
 
-    /* ===== ШАПКА (НОВЫЙ СТИЛЬ) ===== */
+    /* Стили для шапки (оставляем для резерва) */
     .header {
       padding: 20px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
@@ -522,25 +522,40 @@
 </head>
 <body>
 
-<!-- ШАПКА (НОВЫЙ СТИЛЬ) -->
-<header class="header">
-  <div class="container">
-    <div class="nav">
-      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
-      <div class="nav-links">
-        <a href="/https-meysternlp.ru-/">Главная</a>
-        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
-        <a href="/https-meysternlp.ru-/igry/">Игры</a>
-        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
-        <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
-        <a href="/https-meysternlp.ru-/sobytiya/">События</a>
-        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
-        <a href="/https-meysternlp.ru-/obo-mne/" class="active">Обо мне</a>
-      </div>
-      <a href="#" class="btn-header" onclick="alert('Форма записи появится здесь')">Запись на консультацию</a>
-    </div>
-  </div>
-</header>
+<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
+<div id="header-placeholder"></div>
+
+<script>
+  // Загружаем шапку из header.html
+  fetch('/https-meysternlp.ru-/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки шапки:', error);
+      // Запасной вариант на случай ошибки
+      document.getElementById('header-placeholder').innerHTML = `
+        <header class="header">
+          <div class="container">
+            <div class="nav">
+              <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
+              <div class="nav-links">
+                <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
+                <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
+                <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
+                <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
+                <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
+                <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">События</a>
+                <a href="/https-meysternlp.ru-/blog/" class="nav-link">Статьи</a>
+              </div>
+              <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
+            </div>
+          </div>
+        </header>
+      `;
+    });
+</script>
 
 <!-- ЗАГОЛОВОК -->
 <section class="page-header">
@@ -666,37 +681,23 @@
   </div>
 </section>
 
-<!-- ПОДВАЛ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
-      <div class="social-links">
-        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
-        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
-        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
-        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
-      </div>
-    </div>
-    <div class="copyright">© Андрей Мейстер · системное мышление · 2026</div>
-  </div>
-</footer>
+<!-- ПОДКЛЮЧАЕМ ПОДВАЛ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
+<div id="footer-placeholder"></div>
+
+<script>
+  // Загружаем подвал из footer.html
+  fetch('/https-meysternlp.ru-/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки подвала:', error);
+    });
+</script>
 
 <!-- Font Awesome для иконок соцсетей -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<script>
-  // Подсветка активного пункта меню
-  document.addEventListener('DOMContentLoaded', function() {
-    const path = window.location.pathname;
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      const href = link.getAttribute('href');
-      if (path.includes('obo-mne') && href.includes('obo-mne')) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
