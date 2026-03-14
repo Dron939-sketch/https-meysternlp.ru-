@@ -138,7 +138,7 @@
       left: 0;
     }
 
-    /* ===== ШАПКА (ИСПРАВЛЕННАЯ) ===== */
+    /* ===== ШАПКА ===== */
     .header {
       padding: 30px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
@@ -194,7 +194,7 @@
       border-bottom-color: #3A86FF;
     }
 
-    /* Кнопка в шапке (стили как в оригинале) */
+    /* Кнопка в шапке */
     .btn-header {
       display: inline-block;
       padding: 10px 24px;
@@ -235,7 +235,6 @@
       justify-content: center;
     }
 
-    /* Фраза */
     .hero-phrase-block {
       margin: 0 0 20px;
     }
@@ -261,7 +260,6 @@
       text-transform: none;
     }
 
-    /* Линия вместо звездочки */
     .hero-divider {
       width: 60px;
       height: 1px;
@@ -284,7 +282,7 @@
       margin-top: 10px;
     }
 
-    /* ===== ВИДЕО 16:9 С РАМКОЙ ПО КОНТУРУ ===== */
+    /* ===== ВИДЕО ===== */
     .hero-image {
       position: relative;
       width: 100%;
@@ -327,8 +325,8 @@
     }
 
     .video-wrapper:hover::before {
-      border-color: #C6A43F;
-      box-shadow: 0 0 20px rgba(198, 164, 63, 0.5);
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px rgba(58, 134, 255, 0.5);
     }
 
     .video-wrapper::after {
@@ -362,13 +360,13 @@
     }
 
     .hero-sticker:hover {
-      background-color: #C6A43F;
-      border-color: #C6A43F;
+      background-color: #3A86FF;
+      border-color: #3A86FF;
       color: #0C0C0C;
-      box-shadow: 0 0 25px rgba(198, 164, 63, 0.5);
+      box-shadow: 0 0 25px rgba(58, 134, 255, 0.5);
     }
 
-    /* ===== НОВЫЙ БЛОК: ЧЕМ Я МОГУ БЫТЬ ПОЛЕЗЕН (2×2) ===== */
+    /* ===== ЧЕМ Я МОГУ БЫТЬ ПОЛЕЗЕН (2×2) ===== */
     .section {
       padding: 80px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.1);
@@ -432,7 +430,7 @@
       font-weight: 400;
     }
 
-    /* ===== НОВЫЙ БЛОК: МОИ ПРОЕКТЫ (с вопросами) ===== */
+    /* ===== МОИ ПРОЕКТЫ (с вопросами) ===== */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -497,7 +495,7 @@
       flex-grow: 1;
     }
 
-    /* ===== СИСТЕМНОЕ МЫШЛЕНИЕ ===== */
+    /* ===== КАК ЭТО РАБОТАЕТ (НОВЫЙ БЛОК) ===== */
     .system-section {
       padding: 80px 0;
       background-color: #0C0C0C;
@@ -513,82 +511,21 @@
       letter-spacing: 0.1em;
     }
 
-    .system-cycle {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-bottom: 80px;
-    }
-
     .cycle-item {
       background-color: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(58, 134, 255, 0.2);
       padding: 30px;
-      text-align: center;
-      position: relative;
       transition: all 0.3s ease;
       border-radius: 8px;
     }
 
     .cycle-item:hover {
-      border-color: #C6A43F;
-      box-shadow: 0 0 30px rgba(198, 164, 63, 0.2);
+      border-color: #3A86FF;
+      box-shadow: 0 0 30px rgba(58, 134, 255, 0.2);
       transform: translateY(-5px);
     }
 
-    .cycle-icon {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      color: #3A86FF;
-      transition: color 0.3s ease;
-    }
-
-    .cycle-item:hover .cycle-icon {
-      color: #C6A43F;
-    }
-
-    .cycle-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: #FFFFFF;
-      letter-spacing: 0.1em;
-    }
-
-    .cycle-item p {
-      font-size: 0.95rem;
-      color: #CCCCCC;
-      margin-bottom: 20px;
-      line-height: 1.5;
-    }
-
-    .cycle-arrow {
-      font-size: 1.5rem;
-      color: #3A86FF;
-      margin-top: 10px;
-    }
-
-    .about-author {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px;
-      background-color: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(58, 134, 255, 0.2);
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .about-author p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #F0F0F0;
-    }
-
-    .about-author strong {
-      color: #3A86FF;
-      font-weight: 400;
-    }
-
-    /* ===== ПОСЛЕДНИЕ СТАТЬИ (В СТИЛЕ APPLE) ===== */
+    /* ===== ПОСЛЕДНИЕ СТАТЬИ ===== */
     .blog-preview-section {
       padding: 80px 0;
       background-color: #F5F5F7;
@@ -737,27 +674,20 @@
     }
 
     .social-links a:hover {
-      border-bottom-color: #C6A43F;
-      color: #C6A43F;
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
       text-shadow: none;
     }
 
     .copyright {
       text-align: center;
       font-size: 0.8rem;
-      opacity: 0.5;
+      color: #666;
       letter-spacing: 0.1em;
       margin-top: 40px;
     }
 
-    /* ===== УТИЛИТЫ ===== */
     .text-blue { color: #3A86FF; }
-    .text-light { color: #F0F0F0; }
-    .border-blue { border-color: #3A86FF; }
-    .mt-2 { margin-top: 0.5rem; }
-    .mt-4 { margin-top: 1.5rem; }
-    .mb-2 { margin-bottom: 0.5rem; }
-    .mb-4 { margin-bottom: 1.5rem; }
 
     /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 992px) {
@@ -868,7 +798,7 @@
   </div>
 </section>
 
-<!-- ЧЕМ Я МОГУ БЫТЬ ПОЛЕЗЕН (НОВЫЙ БЛОК) -->
+<!-- ЧЕМ Я МОГУ БЫТЬ ПОЛЕЗЕН -->
 <section id="strategies" class="section">
   <div class="container">
     <h2>ЧЕМ Я МОГУ БЫТЬ ПОЛЕЗЕН</h2>
@@ -910,7 +840,7 @@
   </div>
 </section>
 
-<!-- МОИ ПРОЕКТЫ (НОВЫЙ БЛОК) -->
+<!-- МОИ ПРОЕКТЫ -->
 <section id="projects" class="section">
   <div class="container">
     <h2>МОИ ПРОЕКТЫ</h2>
@@ -945,71 +875,72 @@
   </div>
 </section>
 
-<!-- СИСТЕМНОЕ МЫШЛЕНИЕ -->
+<!-- КАК ЭТО РАБОТАЕТ -->
 <section class="system-section">
   <div class="container">
-    <h2>СИСТЕМНОЕ МЫШЛЕНИЕ</h2>
-    <p class="system-intro">Всё взаимосвязано. Изменение одного элемента влияет на все остальные.</p>
+    <h2>КАК ЭТО РАБОТАЕТ</h2>
+    <p class="system-intro">Нарратив → Действия → Результаты. Ты можешь выбрать.</p>
     
-    <div class="system-cycle">
-      <div class="cycle-item">
-        <div class="cycle-icon">🧬</div>
-        <h3>ГОРМОНАЛЬНЫЙ ФОН</h3>
-        <p>Определяет поведение и решения</p>
-        <div class="cycle-arrow">↓</div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 60px 0; position: relative;">
+      
+      <!-- Карточка 1: НАРРАТИВ -->
+      <div class="cycle-item" style="animation: fadeUp 0.6s ease-out forwards; opacity: 0; animation-delay: 0.1s; text-align: left; padding: 35px;">
+        <div style="font-size: 1.2rem; font-weight: 300; color: #3A86FF; margin-bottom: 20px; letter-spacing: 0.2em;">01</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 25px; color: #FFFFFF;">НАРРАТИВ</h3>
+        <p style="font-size: 1rem; color: #CCCCCC; line-height: 1.6; margin-bottom: 15px;">Определяет твои ценности и цели. Задает направление.</p>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(58, 134, 255, 0.2);">
+          <p style="font-size: 0.9rem; color: #666; font-style: italic;">«Зачем я просыпаюсь утром?»</p>
+        </div>
       </div>
-      <div class="cycle-item">
-        <div class="cycle-icon">⚙️</div>
-        <h3>АРХИТЕКТУРА ПРОГРЕССИИ</h3>
-        <p>Процессы деятельности</p>
-        <div class="cycle-arrow">↓</div>
+      
+      <!-- Карточка 2: ДЕЙСТВИЯ -->
+      <div class="cycle-item" style="animation: fadeUp 0.6s ease-out forwards; opacity: 0; animation-delay: 0.2s; text-align: left; padding: 35px;">
+        <div style="font-size: 1.2rem; font-weight: 300; color: #3A86FF; margin-bottom: 20px; letter-spacing: 0.2em;">02</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 25px; color: #FFFFFF;">ДЕЙСТВИЯ</h3>
+        <p style="font-size: 1rem; color: #CCCCCC; line-height: 1.6; margin-bottom: 15px;">Ты делаешь то, что соответствует нарративу. Осознанно или нет.</p>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(58, 134, 255, 0.2);">
+          <p style="font-size: 0.9rem; color: #666; font-style: italic;">«Почему я поступаю именно так?»</p>
+        </div>
       </div>
-      <div class="cycle-item">
-        <div class="cycle-icon">🏆</div>
-        <h3>КАЧЕСТВО ЖИЗНИ</h3>
-        <p>Влияет на гормональный фон</p>
-        <div class="cycle-arrow">↓</div>
+      
+      <!-- Карточка 3: РЕЗУЛЬТАТЫ -->
+      <div class="cycle-item" style="animation: fadeUp 0.6s ease-out forwards; opacity: 0; animation-delay: 0.3s; text-align: left; padding: 35px;">
+        <div style="font-size: 1.2rem; font-weight: 300; color: #3A86FF; margin-bottom: 20px; letter-spacing: 0.2em;">03</div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 25px; color: #FFFFFF;">РЕЗУЛЬТАТЫ</h3>
+        <p style="font-size: 1rem; color: #CCCCCC; line-height: 1.6; margin-bottom: 15px;">То, что ты получаешь в жизни. То, во что превращается твой нарратив.</p>
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(58, 134, 255, 0.2);">
+          <p style="font-size: 0.9rem; color: #666; font-style: italic;">«Это вообще моя жизнь?»</p>
+        </div>
       </div>
-      <div class="cycle-item">
-        <div class="cycle-icon">🔑</div>
-        <h3>ВОЗМОЖНОСТИ</h3>
-        <p>Определяют качество жизни</p>
-        <div class="cycle-arrow">↓</div>
-      </div>
-      <div class="cycle-item">
-        <div class="cycle-icon">🤝</div>
-        <h3>СОЦИАЛЬНЫЕ СВЯЗИ</h3>
-        <p>Определяют возможности</p>
-        <div class="cycle-arrow">↓</div>
-      </div>
-      <div class="cycle-item">
-        <div class="cycle-icon">🗣️</div>
-        <h3>РЕЧЬ</h3>
-        <p>Влияет на социальные связи</p>
-        <div class="cycle-arrow">↓</div>
-      </div>
-      <div class="cycle-item">
-        <div class="cycle-icon">🧠</div>
-        <h3>МЫШЛЕНИЕ</h3>
-        <p>Влияет на гормональный фон</p>
-        <div class="cycle-arrow">↻</div>
+      
+    </div>
+    
+    <!-- Блок ВЫБОР -->
+    <div style="text-align: center; margin: 30px 0 60px;">
+      <div style="display: inline-block; background-color: rgba(58, 134, 255, 0.1); border: 1px solid #3A86FF; padding: 20px 40px; border-radius: 50px;">
+        <div style="font-size: 1.5rem; font-weight: 200; color: #3A86FF; margin-bottom: 5px;">⬆︎</div>
+        <div style="font-size: 1.5rem; font-weight: 300; color: #FFFFFF; letter-spacing: 0.1em;">ВЫБОР</div>
+        <p style="font-size: 1rem; color: #CCCCCC; margin-top: 10px; max-width: 400px;">Ты можешь поменять нарратив. А можешь оставить всё как есть.</p>
       </div>
     </div>
     
-    <div class="about-author">
-      <p><strong>Андрей Мейстер</strong> — психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика». Кандидат наук, автор бестселлера «Теория манипуляции».</p>
+    <!-- Мои продукты работают без меня -->
+    <div style="max-width: 700px; margin: 0 auto; text-align: center; padding: 40px 0 20px;">
+      <p style="font-size: 2rem; font-weight: 200; color: #FFFFFF; margin-bottom: 20px;">Мои продукты работают без меня</p>
+      <p style="font-size: 1.2rem; color: #CCCCCC; line-height: 1.6;">Книги, игры, практикумы — это готовые инструменты. Вы просто берёте их и применяете.</p>
     </div>
+    
   </div>
 </section>
 
-<!-- ПОСЛЕДНИЕ СТАТЬИ В БЛОГЕ -->
+<!-- ПОСЛЕДНИЕ СТАТЬИ -->
 <section class="blog-preview-section">
   <div class="container">
     <h2>ПОСЛЕДНИЕ СТАТЬИ</h2>
     <p class="blog-preview-intro">Регулярно делюсь мыслями о системном мышлении, психологии и методах влияния</p>
     
     <div class="blog-preview-grid">
-      <!-- Статья 1 - ФСБ -->
+      <!-- Статья 1 -->
       <div class="blog-preview-card">
         <div class="card-date">20 марта 2026</div>
         <h3 class="card-title">Как вербует ФСБ: методы, схемы и психологические приемы</h3>
@@ -1020,7 +951,7 @@
         </div>
       </div>
 
-      <!-- Статья 2 - Латеральное мышление -->
+      <!-- Статья 2 -->
       <div class="blog-preview-card">
         <div class="card-date">15 марта 2026</div>
         <h3 class="card-title">Латеральное мышление: что это, техники и упражнения</h3>
@@ -1031,7 +962,7 @@
         </div>
       </div>
 
-      <!-- Статья 3 - Самогипноз -->
+      <!-- Статья 3 -->
       <div class="blog-preview-card">
         <div class="card-date">2 марта 2026</div>
         <h3 class="card-title">Самогипноз для начинающих: пошаговая инструкция</h3>
@@ -1043,7 +974,6 @@
       </div>
     </div>
 
-    <!-- Ссылка на все статьи -->
     <div class="blog-preview-footer">
       <a href="/https-meysternlp.ru-/blog/" class="btn btn-outline">Все статьи блога →</a>
     </div>
