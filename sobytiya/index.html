@@ -339,6 +339,11 @@
       border: none;
     }
 
+    .video-controls {
+      margin-top: 15px;
+      text-align: center;
+    }
+
     .video-card .material-icon {
       color: #C6A43F;
     }
@@ -493,23 +498,8 @@
 </head>
 <body>
 
-<!-- ШАПКА -->
-<header class="header">
-  <div class="container">
-    <div class="nav">
-      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
-      <div class="nav-links">
-        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
-        <a href="/https-meysternlp.ru-/igry/">Игры</a>
-        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
-        <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
-        <a href="/https-meysternlp.ru-/arhiv/" class="active">Архив</a>
-        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
-      </div>
-      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">Виртуальный психолог</a>
-    </div>
-  </div>
-</header>
+<!-- ШАПКА (подключается из header.html) -->
+<div id="header-placeholder"></div>
 
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <div class="container">
@@ -538,8 +528,8 @@
         <div class="video-embed">
           <iframe src="https://vk.com/video_ext.php?oid=469250200&id=456239357&hash=d5f4b9d3f8e2a1c7" allowfullscreen></iframe>
         </div>
-        <div class="material-actions">
-          <a href="https://vk.com/video469250200_456239357" class="btn btn-small" target="_blank">СМОТРЕТЬ НА VK</a>
+        <div class="video-controls">
+          <a href="https://vk.com/video469250200_456239357" class="btn btn-small" target="_blank">ОТКРЫТЬ В VK</a>
         </div>
       </div>
     </div>
@@ -560,7 +550,7 @@
         <div class="material-meta">PDF • Гайд 10</div>
         <div class="material-description">Практическое руководство по управлению вниманием и ресурсами. Матрица контроля — приложение.</div>
         <div class="material-actions">
-          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд%2010_Матрица%20контроля_ПРИЛОЖЕНИЕ%20(2)_compressed.pdf" class="btn btn-small" download>СКАЧАТЬ PDF</a>
+          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд%2010_Матрица%20контроля_ПРИЛОЖЕНИЕ%20(2)_compressed.pdf" class="btn btn-small">ОТКРЫТЬ PDF</a>
         </div>
       </div>
 
@@ -571,7 +561,7 @@
         <div class="material-meta">PDF • Гайд</div>
         <div class="material-description">Анализ деструктивных паттернов и способы работы с ними.</div>
         <div class="material-actions">
-          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд%20_ЯДЫ%20(1)_compressed.pdf" class="btn btn-small" download>СКАЧАТЬ PDF</a>
+          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд%20_ЯДЫ%20(1)_compressed.pdf" class="btn btn-small">ОТКРЫТЬ PDF</a>
         </div>
       </div>
 
@@ -582,7 +572,7 @@
         <div class="material-meta">PDF • Гайд 15</div>
         <div class="material-description">Сборник терапевтических сказок для работы с подсознанием.</div>
         <div class="material-actions">
-          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд_15_Терапевтические%20сказки%20(1)_compressed.pdf" class="btn btn-small" download>СКАЧАТЬ PDF</a>
+          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд_15_Терапевтические%20сказки%20(1)_compressed.pdf" class="btn btn-small">ОТКРЫТЬ PDF</a>
         </div>
       </div>
     </div>
@@ -608,35 +598,23 @@
   </div>
 </div>
 
-<!-- ПОДВАЛ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
-      <div class="social-links">
-        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
-        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
-        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
-        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
-      </div>
-    </div>
-    <div class="copyright">© Андрей Мейстер · 2026</div>
-  </div>
-</footer>
+<!-- ПОДВАЛ (подключается из footer.html) -->
+<div id="footer-placeholder"></div>
 
 <script>
-  // Подсветка активного пункта меню
-  document.addEventListener('DOMContentLoaded', function() {
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (currentPath === href) {
-        link.classList.add('active');
-      }
+  // Загружаем шапку
+  fetch('/https-meysternlp.ru-/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
     });
-  });
+
+  // Загружаем подвал
+  fetch('/https-meysternlp.ru-/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
 </script>
 
 </body>
