@@ -13,7 +13,7 @@
       </button>
       
       <!-- Навигация (на десктопе видна всегда, на мобильных — в бургере) -->
-      <div class="nav-links" id="main-nav">
+      <div class="nav-links" id="navLinks">
         <a href="/https-meysternlp.ru-/knigi/">Книги</a>
         <a href="/https-meysternlp.ru-/igry/">Игры</a>
         <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
@@ -184,8 +184,16 @@
     padding: 15px 0;
     width: 90%;
     max-width: 280px;
+    font-size: 1rem;
   }
   
+  .mobile-only:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+    color: white !important;
+    border-bottom-color: transparent !important;
+  }
+
   .burger {
     display: flex;
   }
@@ -235,64 +243,4 @@
 }
 </style>
 
-<script>
-// Функция для подсветки активного пункта меню
-function highlightCurrentPage() {
-  const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.nav-links a');
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    const cleanHref = href ? href.replace('/https-meysternlp.ru-', '') : '';
-    const cleanPath = currentPath.replace('/https-meysternlp.ru-', '');
-    
-    if (cleanPath === cleanHref || 
-        (cleanHref !== '/' && cleanPath.startsWith(cleanHref + '/')) ||
-        (cleanHref === '/' && cleanPath === '/')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-}
-
-// Функция для работы бургер-меню
-function initBurger() {
-  const burger = document.getElementById('burgerBtn');
-  const nav = document.getElementById('main-nav');
-  
-  if (burger && nav) {
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('active');
-      nav.classList.toggle('active');
-      
-      if (nav.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    });
-    
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        burger.classList.remove('active');
-        nav.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    });
-    
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        burger.classList.remove('active');
-        nav.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  highlightCurrentPage();
-  initBurger();
-});
-</script>
+<!-- СКРИПТ УДАЛЕН - он будет на основных страницах -->
