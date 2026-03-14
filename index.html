@@ -170,7 +170,7 @@
       color: white;
     }
 
-    /* ===== ГЕРОЙ ===== */
+    /* ===== ГЕРОЙ (ОБНОВЛЕННЫЙ) ===== */
     .hero {
       padding: 100px 0;
     }
@@ -183,11 +183,12 @@
     }
 
     .hero-subtitle {
-      font-size: 1rem;
+      font-size: 0.9rem;
       letter-spacing: 0.3em;
       color: #3A86FF;
       margin-bottom: 20px;
       text-transform: uppercase;
+      opacity: 0.7;
     }
 
     .hero-promise {
@@ -202,25 +203,10 @@
     }
 
     .hero-result {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-
-    .gold-asterisk {
-      color: #C6A43F;
-      font-size: 1.8rem;
-      font-weight: 300;
-      line-height: 1;
-      margin-top: 5px;
-      flex-shrink: 0;
-    }
-
-    .hero-result-text {
       font-size: 1.8rem;
       font-weight: 300;
       color: #F0F0F0;
+      margin-bottom: 40px;
       line-height: 1.4;
     }
 
@@ -315,8 +301,13 @@
       margin-bottom: 15px;
     }
 
+    .strategy-desc {
+      font-size: 0.95rem;
+      color: #AAAAAA;
+      margin-top: 10px;
+    }
+
     /* ===== ПРОЕКТЫ ===== */
-    /* Новый блок с текстом про продукты */
     .products-intro {
       margin: 30px 0 50px;
       display: flex;
@@ -684,7 +675,7 @@
         padding-left: 15px;
       }
       
-      .hero-result-text {
+      .hero-result {
         font-size: 1.4rem;
       }
       
@@ -757,7 +748,7 @@
   </div>
 </header>
 
-<!-- ГЕРОЙ -->
+<!-- ГЕРОЙ (ОБНОВЛЕННЫЙ) -->
 <section id="home" class="hero">
   <div class="container">
     <div class="hero-grid">
@@ -771,11 +762,8 @@
         </div>
         
         <div class="hero-result">
-          <span class="gold-asterisk">*</span>
-          <span class="hero-result-text">
-            Вы будете знать <span class="gold-text">ЗАЧЕМ</span> просыпаться утром<br>
-            и <span class="gold-text">КАК</span> сделать так, чтобы вечером был результат.
-          </span>
+          Вы будете знать <span class="gold-text">ЗАЧЕМ</span> просыпаться утром 
+          и <span class="gold-text">КАК</span> сделать результат
         </div>
         
         <div class="hero-buttons">
@@ -805,21 +793,25 @@
         <div class="strategy-number">01</div>
         <div class="strategy-title">Принятие</div>
         <p>Снизить ожидания, смириться, принять реальность. Помогу сравнить ваши цели с возможностями и дать честную обратную связь.</p>
+        <div class="strategy-desc">когда реальность не совпадает с ожиданиями</div>
       </div>
       <div class="strategy-card">
         <div class="strategy-number">02</div>
         <div class="strategy-title">Магия</div>
         <p>Научу самогипнозу и работе с подсознанием без эзотерики. «Посылать сигналы Вселенной» — теперь научно.</p>
+        <div class="strategy-desc">когда хотите влиять на подсознание без эзотерики</div>
       </div>
       <div class="strategy-card">
         <div class="strategy-number">03</div>
         <div class="strategy-title">Масштаб</div>
         <p>Уйти от токсичных людей или создать компанию. Помогу с системным анализом бизнеса и маркетингом.</p>
+        <div class="strategy-desc">когда нужно вырасти или выйти из токсичных отношений</div>
       </div>
       <div class="strategy-card">
         <div class="strategy-number">04</div>
         <div class="strategy-title">Изменение</div>
         <p>Изменить поведение, чтобы получить другую обратную связь. Здесь я — рациональный партнер.</p>
+        <div class="strategy-desc">когда хотите, чтобы люди вокруг реагировали иначе</div>
       </div>
     </div>
   </div>
@@ -830,7 +822,6 @@
   <div class="container">
     <h2>МОИ ПРОЕКТЫ</h2>
     
-    <!-- ПЕРЕНЕСЕННЫЙ ТЕКСТ ПРО ПРОДУКТЫ -->
     <div class="products-intro">
       <div class="products-intro-content">
         <span class="gold-dot-large"></span>
@@ -867,9 +858,7 @@
     <h2>СИСТЕМНОЕ МЫШЛЕНИЕ</h2>
     <p class="system-intro">Всё взаимосвязано. Изменение одного элемента влияет на все остальные.</p>
     
-    <!-- ПИРАМИДА: 3 СВЕРХУ, 4 СНИЗУ -->
     <div class="pyramid" id="pyramid">
-      <!-- Верхний ряд - 3 элемента -->
       <div class="row top-row">
         <div class="pyramid-item" data-id="hormones">
           <div class="item-icon">🧬</div>
@@ -888,7 +877,6 @@
         </div>
       </div>
       
-      <!-- Нижний ряд - 4 элемента -->
       <div class="row bottom-row">
         <div class="pyramid-item" data-id="opportunities">
           <div class="item-icon">🔑</div>
@@ -913,7 +901,6 @@
       </div>
     </div>
 
-    <!-- ПАНЕЛЬ С ТЕКСТОМ -->
     <div class="text-panel" id="textPanel">
       <div class="panel-title" id="panelTitle">ГОРМОНАЛЬНЫЙ ФОН</div>
       <div class="panel-desc" id="panelDesc">Гормональный фон — это фундамент, на котором строится наше поведение, эмоции и решения. Он определяет, как мы воспринимаем мир и реагируем на события.</div>
@@ -926,14 +913,13 @@
   </div>
 </section>
 
-<!-- ПОСЛЕДНИЕ СТАТЬИ В БЛОГЕ -->
+<!-- ПОСЛЕДНИЕ СТАТЬИ -->
 <section class="blog-preview-section">
   <div class="container">
     <h2>ПОСЛЕДНИЕ СТАТЬИ</h2>
     <p class="blog-preview-intro">Регулярно делюсь мыслями о системном мышлении, психологии и методах влияния</p>
     
     <div class="blog-preview-grid">
-      <!-- Статья 1 - ФСБ -->
       <div class="blog-preview-card">
         <div class="card-date">20 марта 2026</div>
         <h3 class="card-title">Как вербует ФСБ: методы, схемы и психологические приемы</h3>
@@ -944,7 +930,6 @@
         </div>
       </div>
 
-      <!-- Статья 2 - Латеральное мышление -->
       <div class="blog-preview-card">
         <div class="card-date">15 марта 2026</div>
         <h3 class="card-title">Латеральное мышление: что это, техники и упражнения</h3>
@@ -955,7 +940,6 @@
         </div>
       </div>
 
-      <!-- Статья 3 - Самогипноз -->
       <div class="blog-preview-card">
         <div class="card-date">2 марта 2026</div>
         <h3 class="card-title">Самогипноз для начинающих: пошаговая инструкция</h3>
@@ -967,7 +951,6 @@
       </div>
     </div>
 
-    <!-- Ссылка на все статьи -->
     <div class="blog-preview-footer">
       <a href="/https-meysternlp.ru-/blog/" class="btn btn-outline">Все статьи блога →</a>
     </div>
@@ -991,7 +974,6 @@
 </footer>
 
 <script>
-  // Данные для текста в пирамиде
   const texts = {
     hormones: {
       title: "ГОРМОНАЛЬНЫЙ ФОН",
@@ -1030,7 +1012,6 @@
     }
   };
 
-  // Функция обновления текста в пирамиде
   function updateText(id) {
     const data = texts[id];
     document.getElementById('panelTitle').textContent = data.title;
@@ -1043,7 +1024,6 @@
     document.querySelector(`[data-id="${id}"]`).classList.add('active');
   }
 
-  // Назначаем обработчики кликов на пирамиду
   document.querySelectorAll('.pyramid-item').forEach(item => {
     item.addEventListener('click', function() {
       const id = this.getAttribute('data-id');
@@ -1051,7 +1031,6 @@
     });
   });
 
-  // Подсветка меню и начальный текст
   document.addEventListener('DOMContentLoaded', function() {
     const path = window.location.pathname;
     document.querySelectorAll('.nav-links a').forEach(link => {
