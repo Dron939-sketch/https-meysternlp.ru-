@@ -5,20 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO МЕТА-ТЕГИ -->
-  <title>События и мероприятия — Андрей Мейстер</title>
-  <meta name="description" content="События и мероприятия, набор в фокус группы, тестирование проектов - узнайте сейчас как и где вы можете познакомиться с Андреем Мейстером.">
-  <meta name="keywords" content="события, мероприятия, фокус-группа, практикум, разговорный гипноз, вариатика, тренинг">
+  <title>События — интенсив, фокус-группы, практикумы | Андрей Мейстер</title>
+  <meta name="description" content="То, что происходит здесь и сейчас. Фокус-группы, интенсивы по разговорному гипнозу и Вариатике. Ближайшие события в Сочи.">
+  <meta name="keywords" content="события, мероприятия, фокус-группа, практикум, разговорный гипноз, вариатика, тренинг, сочи">
   <meta name="author" content="Андрей Мейстер">
   
-  <!-- OPEN GRAPH ДЛЯ СОЦСЕТЕЙ -->
-  <meta property="og:title" content="События и мероприятия — Андрей Мейстер">
-  <meta property="og:description" content="Актуальные события, набор в фокус-группы, практикумы и интенсивы">
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="События — Андрей Мейстер">
+  <meta property="og:description" content="То, что происходит здесь и сейчас. Фокус-группы, интенсивы, практикумы.">
   <meta property="og:image" content="/https-meysternlp.ru-/images/sobytiya-preview.jpg">
   <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/sobytiya/">
   <meta property="og:type" content="website">
   
   <!-- КАНОНИЧЕСКАЯ ССЫЛКА -->
   <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/sobytiya/">
+  
+  <!-- Подключаем Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
     /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
@@ -33,14 +38,15 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: #0C0C0C;
       color: #F0F0F0;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -50,35 +56,37 @@
       font-weight: 300;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      line-height: 1.2;
     }
 
     h1 {
       font-size: 3.5rem;
       font-weight: 200;
-      margin-bottom: 1rem;
-      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+      color: #3A86FF;
     }
 
     h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 300;
       margin-bottom: 1.5rem;
-      color: #3A86FF;
+      color: #FFFFFF;
       letter-spacing: 0.15em;
     }
 
     h3 {
       font-size: 1.3rem;
-      font-weight: 400;
+      font-weight: 300;
       margin-bottom: 1rem;
-      color: #FFFFFF;
+      color: #C6A43F;
+      letter-spacing: 0.1em;
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 300;
       color: #CCCCCC;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     /* ===== ССЫЛКИ И КНОПКИ ===== */
@@ -94,19 +102,19 @@
 
     .btn {
       display: inline-block;
-      padding: 12px 30px;
-      border: 1px solid #3A86FF;
-      background: transparent;
-      color: #FFFFFF;
-      text-decoration: none;
+      padding: 12px 28px;
+      font-weight: 400;
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid #3A86FF;
+      background-color: transparent;
+      color: #FFFFFF;
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-      border-radius: 4px;
     }
 
     .btn::before {
@@ -131,32 +139,12 @@
       left: 0;
     }
 
-    /* Кнопка в шапке (градиентная) */
-    .btn-header {
-      display: inline-block;
-      padding: 10px 24px;
-      background: linear-gradient(to right, #00A8E8, #3A86FF);
-      color: white;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: none;
-      letter-spacing: normal;
-      border: none;
-      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+    .btn-small {
+      padding: 8px 20px;
+      font-size: 0.75rem;
     }
 
-    .btn-header:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
-      color: white;
-    }
-
-    .btn-header::before {
-      display: none;
-    }
-
-    /* Стили для шапки (оставляем для резерва) */
+    /* ===== ШАПКА ===== */
     .header {
       padding: 20px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
@@ -208,68 +196,116 @@
       color: #3A86FF;
     }
 
-    /* ===== ЗАГОЛОВОК СТРАНИЦЫ ===== */
+    .btn-header {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      color: white;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
+      border: none;
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      color: white;
+    }
+
+    /* ===== СТРАНИЦА СОБЫТИЙ ===== */
     .page-header {
-      padding: 60px 0 30px;
-      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
-      margin-bottom: 40px;
+      padding: 60px 0 20px;
+      text-align: center;
     }
 
     .page-header h1 {
-      color: #3A86FF;
-      font-size: 2.8rem;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
-    .page-header p {
+    .page-header .subtitle {
       font-size: 1.2rem;
-      max-width: 800px;
+      color: #FFFFFF;
+      font-weight: 200;
+      letter-spacing: 0.1em;
     }
 
-    /* ===== КАРТОЧКИ СОБЫТИЙ ===== */
-    .events-grid {
+    .divider {
+      width: 60px;
+      height: 1px;
+      background-color: #3A86FF;
+      margin: 30px auto;
+    }
+
+    .section-tag {
+      margin: 50px 0 20px;
       display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin-bottom: 60px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-tag-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .section-tag-text {
+      font-size: 1.8rem;
+      font-weight: 200;
+      color: #FFFFFF;
     }
 
     .event-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(58, 134, 255, 0.2);
-      padding: 40px;
+      padding: 35px;
+      margin: 30px 0;
       transition: all 0.3s ease;
+      border-radius: 8px;
     }
 
     .event-card:hover {
       border-color: #3A86FF;
       box-shadow: 0 0 30px rgba(58, 134, 255, 0.15);
+      transform: translateY(-2px);
     }
 
-    .event-title {
+    .focus-group-card {
+      background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), transparent);
+      border: 1px solid #3A86FF;
+    }
+
+    .event-name {
       font-size: 1.8rem;
+      font-weight: 300;
       color: #FFFFFF;
+      margin-bottom: 5px;
+    }
+
+    .event-status {
+      color: #C6A43F;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       margin-bottom: 15px;
-      text-transform: none;
-      letter-spacing: normal;
     }
 
-    .event-details {
+    .event-meta {
       display: flex;
+      gap: 20px;
+      margin: 15px 0;
+      color: #3A86FF;
+      font-size: 0.95rem;
       flex-wrap: wrap;
-      gap: 30px;
-      margin: 20px 0;
     }
 
-    .detail-item {
+    .event-meta span {
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: #3A86FF;
-    }
-
-    .detail-item i {
-      font-size: 1.2rem;
+      gap: 5px;
     }
 
     .event-description {
@@ -277,8 +313,12 @@
       line-height: 1.8;
     }
 
-    .event-description p {
-      margin-bottom: 15px;
+    .event-quote {
+      border-left: 3px solid #3A86FF;
+      padding-left: 20px;
+      margin: 20px 0;
+      color: #F0F0F0;
+      font-style: italic;
     }
 
     .event-conditions {
@@ -291,29 +331,86 @@
     .event-conditions h4 {
       color: #C6A43F;
       margin-bottom: 10px;
-      font-size: 1.1rem;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .event-conditions p {
       margin-bottom: 5px;
+      font-size: 0.95rem;
     }
 
     .event-footer {
-      display: flex;
-      justify-content: flex-start;
-      margin-top: 30px;
+      margin-top: 25px;
     }
 
-    /* Фокус-группа */
-    .focus-group {
-      background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), transparent);
-      border: 1px solid #3A86FF;
+    .email-section {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 40px;
+      margin: 60px 0;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .email-section p {
+      margin-bottom: 25px;
+      color: #FFFFFF;
+    }
+
+    .form-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .email-input {
+      background-color: transparent;
+      border: 1px solid rgba(58, 134, 255, 0.3);
+      padding: 14px 20px;
+      font-size: 1rem;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      min-width: 300px;
+    }
+
+    .email-input:focus {
+      outline: none;
+      border-color: #3A86FF;
+    }
+
+    .form-note {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .actions-section {
+      text-align: center;
+      margin: 50px 0 30px;
+    }
+
+    .actions-title {
+      font-size: 1.1rem;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      letter-spacing: 0.1em;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     /* ===== ПОДВАЛ ===== */
     .footer {
       padding: 60px 0 30px;
       border-top: 1px solid rgba(58, 134, 255, 0.2);
+      margin-top: 60px;
     }
 
     .footer-content {
@@ -354,11 +451,11 @@
     }
 
     .text-blue { color: #3A86FF; }
+    .text-gold { color: #C6A43F; }
 
     /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
-      h2 { font-size: 1.8rem; }
       
       .nav {
         flex-direction: column;
@@ -369,154 +466,205 @@
         gap: 15px;
       }
       
+      .section-tag-text {
+        font-size: 1.5rem;
+      }
+      
       .event-card {
         padding: 25px;
       }
       
-      .event-details {
+      .event-name {
+        font-size: 1.5rem;
+      }
+      
+      .event-meta {
         flex-direction: column;
         gap: 10px;
+      }
+      
+      .email-input {
+        min-width: 100%;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .action-buttons .btn {
+        width: 100%;
+        max-width: 280px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
-<div id="header-placeholder"></div>
-
-<script>
-  // Загружаем шапку из header.html
-  fetch('/https-meysternlp.ru-/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Ошибка загрузки шапки:', error);
-      // Запасной вариант на случай ошибки
-      document.getElementById('header-placeholder').innerHTML = `
-        <header class="header">
-          <div class="container">
-            <div class="nav">
-              <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
-              <div class="nav-links">
-                <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
-                <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
-                <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
-                <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
-                <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
-                <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">События</a>
-                <a href="/https-meysternlp.ru-/blog/" class="nav-link">Статьи</a>
-              </div>
-              <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
-            </div>
-          </div>
-        </header>
-      `;
-    });
-</script>
+<!-- ШАПКА -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+        <a href="/https-meysternlp.ru-/igry/">Игры</a>
+        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+        <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
+        <a href="/https-meysternlp.ru-/sobytiya/" class="active">События</a>
+        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
+      </div>
+      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">Виртуальный психолог</a>
+    </div>
+  </div>
+</header>
 
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <div class="container">
-  <!-- Заголовок страницы -->
+  <!-- Заголовок -->
   <div class="page-header">
     <h1>СОБЫТИЯ</h1>
-    <p>В этом разделе будет информация обо всех актуальных событиях и мероприятиях.</p>
+    <div class="subtitle">То, что происходит здесь и сейчас.</div>
+    <div class="subtitle">Или вот-вот произойдёт.</div>
+    <div class="divider"></div>
   </div>
 
-  <!-- Список событий -->
-  <div class="events-grid">
-    
-    <!-- Событие 1: Фокус-группа -->
-    <div class="event-card focus-group">
-      <h2 class="event-title">Набор в фокус-группу</h2>
-      <div class="event-details">
-        <div class="detail-item">
-          <i class="fas fa-users"></i>
-          <span>Набор открыт</span>
-        </div>
-      </div>
-      <div class="event-description">
-        <p>Идет набор в фокус-группу для проверки результативности упражнения по формированию навыка.</p>
-      </div>
-      <div class="event-footer">
-        <a href="#" class="btn" onclick="alert('Запись в фокус-группу появится здесь')">Записаться</a>
-      </div>
-    </div>
+  <!-- БЛИЖАЙШЕЕ -->
+  <div class="section-tag">
+    <span class="section-tag-icon">🔮</span>
+    <span class="section-tag-text">БЛИЖАЙШЕЕ</span>
+  </div>
 
-    <!-- Событие 2: Практикум "Разговорный гипноз" -->
-    <div class="event-card">
-      <h2 class="event-title">Практикум «Разговорный гипноз» в режиме интенсив</h2>
-      <div class="event-details">
-        <div class="detail-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>г. Сочи</span>
-        </div>
-        <div class="detail-item">
-          <i class="far fa-calendar-alt"></i>
-          <span>11-14 февраля 2026</span>
-        </div>
-      </div>
-      <div class="event-description">
-        <p>Приглашаем вас на интенсивный практикум, основанный на программе «Пакет Стандартный». Этот практикум предлагает углубленное изучение техник разговорного гипноза и их применение в различных жизненных ситуациях.</p>
-      </div>
-      <div class="event-conditions">
-        <h4>Что взять с собой:</h4>
-        <p>Для полноценного участия в программе мы рекомендуем иметь два комплекта одежды:</p>
-        <p>— Повседневная (комфортная и удобная, для занятий и упражнений).<br>
-        — Парадно-выходная (для особых мероприятий и упражнений, требующих более формального стиля).</p>
-      </div>
-      <div class="event-conditions">
-        <h4>Важное условие:</h4>
-        <p>Участники должны обладать начальными знаниями, полученными в курсе «РГ — пакет стандартный», чтобы максимально эффективно использовать возможности интенсива. Зарегистрируйтесь, чтобы забронировать место!</p>
-      </div>
-      <div class="event-footer">
-        <a href="#" class="btn" onclick="alert('Запись на интенсив появится здесь')">Записаться</a>
-      </div>
+  <!-- Фокус-группа -->
+  <div class="event-card focus-group-card">
+    <div class="event-name">ФОКУС-ГРУППА</div>
+    <div class="event-status">Набор открыт</div>
+    <div class="event-description">
+      <p>Проверка результативности упражнения по формированию навыка.</p>
     </div>
+    <div class="event-quote">
+      Это не обучение. Это эксперимент.
+      Вы получите инструмент. Я — данные.
+      Сработает? Посмотрим.
+    </div>
+    <div class="event-meta">
+      <span>📍 Статус: можно попасть</span>
+      <span>💻 Место: онлайн</span>
+      <span>📅 Когда: по согласованию</span>
+    </div>
+    <div class="event-footer">
+      <a href="#" class="btn btn-small" onclick="alert('Запись в фокус-группу появится здесь')">ХОЧУ ПОПРОБОВАТЬ</a>
+    </div>
+  </div>
 
-    <!-- Событие 3: Практикум «Вариатика-progressive» -->
-    <div class="event-card">
-      <h2 class="event-title">Практикум «Вариатика-progressive»</h2>
-      <div class="event-details">
-        <div class="detail-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>г. Сочи</span>
-        </div>
-        <div class="detail-item">
-          <i class="far fa-calendar-alt"></i>
-          <span>17-19 февраля 2026</span>
-        </div>
-      </div>
-      <div class="event-conditions">
-        <h4>Обязательное условие:</h4>
-        <p>Для эффективного и продуктивного участия в практикуме участники должны иметь теоретическую осведомленность о методах и принципах «Вариатики-progressive». Это гарантирует, что каждый участник сможет максимально воспользоваться предлагаемой программой упражнения.</p>
-      </div>
-      <div class="event-footer">
-        <a href="#" class="btn" onclick="alert('Запись на практикум появится здесь')">Записаться</a>
-      </div>
+  <!-- ИНТЕНСИВЫ -->
+  <div class="section-tag" style="margin-top: 60px;">
+    <span class="section-tag-icon">⚡</span>
+    <span class="section-tag-text">ИНТЕНСИВЫ</span>
+  </div>
+
+  <!-- Практикум Разговорный гипноз -->
+  <div class="event-card">
+    <div class="event-name">ПРАКТИКУМ «РАЗГОВОРНЫЙ ГИПНОЗ»</div>
+    <div class="event-status">11–14 февраля 2026 · Сочи</div>
+    <div class="event-description">
+      <p>Углублённое изучение техник разговорного гипноза и их применение в различных жизненных ситуациях.</p>
+    </div>
+    <div class="event-conditions">
+      <h4>Что взять с собой:</h4>
+      <p>• Повседневная одежда (комфортная, для упражнений)</p>
+      <p>• Парадно-выходная (для особых мероприятий)</p>
+    </div>
+    <div class="event-conditions">
+      <h4>Условие:</h4>
+      <p>Начальные знания из курса «РГ — пакет стандартный»</p>
+    </div>
+    <div class="event-footer">
+      <a href="#" class="btn btn-small" onclick="alert('Запись на интенсив появится здесь')">ЗАПИСАТЬСЯ</a>
+    </div>
+  </div>
+
+  <!-- Практикум Вариатика-progressive -->
+  <div class="event-card">
+    <div class="event-name">ПРАКТИКУМ «ВАРИАТИКА-PROGRESSIVE»</div>
+    <div class="event-status">17–19 февраля 2026 · Сочи</div>
+    <div class="event-description">
+      <p>Работа с методами и принципами вариативного мышления.</p>
+    </div>
+    <div class="event-conditions">
+      <h4>Условие:</h4>
+      <p>Теоретическая осведомлённость о методах «Вариатики»</p>
+    </div>
+    <div class="event-footer">
+      <a href="#" class="btn btn-small" onclick="alert('Запись на практикум появится здесь')">ЗАПИСАТЬСЯ</a>
+    </div>
+  </div>
+
+  <!-- В РАЗРАБОТКЕ -->
+  <div class="section-tag" style="margin-top: 60px;">
+    <span class="section-tag-icon">🌟</span>
+    <span class="section-tag-text">В РАЗРАБОТКЕ</span>
+  </div>
+
+  <div class="event-card" style="border-color: rgba(198, 164, 63, 0.3);">
+    <div class="event-description">
+      <p>Скоро появятся:</p>
+      <p>• Лекции в других городах<br>
+      • Онлайн-марафоны<br>
+      • Закрытые клубы</p>
+    </div>
+  </div>
+
+  <!-- Подписка -->
+  <div class="email-section">
+    <p>Хотите узнать о новых событиях первым?</p>
+    <div class="form-group">
+      <input type="email" class="email-input" placeholder="Ваш email">
+      <button class="btn">УВЕДОМЛЯТЬ</button>
+    </div>
+    <div class="form-note">* Без спама. Только анонсы.</div>
+  </div>
+
+  <!-- Действия -->
+  <div class="actions-section">
+    <div class="actions-title">А пока можете:</div>
+    <div class="action-buttons">
+      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn">ПОПРОБОВАТЬ ФРЕДИ</a>
+      <a href="/https-meysternlp.ru-/blog/" class="btn">ЧИТАТЬ БЛОГ</a>
     </div>
   </div>
 </div>
 
-<!-- ПОДКЛЮЧАЕМ ПОДВАЛ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
-<div id="footer-placeholder"></div>
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">© Андрей Мейстер · 2026</div>
+  </div>
+</footer>
 
 <script>
-  // Загружаем подвал из footer.html
-  fetch('/https-meysternlp.ru-/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Ошибка загрузки подвала:', error);
+  // Подсветка активного пункта меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (currentPath === href) {
+        link.classList.add('active');
+      }
     });
+  });
 </script>
-
-<!-- Font Awesome для иконок -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </body>
 </html>
