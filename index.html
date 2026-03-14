@@ -203,7 +203,7 @@
       text-shadow: none;
     }
 
-    /* ===== ГЕРОЙ (ЧИСТЫЙ, С ЛИНИЕЙ) ===== */
+    /* ===== ГЕРОЙ ===== */
     .hero {
       padding: 100px 0;
       background-color: #0C0C0C;
@@ -232,17 +232,17 @@
       font-size: 4rem;
       font-weight: 200;
       line-height: 1.2;
-      color: #3A86FF;
+      color: #FFFFFF;
       letter-spacing: -0.01em;
       text-transform: uppercase;
     }
 
     .hero-phrase-line2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 4rem;
+      font-size: 3.8rem;
       font-weight: 300;
       line-height: 1.2;
-      color: #FFFFFF;
+      color: #3A86FF;
       letter-spacing: -0.01em;
       margin-top: 0.2rem;
     }
@@ -618,9 +618,12 @@
         gap: 40px;
       }
       
-      .hero-phrase-line1,
-      .hero-phrase-line2 {
+      .hero-phrase-line1 {
         font-size: 2.8rem;
+      }
+      
+      .hero-phrase-line2 {
+        font-size: 2.6rem;
       }
       
       .strategies-grid,
@@ -653,9 +656,10 @@
 <header class="header">
   <div class="container">
     <div class="nav">
+      <!-- Логотип ведёт на главную -->
       <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
       <div class="nav-links">
-        <a href="/https-meysternlp.ru-/" class="active">Главная</a>
+        <!-- Пункт "Главная" УДАЛЁН -->
         <a href="/https-meysternlp.ru-/knigi/">Книги</a>
         <a href="/https-meysternlp.ru-/igry/">Игры</a>
         <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
@@ -674,7 +678,7 @@
     <div class="hero-grid">
       <!-- Левый блок с текстом -->
       <div class="hero-content">
-        <!-- Фраза: два разных шрифта -->
+        <!-- Фраза: белый + голубой -->
         <div class="hero-phrase-block">
           <div class="hero-phrase-line1">БОГ УМЕР</div>
           <div class="hero-phrase-line2">Теперь мы сами по себе</div>
@@ -846,8 +850,16 @@
     
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (currentPath === href) {
+      // Убираем базовый путь для сравнения
+      const cleanHref = href.replace('/https-meysternlp.ru-', '');
+      const cleanPath = currentPath.replace('/https-meysternlp.ru-', '');
+      
+      if (cleanPath === cleanHref || 
+          (cleanHref !== '/' && cleanPath.startsWith(cleanHref + '/')) ||
+          (cleanHref === '/' && cleanPath === '/')) {
         link.classList.add('active');
+      } else {
+        link.classList.remove('active');
       }
     });
   });
