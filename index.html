@@ -42,13 +42,6 @@
       line-height: 1.2;
     }
 
-    h1 {
-      font-size: 4.5rem;
-      font-weight: 200;
-      margin-bottom: 0.5rem;
-      color: #FFFFFF;
-    }
-
     h2 {
       font-size: 2.2rem;
       font-weight: 300;
@@ -199,7 +192,7 @@
       color: #3A86FF;
     }
 
-    /* ===== КНОПКА В ШАПКЕ ===== */
+    /* Кнопка в шапке */
     .btn-header {
       display: inline-block;
       padding: 10px 24px;
@@ -240,22 +233,13 @@
       justify-content: center;
     }
 
-    .hero-subtitle {
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #3A86FF;
-      margin-bottom: 20px;
-    }
-
-    /* Новые стили для фразы */
+    /* Фраза */
     .hero-phrase-block {
-      margin: 20px 0 20px;
+      margin: 0 0 20px;
     }
 
     .hero-phrase-line1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 200;
       line-height: 1.2;
       color: #FFFFFF;
@@ -263,10 +247,10 @@
     }
 
     .hero-phrase-line2 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       font-weight: 300;
       line-height: 1.2;
-      color: #C6A43F;
+      color: #3A86FF; /* Голубой */
       letter-spacing: -0.01em;
       margin-top: 0.2rem;
     }
@@ -291,7 +275,7 @@
       margin-top: 10px;
     }
 
-    /* ===== ВИДЕО 16:9 С РАМКОЙ ПО КОНТУРУ ===== */
+    /* ===== ВИДЕО ===== */
     .hero-image {
       position: relative;
       width: 100%;
@@ -624,6 +608,43 @@
     .text-blue { color: #3A86FF; }
     .text-light { color: #F0F0F0; }
     .border-blue { border-color: #3A86FF; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 768px) {
+      h2 { font-size: 1.8rem; }
+      
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .hero-phrase-line1,
+      .hero-phrase-line2 {
+        font-size: 2.8rem;
+      }
+      
+      .strategies-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -632,9 +653,10 @@
 <header class="header">
   <div class="container">
     <div class="nav">
-      <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <!-- Логотип ведёт на главную -->
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
       <div class="nav-links">
-        <a href="/https-meysternlp.ru-/" class="active">Главная</a>
+        <!-- Пункт "Главная" УДАЛЁН -->
         <a href="/https-meysternlp.ru-/knigi/">Книги</a>
         <a href="/https-meysternlp.ru-/igry/">Игры</a>
         <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
@@ -647,15 +669,13 @@
   </div>
 </header>
 
-<!-- ГЕРОЙ (НОВЫЙ) -->
+<!-- ГЕРОЙ -->
 <section id="home" class="hero">
   <div class="container">
     <div class="hero-grid">
       <!-- Левый блок с текстом -->
       <div class="hero-content">
-        <div class="hero-subtitle">тренер системного и латерального мышления</div>
-        
-        <!-- Фраза вместо имени -->
+        <!-- Фраза (подпись убрана) -->
         <div class="hero-phrase-block">
           <div class="hero-phrase-line1">Бог умер.</div>
           <div class="hero-phrase-line2">Теперь мы сами по себе.</div>
@@ -824,8 +844,7 @@
     
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (currentPath === href || 
-          (href === '/https-meysternlp.ru-/' && currentPath === '/https-meysternlp.ru-/')) {
+      if (currentPath === href) {
         link.classList.add('active');
       }
     });
