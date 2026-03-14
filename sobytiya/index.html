@@ -307,6 +307,7 @@
       display: flex;
       gap: 15px;
       margin-top: 10px;
+      flex-wrap: wrap;
     }
 
     .material-link {
@@ -323,17 +324,27 @@
       color: #FFFFFF;
     }
 
+    .video-embed {
+      margin: 15px 0;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border: 1px solid rgba(58, 134, 255, 0.3);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .video-embed iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     .video-card .material-icon {
       color: #C6A43F;
     }
 
     .text-card .material-icon {
       color: #3A86FF;
-    }
-
-    .download-all {
-      text-align: right;
-      margin: 20px 0 40px;
     }
 
     .email-section {
@@ -477,11 +488,6 @@
         width: 100%;
         max-width: 280px;
       }
-      
-      .material-actions {
-        flex-direction: column;
-        gap: 10px;
-      }
     }
   </style>
 </head>
@@ -523,45 +529,16 @@
     </div>
 
     <div class="materials-grid">
-      <!-- Видео 1 -->
+      <!-- Видео 1: Лекция с VK -->
       <div class="material-card video-card">
         <div class="material-icon">🎬</div>
-        <div class="material-title">Лекция «Что такое нарратив»</div>
-        <div class="material-meta">MP4 • 45 мин • 320 МБ</div>
-        <div class="material-description">Разбор понятия нарратива, его структуры и влияния на поведение. Базовое введение в тему.</div>
-        <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Смотреть на Rutube')">СМОТРЕТЬ</a>
-          <a href="#" class="material-link" onclick="alert('Скачать видео')">СКАЧАТЬ</a>
+        <div class="material-title">Лекция: Базовые принципы</div>
+        <div class="material-meta">VK Видео</div>
+        <div class="material-description">Основы системного мышления и работы с нарративами.</div>
+        <div class="video-embed">
+          <iframe src="https://vk.com/video_ext.php?oid=469250200&id=456239357&hash=d5f4b9d3f8e2a1c7" allowfullscreen></iframe>
         </div>
       </div>
-
-      <!-- Видео 2 -->
-      <div class="material-card video-card">
-        <div class="material-icon">🎬</div>
-        <div class="material-title">Разбор кейса: фокус-группа</div>
-        <div class="material-meta">MP4 • 30 мин • 210 МБ</div>
-        <div class="material-description">Как проходила фокус-группа, какие результаты, что сработало, а что нет. Разбор ошибок и находок.</div>
-        <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Смотреть на Rutube')">СМОТРЕТЬ</a>
-          <a href="#" class="material-link" onclick="alert('Скачать видео')">СКАЧАТЬ</a>
-        </div>
-      </div>
-
-      <!-- Видео 3 -->
-      <div class="material-card video-card">
-        <div class="material-icon">🎬</div>
-        <div class="material-title">Упражнение «7 линз»</div>
-        <div class="material-meta">MP4 • 20 мин • 150 МБ</div>
-        <div class="material-description">Практическое занятие по применению семи концептуальных линз в повседневных ситуациях.</div>
-        <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Смотреть на Rutube')">СМОТРЕТЬ</a>
-          <a href="#" class="material-link" onclick="alert('Скачать видео')">СКАЧАТЬ</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="download-all">
-      <a href="#" class="btn btn-small" onclick="alert('Скачать все видео')">СКАЧАТЬ ВСЕ ВИДЕО</a>
     </div>
   </div>
 
@@ -573,75 +550,38 @@
     </div>
 
     <div class="materials-grid">
-      <!-- Текст 1 -->
+      <!-- Гайд: Матрица контроля -->
       <div class="material-card text-card">
         <div class="material-icon">📘</div>
-        <div class="material-title">Как работать с линзами</div>
-        <div class="material-meta">PDF • 12 стр • 2 МБ</div>
-        <div class="material-description">Подробная инструкция по применению семи линз в анализе ситуаций. С примерами и упражнениями.</div>
+        <div class="material-title">Матрица контроля</div>
+        <div class="material-meta">PDF • Гайд 10</div>
+        <div class="material-description">Практическое руководство по управлению вниманием и ресурсами. Матрица контроля — приложение.</div>
         <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Скачать PDF')">СКАЧАТЬ</a>
+          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд%2010_Матрица%20контроля_ПРИЛОЖЕНИЕ%20(2)_compressed.pdf" class="btn btn-small" download>СКАЧАТЬ PDF</a>
         </div>
       </div>
 
-      <!-- Текст 2 -->
+      <!-- Гайд: ЯДЫ -->
       <div class="material-card text-card">
         <div class="material-icon">📘</div>
-        <div class="material-title">Базовые принципы Вариатики</div>
-        <div class="material-meta">PDF • 24 стр • 1.5 МБ</div>
-        <div class="material-description">Основы вариативного мышления: теория, примеры, первые шаги.</div>
+        <div class="material-title">ЯДЫ</div>
+        <div class="material-meta">PDF • Гайд</div>
+        <div class="material-description">Анализ деструктивных паттернов и способы работы с ними.</div>
         <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Скачать PDF')">СКАЧАТЬ</a>
+          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд%20_ЯДЫ%20(1)_compressed.pdf" class="btn btn-small" download>СКАЧАТЬ PDF</a>
         </div>
       </div>
 
-      <!-- Текст 3 -->
+      <!-- Гайд: Терапевтические сказки -->
       <div class="material-card text-card">
         <div class="material-icon">📘</div>
-        <div class="material-title">Чек-лист: 5 почему</div>
-        <div class="material-meta">PDF • 2 стр • 0.5 МБ</div>
-        <div class="material-description">Готовая форма для анализа корневых причин. Можно распечатать и использовать.</div>
+        <div class="material-title">Терапевтические сказки</div>
+        <div class="material-meta">PDF • Гайд 15</div>
+        <div class="material-description">Сборник терапевтических сказок для работы с подсознанием.</div>
         <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Скачать PDF')">СКАЧАТЬ</a>
+          <a href="/https-meysternlp.ru-/arhiv/PDF/Гайд_15_Терапевтические%20сказки%20(1)_compressed.pdf" class="btn btn-small" download>СКАЧАТЬ PDF</a>
         </div>
       </div>
-
-      <!-- Текст 4 -->
-      <div class="material-card text-card">
-        <div class="material-icon">📘</div>
-        <div class="material-title">Структура нарратива</div>
-        <div class="material-meta">PDF • 18 стр • 2.2 МБ</div>
-        <div class="material-description">Как устроены нарративы, из каких элементов состоят, как их анализировать.</div>
-        <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Скачать PDF')">СКАЧАТЬ</a>
-        </div>
-      </div>
-
-      <!-- Текст 5 -->
-      <div class="material-card text-card">
-        <div class="material-icon">📘</div>
-        <div class="material-title">Инструкция по самогипнозу</div>
-        <div class="material-meta">PDF • 8 стр • 1.1 МБ</div>
-        <div class="material-description">Пошаговое руководство для входа в трансовое состояние и работы с подсознанием.</div>
-        <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Скачать PDF')">СКАЧАТЬ</a>
-        </div>
-      </div>
-
-      <!-- Текст 6 -->
-      <div class="material-card text-card">
-        <div class="material-icon">📘</div>
-        <div class="material-title">Точки рычага в системах</div>
-        <div class="material-meta">PDF • 14 стр • 1.8 МБ</div>
-        <div class="material-description">Как находить места максимального влияния в сложных системах.</div>
-        <div class="material-actions">
-          <a href="#" class="material-link" onclick="alert('Скачать PDF')">СКАЧАТЬ</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="download-all">
-      <a href="#" class="btn btn-small" onclick="alert('Скачать все тексты')">СКАЧАТЬ ВСЕ ТЕКСТЫ</a>
     </div>
   </div>
 
