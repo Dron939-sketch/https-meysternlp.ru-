@@ -149,15 +149,15 @@
       left: 0;
     }
 
-    /* ===== ШАПКА (СТАБИЛЬНАЯ) ===== */
+    /* ===== ШАПКА (УМЕНЬШЕННАЯ) ===== */
     .header {
-      padding: 20px 0;
+      padding: 15px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
       position: sticky;
       top: 0;
       background-color: #0C0C0C;
       z-index: 100;
-      height: 90px;
+      height: 70px;
       display: flex;
       align-items: center;
     }
@@ -170,7 +170,7 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 300;
       letter-spacing: 0.3em;
       color: #FFFFFF;
@@ -183,17 +183,17 @@
 
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 25px;
     }
 
     .nav-links a {
       color: #F0F0F0;
       font-weight: 300;
       letter-spacing: 0.1em;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       border-bottom: 1px solid transparent;
-      padding-bottom: 5px;
+      padding-bottom: 3px;
       transition: border-color 0.3s ease;
       white-space: nowrap;
     }
@@ -205,28 +205,28 @@
 
     .btn-header {
       display: inline-block;
-      padding: 8px 20px;
+      padding: 6px 16px;
       background: linear-gradient(to right, #00A8E8, #3A86FF);
       color: white;
       border-radius: 30px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 500;
       text-transform: none;
       letter-spacing: normal;
       border: none;
-      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+      box-shadow: 0 3px 10px rgba(58, 134, 255, 0.3);
       white-space: nowrap;
     }
 
     .btn-header:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.4);
       color: white;
     }
 
     /* ===== СТРАНИЦА МАНИФЕСТА ===== */
     .manifest-hero {
-      padding: 100px 0 60px;
+      padding: 80px 0 50px;
       border-bottom: 1px solid rgba(58, 134, 255, 0.1);
       text-align: center;
     }
@@ -264,11 +264,11 @@
       width: 60px;
       height: 1px;
       background: rgba(58, 134, 255, 0.3);
-      margin: 40px auto;
+      margin: 30px auto;
     }
 
     .manifest-section {
-      padding: 80px 0;
+      padding: 70px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.1);
     }
 
@@ -408,7 +408,7 @@
 
     .manifest-invite {
       text-align: center;
-      padding: 80px 0;
+      padding: 70px 0;
       background: rgba(255, 255, 255, 0.02);
       border-top: 1px solid rgba(58, 134, 255, 0.2);
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
@@ -457,17 +457,17 @@
 
     .tool-item {
       text-align: center;
-      min-width: 180px;
+      min-width: 170px;
     }
 
     .tool-btn {
       display: inline-block;
       width: 100%;
-      padding: 16px 24px;
+      padding: 14px 20px;
       border: 1px solid #3A86FF;
       background: transparent;
       color: #FFFFFF;
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.2em;
@@ -501,15 +501,28 @@
 
     .tool-desc {
       margin-top: 10px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #666;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
+    .three-actions {
+      text-align: center;
+      margin: 30px 0;
+      color: #3A86FF;
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+    }
+
+    .three-actions span {
+      margin: 0 10px;
+    }
+
     /* ===== ПОДВАЛ ===== */
     .footer {
-      padding: 60px 0 30px;
+      padding: 50px 0 25px;
       border-top: 1px solid rgba(58, 134, 255, 0.2);
       background-color: #0C0C0C;
     }
@@ -518,26 +531,26 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     .footer-logo {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       letter-spacing: 0.3em;
     }
 
     .social-links {
       display: flex;
-      gap: 30px;
+      gap: 25px;
     }
 
     .social-links a {
       color: #F0F0F0;
-      font-size: 1rem;
+      font-size: 0.9rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       border-bottom: 1px solid transparent;
-      padding-bottom: 5px;
+      padding-bottom: 3px;
       transition: all 0.3s ease;
     }
 
@@ -548,10 +561,10 @@
 
     .copyright {
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       color: #666;
       letter-spacing: 0.1em;
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .text-blue {
@@ -562,18 +575,18 @@
     @media (max-width: 992px) {
       .header {
         height: auto;
-        min-height: 90px;
+        min-height: 70px;
       }
       
       .nav {
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 10px;
       }
       
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 15px;
       }
     }
 
@@ -629,25 +642,25 @@
       }
       
       .tool-item {
-        min-width: 140px;
+        min-width: 130px;
       }
       
       .tool-btn {
-        padding: 14px 20px;
-        font-size: 0.9rem;
+        padding: 12px 16px;
+        font-size: 0.8rem;
       }
       
       .footer-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        gap: 15px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- ШАПКА (СТАБИЛЬНАЯ) -->
+<!-- ШАПКА (УМЕНЬШЕННАЯ) -->
 <header class="header">
   <div class="container">
     <div class="nav">
@@ -685,6 +698,7 @@
       <li>Что для тебя важно, а что — пустое</li>
       <li>Куда ты идёшь, а куда — даже не смотришь</li>
       <li>Зачем ты просыпаешься утром</li>
+      <li>Как ты поступаешь, когда нет инструкции</li>
     </ul>
   </div>
 </section>
@@ -700,6 +714,7 @@
       <li>«Зачем я это делаю?»</li>
       <li>«Почему мне так неуютно?»</li>
       <li>«Это вообще моя жизнь?»</li>
+      <li>«Кем я притворяюсь?»</li>
     </ul>
     <div class="manifest-quote">
       Это момент встречи с нарративом.
@@ -726,6 +741,7 @@
       <p class="or">либо</p>
       <p><strong style="color: #FFFFFF;">Либо транслируешь чужой.</strong></p>
       <p class="no-third">Третьего не дано.</p>
+      <p style="color: #666; font-size: 0.9rem; margin-top: 20px;">Можно не выбирать. Тогда выберут за тебя.</p>
     </div>
   </div>
 </section>
@@ -737,6 +753,7 @@
     <p>Семья говорит одно. Работа — другое. Среда — третье.</p>
     <p style="margin: 30px 0; color: #FFFFFF;">Внутри тебя — голоса, которые спорят.</p>
     <p>Это <span class="manifest-highlight">боль</span>. Это же — <span class="manifest-highlight">место выбора</span>.</p>
+    <p style="margin-top: 30px; color: #666; font-style: italic;">Ты либо соберёшь их в один хор. Либо будешь слушать какофонию вечно.</p>
   </div>
 </section>
 
@@ -763,7 +780,11 @@
       </div>
     </div>
     
-    <p style="text-align: center; color: #666; font-style: italic; margin-top: 40px;">Их камни всё ещё летят. Я подхватил и бросаю дальше.</p>
+    <div class="three-actions">
+      <span>Ясность видеть.</span> • <span>Систему строить.</span> • <span>Школу создавать.</span>
+    </div>
+    
+    <p style="text-align: center; color: #666; font-style: italic; margin-top: 30px;">Их камни всё ещё летят. Я подхватил и бросаю дальше.</p>
   </div>
 </section>
 
@@ -776,6 +797,7 @@
     <p class="gray-text">Идеология — больше не вдохновляет.</p>
     <p style="margin: 40px 0; color: #3A86FF; font-size: 2.5rem; text-align: center; font-weight: 200;">Но.</p>
     <p>Человек — единственное существо, которое живёт нарративами. Без истории, в которую он верит, он не живёт — он просто существует.</p>
+    <p style="margin: 30px 0; color: #FFFFFF; font-size: 1.5rem; text-align: center;">Значит, я создам свою.</p>
     <p style="font-size: 2rem; color: #FFFFFF; margin: 40px 0; text-align: center; font-weight: 200;">Я выбираю жить.</p>
     <p>Я бросаю камень. Я хочу, чтобы мой камень летел долго. Чтобы через сто лет кто-то сказал: «Андрей Мейстер? Да, его нарратив всё ещё работает».</p>
   </div>
@@ -785,8 +807,16 @@
 <section class="manifest-section">
   <div class="container manifest-block">
     <h2>Что я делаю</h2>
-    <p>Я учу видеть нарративы. Понимать, из чего они сделаны. Видеть, какие из них работают, а какие рассыпались. Замечать пересечения и несостыковки — и решать, что с ними делать.</p>
-    <p><span class="manifest-highlight">Зачем это нужно?</span> Чтобы перестать жить чужим сценарием. Чтобы понять, почему ты делаешь то, что делаешь. Чтобы осознанно выбрать — или создать — свой собственный нарратив. И бросить свой камень.</p>
+    <p style="margin-bottom: 20px;">Я учу видеть нарративы:</p>
+    <ul class="manifest-list">
+      <li>Из чего они сделаны</li>
+      <li>Какие работают, а какие рассыпались</li>
+      <li>Где пересекаются и трутся</li>
+    </ul>
+    <p style="margin-top: 30px;"><span class="manifest-highlight">Зачем?</span></p>
+    <p>Чтобы перестать жить чужим сценарием.</p>
+    <p>Чтобы понять, почему ты делаешь то, что делаешь.</p>
+    <p>Чтобы создать свой. И бросить свой камень.</p>
   </div>
 </section>
 
@@ -812,7 +842,7 @@
     </div>
     
     <p style="text-align: center; margin: 40px 0 20px;">Я просто даю вам камень. А дальше — вы сами.</p>
-    <p style="text-align: center; color: #666; font-style: italic;">Потому что настоящий нарратив не нуждается в авторе. Он живёт сам.</p>
+    <p style="text-align: center; color: #666; font-style: italic;">Потому что настоящий нарратив не нуждается в авторе. Он живёт сам. Или не живёт.</p>
   </div>
 </section>
 
@@ -820,6 +850,7 @@
 <section class="manifest-invite">
   <div class="container">
     <h2>А вы?</h2>
+    <p>Бог умер. А вы?</p>
     <p>В каком нарративе живёте вы? Где в вашей жизни несостыковки?</p>
     <p style="margin-bottom: 30px;">Хотите бросить свой камень?</p>
     <div class="invite-strong">Я покажу, как.</div>
