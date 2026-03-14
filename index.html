@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Андрей Мейстер — системное мышление</title>
-  <!-- Подключаем Inter (основной) и Montserrat (для контраста в шапке, как в оригинале) -->
+  <!-- Подключаем Inter и Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
@@ -143,9 +143,9 @@
       left: 0;
     }
 
-    /* ===== ШАПКА (исправленная) ===== */
+    /* ===== ШАПКА ===== */
     .header {
-      padding: 20px 0; /* Уменьшил паддинг для более компактной шапки */
+      padding: 20px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
       position: sticky;
       top: 0;
@@ -158,53 +158,79 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      min-height: 60px; /* Фиксированная минимальная высота */
+      min-height: 60px;
     }
 
-    /* Логотип — Montserrat как в оригинале */
     .logo {
       font-size: 1.5rem;
       font-weight: 300;
       letter-spacing: 0.3em;
       color: #FFFFFF;
       font-family: 'Montserrat', sans-serif;
-      white-space: nowrap; /* Запрещаем перенос */
+      white-space: nowrap;
     }
 
     .logo span {
       color: #3A86FF;
     }
 
-    /* Навигация */
     .nav-links {
       display: flex;
-      gap: 40px; /* Уменьшил gap для более плотного расположения */
+      gap: 40px;
       align-items: center;
-      flex-wrap: wrap; /* Разрешаем перенос на мобильных */
+      flex-wrap: wrap;
     }
 
     .nav-links a {
       color: #F0F0F0;
-      font-weight: 400; /* Чуть жирнее для читаемости */
+      font-weight: 400;
       letter-spacing: 0.1em;
       font-size: 0.9rem;
       text-transform: uppercase;
       border-bottom: 1px solid transparent;
       padding-bottom: 5px;
       font-family: 'Montserrat', sans-serif;
-      white-space: nowrap; /* Запрещаем перенос внутри пунктов */
+      white-space: nowrap;
       transition: border-color 0.3s ease, color 0.3s ease;
     }
 
     .nav-links a:hover {
       border-bottom-color: #3A86FF;
-      color: #3A86FF; /* Добавил изменение цвета при ховере */
+      color: #3A86FF;
+      text-shadow: none;
+    }
+
+    .nav-links a.active {
+      border-bottom-color: #3A86FF;
+      color: #3A86FF;
+    }
+
+    /* Кнопка в шапке */
+    .btn-header {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      color: white;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
+      border: none;
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      color: white;
       text-shadow: none;
     }
 
     /* ===== ГЕРОЙ ===== */
     .hero {
-      padding: 80px 0 100px; /* Немно сократил верхний паддинг */
+      padding: 80px 0 100px;
       background-color: #0C0C0C;
     }
 
@@ -221,31 +247,54 @@
       justify-content: center;
     }
 
-    .hero-subtitle {
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #3A86FF;
-      margin-bottom: 20px;
-      font-family: 'Inter', sans-serif;
+    /* Фраза */
+    .hero-phrase-block {
+      margin: 0 0 20px;
     }
 
-    .hero-description {
-      font-size: 1.2rem;
-      max-width: 90%;
-      border-left: 2px solid #3A86FF;
-      padding-left: 20px;
-      margin: 30px 0 40px;
+    .hero-phrase-line1 {
       font-family: 'Inter', sans-serif;
+      font-size: 4rem;
+      font-weight: 200;
+      line-height: 1.2;
+      color: #FFFFFF;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero-phrase-line2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 2.5rem;
       font-weight: 300;
-      color: #CCCCCC;
+      line-height: 1.2;
+      color: #3A86FF;
+      letter-spacing: 0.02em;
+      margin-top: 0.5rem;
+      text-transform: none;
+    }
+
+    /* Линия вместо звездочки */
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background-color: #3A86FF;
+      margin: 30px 0 20px;
+    }
+
+    .hero-footnote {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #666;
+      margin-bottom: 30px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
     }
 
     .hero-buttons {
       display: flex;
       gap: 30px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     /* ===== ВИДЕО ===== */
@@ -594,10 +643,6 @@
     .text-blue { color: #3A86FF; }
     .text-light { color: #F0F0F0; }
     .border-blue { border-color: #3A86FF; }
-    .mt-2 { margin-top: 0.5rem; }
-    .mt-4 { margin-top: 1.5rem; }
-    .mb-2 { margin-bottom: 0.5rem; }
-    .mb-4 { margin-bottom: 1.5rem; }
 
     /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 992px) {
@@ -632,8 +677,12 @@
         gap: 40px;
       }
       
-      h1 {
-        font-size: 3rem;
+      .hero-phrase-line1 {
+        font-size: 2.8rem;
+      }
+      
+      .hero-phrase-line2 {
+        font-size: 1.8rem;
       }
       
       h2 {
@@ -643,10 +692,6 @@
       .strategies-grid,
       .projects-grid {
         grid-template-columns: 1fr;
-      }
-      
-      .hero-description {
-        max-width: 100%;
       }
       
       .footer-content {
@@ -663,16 +708,16 @@
 <header class="header">
   <div class="container">
     <div class="nav">
-      <div class="logo"><span>А</span>МЕЙСТЕР</div>
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
       <div class="nav-links">
-        <a href="#home">Главная</a>
-        <a href="#strategies">Стратегии</a>
-        <a href="#projects">Проекты</a>
-        <a href="https://meysternlp.ru/knigi/">Книги</a>
-        <a href="https://meysternlp.ru/treningi/">Тренинги</a>
-        <a href="https://meysternlp.ru/obo-mne/">Обо мне</a>
+        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+        <a href="/https-meysternlp.ru-/igry/">Игры</a>
+        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+        <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
+        <a href="/https-meysternlp.ru-/sobytiya/">События</a>
+        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
       </div>
-      <a href="https://meysternlp.ru/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE3OTEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D" class="btn">Запись</a>
+      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
     </div>
   </div>
 </header>
@@ -681,27 +726,32 @@
 <section id="home" class="hero">
   <div class="container">
     <div class="hero-grid">
-      <!-- Левый блок с текстом -->
       <div class="hero-content">
-        <div class="hero-subtitle">тренер системного и латерального мышления</div>
-        <h1>Андрей<br>Мейстер</h1>
-        <div class="hero-description">
-          Автор бестселлера «Теория манипуляции», кандидат наук. Вижу закономерности там, где другие видят хаос.
+        <div class="hero-phrase-block">
+          <div class="hero-phrase-line1">БОГ УМЕР</div>
+          <div class="hero-phrase-line2">Теперь мы сами по себе</div>
         </div>
+        
+        <div class="hero-divider"></div>
+        
+        <div class="hero-footnote">
+          короткая фраза, за которой час разговора
+        </div>
+        
         <div class="hero-buttons">
-          <a href="https://meysternlp.ru/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6IjE3OTEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D" class="btn">Консультация</a>
-          <a href="#projects" class="btn">Проекты</a>
+          <a href="/https-meysternlp.ru-/obo-mne/" class="btn">УЗНАТЬ</a>
+          <a href="#projects" class="btn">ПРОЕКТЫ</a>
         </div>
       </div>
-      <!-- Правый блок с видео 16:9 -->
+      
       <div class="hero-image">
         <div class="video-wrapper">
           <video autoplay loop muted playsinline>
-            <source src="Новый%20проект.mp4" type="video/mp4">
+            <source src="/https-meysternlp.ru-/video.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
           </video>
         </div>
-        <div class="hero-sticker">системно</div>
+        <div class="hero-sticker">НАРРАТИВ</div>
       </div>
     </div>
   </div>
@@ -745,19 +795,19 @@
         <div class="project-icon">🧠</div>
         <div class="project-title">Практикум</div>
         <p>«Разговорный гипноз» — освоение навыков влияния в повседневной жизни.</p>
-        <a href="https://meysternlp.ru/treningi/" class="project-link">Подробнее →</a>
+        <a href="/https-meysternlp.ru-/treningi/" class="project-link">Подробнее →</a>
       </div>
       <div class="project-card">
         <div class="project-icon">📘</div>
         <div class="project-title">Книги</div>
         <p>Трилогия «Теория манипуляции» — бестселлеры по психологии влияния.</p>
-        <a href="https://meysternlp.ru/knigi/" class="project-link">Подробнее →</a>
+        <a href="/https-meysternlp.ru-/knigi/" class="project-link">Подробнее →</a>
       </div>
       <div class="project-card">
         <div class="project-icon">🎲</div>
         <div class="project-title">Игры</div>
         <p>Дидактическая игра «Маркетолог» — учимся мыслить системно.</p>
-        <a href="https://meysternlp.ru/didakticheskie-igry/" class="project-link">Подробнее →</a>
+        <a href="/https-meysternlp.ru-/igry/" class="project-link">Подробнее →</a>
       </div>
     </div>
   </div>
@@ -771,57 +821,51 @@
     
     <div class="system-cycle">
       <div class="cycle-item">
-        <div class="cycle-icon">🧪</div>
+        <div class="cycle-icon">🧬</div>
         <h3>ГОРМОНАЛЬНЫЙ ФОН</h3>
-        <p>Определяет наше поведение и решения</p>
+        <p>Определяет поведение и решения</p>
         <div class="cycle-arrow">↓</div>
       </div>
-      
       <div class="cycle-item">
-        <div class="cycle-icon">🏗️</div>
+        <div class="cycle-icon">⚙️</div>
         <h3>АРХИТЕКТУРА ПРОГРЕССИИ</h3>
-        <p>Процессы деятельности влияют на мышление и восприятие мира</p>
+        <p>Процессы деятельности</p>
         <div class="cycle-arrow">↓</div>
       </div>
-      
       <div class="cycle-item">
         <div class="cycle-icon">🏆</div>
         <h3>КАЧЕСТВО ЖИЗНИ</h3>
         <p>Влияет на гормональный фон</p>
         <div class="cycle-arrow">↓</div>
       </div>
-      
       <div class="cycle-item">
         <div class="cycle-icon">🔑</div>
         <h3>ВОЗМОЖНОСТИ</h3>
         <p>Определяют качество жизни</p>
         <div class="cycle-arrow">↓</div>
       </div>
-      
       <div class="cycle-item">
-        <div class="cycle-icon">👥</div>
+        <div class="cycle-icon">🤝</div>
         <h3>СОЦИАЛЬНЫЕ СВЯЗИ</h3>
         <p>Определяют возможности</p>
         <div class="cycle-arrow">↓</div>
       </div>
-      
       <div class="cycle-item">
-        <div class="cycle-icon">💬</div>
+        <div class="cycle-icon">🗣️</div>
         <h3>РЕЧЬ</h3>
         <p>Влияет на социальные связи</p>
         <div class="cycle-arrow">↓</div>
       </div>
-      
       <div class="cycle-item">
-        <div class="cycle-icon">🧩</div>
+        <div class="cycle-icon">🧠</div>
         <h3>МЫШЛЕНИЕ</h3>
-        <p>Отражается в речи и влияет на гормональный фон</p>
+        <p>Влияет на гормональный фон</p>
         <div class="cycle-arrow">↻</div>
       </div>
     </div>
     
     <div class="about-author">
-      <p><strong>Андрей Мейстер</strong> — психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика». Специализируется на развитии латерального мышления, системного анализа и когнитивных навыков. Помогает людям видеть закономерности там, где другие видят хаос, и находить решения там, где другие видят тупик. Ведёт тренинги по темам: системное мышление, латеральное мышление, когнитивная гибкость, принятие решений.</p>
+      <p><strong>Андрей Мейстер</strong> — психолог, когнитивный тренер, разработчик технологии системного мышления «Вариатика». Кандидат наук, автор бестселлера «Теория манипуляции».</p>
     </div>
   </div>
 </section>
@@ -838,11 +882,31 @@
         <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
       </div>
     </div>
-    <div class="copyright">
-      © Андрей Мейстер · системное мышление · 2026
-    </div>
+    <div class="copyright">© Андрей Мейстер · 2026</div>
   </div>
 </footer>
+
+<script>
+  // Подсветка активного пункта меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      const cleanHref = href.replace('/https-meysternlp.ru-', '');
+      const cleanPath = currentPath.replace('/https-meysternlp.ru-', '');
+      
+      if (cleanPath === cleanHref || 
+          (cleanHref !== '/' && cleanPath.startsWith(cleanHref + '/')) ||
+          (cleanHref === '/' && cleanPath === '/')) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
