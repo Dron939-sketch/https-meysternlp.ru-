@@ -68,9 +68,9 @@
     }
 
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 300;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
       color: #3A86FF;
       letter-spacing: 0.15em;
     }
@@ -79,7 +79,7 @@
       font-size: 1.2rem;
       font-weight: 300;
       color: #F0F0F0;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       line-height: 1.7;
     }
 
@@ -93,6 +93,10 @@
         opacity: 1;
         transform: translateY(0);
       }
+    }
+
+    .manifest-section {
+      animation: fadeUp 0.8s ease-out forwards;
     }
 
     /* ===== ССЫЛКИ И КНОПКИ ===== */
@@ -257,7 +261,7 @@
     }
 
     .manifest-section {
-      padding: 70px 0;
+      padding: 80px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.1);
     }
 
@@ -275,6 +279,8 @@
       font-weight: 400;
       color: #FFFFFF;
       margin: 40px 0;
+      padding-left: 25px;
+      border-left: 2px solid #3A86FF;
       line-height: 1.6;
     }
 
@@ -287,7 +293,7 @@
       color: #F0F0F0;
       font-size: 1.2rem;
       font-weight: 300;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       padding-left: 25px;
       position: relative;
     }
@@ -350,7 +356,7 @@
 
     .manifest-choice {
       text-align: center;
-      margin: 40px 0;
+      margin: 50px 0;
     }
 
     .manifest-choice p {
@@ -363,15 +369,29 @@
     .manifest-choice .or {
       color: #666;
       font-size: 1rem;
-      margin: 15px 0;
+      margin: 20px 0;
       text-transform: uppercase;
       letter-spacing: 0.2em;
+      position: relative;
+    }
+
+    .manifest-choice .or::before,
+    .manifest-choice .or::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background: #3A86FF;
+      margin: 0 15px;
+      vertical-align: middle;
+      opacity: 0.3;
     }
 
     .manifest-choice .no-third {
       color: #666;
       font-size: 0.9rem;
-      margin-top: 20px;
+      margin-top: 30px;
+      font-style: italic;
     }
 
     .gray-text {
@@ -423,38 +443,61 @@
     .tools-grid {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      margin: 50px 0;
+      gap: 30px;
+      margin: 60px 0 40px;
       flex-wrap: wrap;
     }
 
     .tool-item {
       text-align: center;
+      min-width: 180px;
     }
 
-    .tool-title {
-      color: #FFFFFF;
-      font-size: 1.2rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-
-    .tool-link {
+    .tool-btn {
       display: inline-block;
-      padding: 10px 24px;
+      width: 100%;
+      padding: 16px 24px;
       border: 1px solid #3A86FF;
       background: transparent;
       color: #FFFFFF;
-      font-size: 0.8rem;
+      font-size: 1rem;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
 
-    .tool-link:hover {
+    .tool-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
       background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .tool-btn:hover {
       color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .tool-btn:hover::before {
+      left: 0;
+    }
+
+    .tool-desc {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
     /* ===== ПОДВАЛ ===== */
@@ -515,7 +558,7 @@
       }
       
       h1 { font-size: 3rem; }
-      h2 { font-size: 1.8rem; }
+      h2 { font-size: 2rem; }
       
       .manifest-hero-god {
         font-size: 3rem;
@@ -535,6 +578,7 @@
       
       .manifest-quote {
         font-size: 1.3rem;
+        padding-left: 15px;
       }
       
       .manifest-name .name {
@@ -557,7 +601,16 @@
       }
       
       .tools-grid {
-        gap: 30px;
+        gap: 20px;
+      }
+      
+      .tool-item {
+        min-width: 140px;
+      }
+      
+      .tool-btn {
+        padding: 14px 20px;
+        font-size: 0.9rem;
       }
       
       .footer-content {
@@ -653,27 +706,29 @@
   </div>
 </section>
 
-<!-- ПЕРЕСЕЧЕНИЯ -->
+<!-- ПЕРЕСЕЧЕНИЯ (УЛУЧШЕННЫЙ) -->
 <section class="manifest-section">
   <div class="container manifest-block">
     <h2>Пересечения</h2>
-    <p>Мы редко живём в одном нарративе. Чаще — на пересечении нескольких.</p>
-    <p>Семья говорит одно. Работа — другое. Среда — третье. Внутри тебя живут голоса, которые спорят друг с другом.</p>
-    <p>Эти несостыковки — <span class="manifest-highlight">источник боли.</span> Но они же — <span class="manifest-highlight">источник выбора.</span></p>
+    <p>Семья говорит одно. Работа — другое. Среда — третье.</p>
+    <p style="margin: 30px 0; color: #FFFFFF;">Внутри тебя — голоса, которые спорят.</p>
+    <p>Это <span class="manifest-highlight">боль</span>. Это же — <span class="manifest-highlight">место выбора</span>.</p>
   </div>
 </section>
 
-<!-- МОИ КАМНИ -->
+<!-- МОИ КАМНИ (С ФАЛЕСОМ) -->
 <section class="manifest-section">
   <div class="container manifest-block">
     <h2>Мои камни</h2>
-    <div class="manifest-names">
-      <div class="manifest-name">
-        <div class="name">Фалес</div>
-        <span>основал философскую школу</span>
-      </div>
+    
+    <!-- Фалес отдельно и крупно -->
+    <div style="text-align: center; margin: 40px 0 30px;">
+      <div style="font-size: 2.5rem; font-weight: 200; color: #FFFFFF; margin-bottom: 10px;">Фалес</div>
+      <div style="font-size: 1rem; color: #3A86FF; letter-spacing: 0.1em; text-transform: uppercase;">основал философскую школу</div>
     </div>
-    <div class="manifest-names" style="margin-top: 20px;">
+    
+    <!-- Рассел и Щедровицкий рядом -->
+    <div class="manifest-names" style="margin-top: 30px;">
       <div class="manifest-name">
         <div class="name-small">Бертран Рассел</div>
         <span>научил меня ясности</span>
@@ -683,7 +738,8 @@
         <span>научил меня системе</span>
       </div>
     </div>
-    <p style="text-align: center; color: #666; font-style: italic; margin-top: 30px;">Их камни всё ещё летят. Я подхватил и бросаю дальше.</p>
+    
+    <p style="text-align: center; color: #666; font-style: italic; margin-top: 40px;">Их камни всё ещё летят. Я подхватил и бросаю дальше.</p>
   </div>
 </section>
 
@@ -710,24 +766,24 @@
   </div>
 </section>
 
-<!-- МОЙ КАМЕНЬ -->
+<!-- МОЙ КАМЕНЬ (ИНСТРУМЕНТЫ) -->
 <section class="manifest-section">
   <div class="container manifest-block">
     <h2>Мой камень</h2>
-    <p style="font-size: 1.5rem; color: #FFFFFF; margin-bottom: 30px;">Мой камень — это инструменты.</p>
+    <p style="font-size: 1.5rem; color: #FFFFFF; margin-bottom: 30px; text-align: center;">Мой камень — это инструменты.</p>
     
     <div class="tools-grid">
       <div class="tool-item">
-        <div class="tool-title">Книги</div>
-        <a href="/https-meysternlp.ru-/knigi/" class="tool-link">ПЕРЕЙТИ</a>
+        <a href="/https-meysternlp.ru-/knigi/" class="tool-btn">КНИГИ</a>
+        <div class="tool-desc">увидеть нарратив</div>
       </div>
       <div class="tool-item">
-        <div class="tool-title">Игры</div>
-        <a href="/https-meysternlp.ru-/igry/" class="tool-link">ПЕРЕЙТИ</a>
+        <a href="/https-meysternlp.ru-/igry/" class="tool-btn">ИГРЫ</a>
+        <div class="tool-desc">научиться менять</div>
       </div>
       <div class="tool-item">
-        <div class="tool-title">Практикумы</div>
-        <a href="/https-meysternlp.ru-/treningi/" class="tool-link">ПЕРЕЙТИ</a>
+        <a href="/https-meysternlp.ru-/treningi/" class="tool-btn">ПРАКТИКУМЫ</a>
+        <div class="tool-desc">создать свой камень</div>
       </div>
     </div>
     
@@ -743,7 +799,11 @@
     <p>В каком нарративе живёте вы? Где в вашей жизни несостыковки?</p>
     <p style="margin-bottom: 30px;">Хотите бросить свой камень?</p>
     <div class="invite-strong">Я покажу, как.</div>
-    <a href="/https-meysternlp.ru-/" class="btn" style="margin-top: 40px;">НАЧАТЬ ИССЛЕДОВАНИЕ</a>
+    <div style="margin-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <a href="/https-meysternlp.ru-/knigi/" class="btn">КНИГИ</a>
+      <a href="/https-meysternlp.ru-/igry/" class="btn">ИГРЫ</a>
+      <a href="/https-meysternlp.ru-/treningi/" class="btn">ПРАКТИКУМЫ</a>
+    </div>
   </div>
 </section>
 
