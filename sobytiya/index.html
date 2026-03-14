@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   
   <!-- SEO МЕТА-ТЕГИ -->
   <title>Архив материалов — видео и тексты | Андрей Мейстер</title>
@@ -43,12 +43,15 @@
       color: #F0F0F0;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      width: 100%;
     }
 
     /* ===== ТИПОГРАФИКА ===== */
@@ -107,6 +110,8 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      border-radius: 30px;
+      text-align: center;
     }
 
     .btn::before {
@@ -370,7 +375,7 @@
     }
 
     .social-links a:hover {
-      color: #C6A43F;
+      color: #3A86FF; /* ИСПРАВЛЕНО: был золотой */
     }
 
     .copyright {
@@ -378,6 +383,7 @@
       margin-top: 40px;
       font-size: 0.8rem;
       opacity: 0.5;
+      color: #666;
     }
 
     .text-blue { color: #3A86FF; }
@@ -468,7 +474,7 @@
     </div>
   </div>
 
-  <!-- ТЕКСТОВЫЙ РАЗДЕЛ (ИСПРАВЛЕНЫ ПУТИ К PDF) -->
+  <!-- ТЕКСТОВЫЙ РАЗДЕЛ -->
   <div class="archive-section">
     <div class="section-title">
       <span class="section-icon">📄</span>
@@ -564,21 +570,8 @@
   </div>
 </div>
 
-<!-- ПОДВАЛ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
-      <div class="social-links">
-        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
-        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
-        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
-        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
-      </div>
-    </div>
-    <div class="copyright">© Андрей Мейстер · 2026</div>
-  </div>
-</footer>
+<!-- ПОДВАЛ ПОДГРУЖАЕТСЯ ИЗ footer.html -->
+<div id="footer-placeholder"></div>
 
 <script>
   // Загружаем шапку из header.html
@@ -587,34 +580,94 @@
     .then(data => {
       document.getElementById('header-placeholder').innerHTML = data;
       
-      // После загрузки шапки подсвечиваем активный пункт
+      // После загрузки шапки инициализируем бургер и подсветку
       setTimeout(() => {
+        // 1. Подсветка активного пункта
         const currentPath = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-links a');
         
         navLinks.forEach(link => {
           const href = link.getAttribute('href');
-          // Проверяем, что ссылка ведет на архив (содержит sobytiya)
           if (href && href.includes('/sobytiya/')) {
             link.classList.add('active');
-          } else {
-            link.classList.remove('active');
           }
         });
+        
+        // 2. Бургер-меню
+        const burger = document.getElementById('burgerBtn');
+        const nav = document.getElementById('navLinks');
+        
+        if (burger && nav) {
+          burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+          });
+          
+          nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            });
+          });
+          
+          window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            }
+          });
+        }
       }, 100);
     })
     .catch(error => {
       console.error('Ошибка загрузки шапки:', error);
-      // Заглушка на случай ошибки
+      // Запасной вариант на случай ошибки
       document.getElementById('header-placeholder').innerHTML = `
-        <header style="padding: 30px 0; border-bottom: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C; position: sticky; top: 0; z-index: 100;">
+        <header style="padding: 20px 0; border-bottom: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C;">
           <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
               <a href="/https-meysternlp.ru-/" style="color: #FFFFFF; font-size: 1.5rem; letter-spacing: 0.3em; text-decoration: none;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</a>
-              <a href="/https-meysternlp.ru-/virtual-psychologist/" style="padding: 10px 24px; background: linear-gradient(to right, #00A8E8, #3A86FF); color: white; border-radius: 30px; text-decoration: none; font-size: 0.9rem;">🧠 Виртуальный психолог</a>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="/https-meysternlp.ru-/knigi/" style="color: #F0F0F0; text-decoration: none;">Книги</a>
+                <a href="/https-meysternlp.ru-/igry/" style="color: #F0F0F0; text-decoration: none;">Игры</a>
+                <a href="/https-meysternlp.ru-/treningi/" style="color: #F0F0F0; text-decoration: none;">Тренинги</a>
+                <a href="/https-meysternlp.ru-/v-razrabotke/" style="color: #F0F0F0; text-decoration: none;">В разработке</a>
+                <a href="/https-meysternlp.ru-/sobytiya/" style="color: #3A86FF; text-decoration: none; border-bottom: 2px solid #3A86FF;">Архив</a>
+              </div>
+              <a href="/https-meysternlp.ru-/virtual-psychologist/" style="padding: 8px 20px; background: linear-gradient(to right, #00A8E8, #3A86FF); color: white; border-radius: 30px; text-decoration: none;">🧠 Виртуальный психолог</a>
             </div>
           </div>
         </header>
+      `;
+    });
+
+  // Загружаем подвал из footer.html
+  fetch('/https-meysternlp.ru-/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки подвала:', error);
+      // Запасной вариант
+      document.getElementById('footer-placeholder').innerHTML = `
+        <footer style="padding: 40px 0 20px; border-top: 1px solid rgba(58, 134, 255, 0.2); margin-top: 40px;">
+          <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+              <div style="color: #FFFFFF; font-size: 1.2rem; letter-spacing: 0.3em;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</div>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="https://t.me/meysternlp" target="_blank" style="color: #F0F0F0;">Tg</a>
+                <a href="https://vk.com/meysternlp" target="_blank" style="color: #F0F0F0;">VK</a>
+                <a href="https://rutube.ru/channel/29916593/" target="_blank" style="color: #F0F0F0;">Rutube</a>
+                <a href="https://dzen.ru/89857788588" target="_blank" style="color: #F0F0F0;">Дзен</a>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #666;">© Андрей Мейстер · 2026</div>
+          </div>
+        </footer>
       `;
     });
 </script>
