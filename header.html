@@ -2,7 +2,7 @@
 <header class="header">
   <div class="container">
     <div class="nav">
-      <!-- Логотип ведёт на главную страницу (как на главной) -->
+      <!-- Логотип ведёт на главную страницу -->
       <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
       
       <!-- Кнопка-бургер (видна только на мобильных) -->
@@ -14,23 +14,23 @@
       
       <!-- Навигация (на десктопе видна всегда, на мобильных — в бургере) -->
       <div class="nav-links" id="main-nav">
-        <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
-        <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
-        <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
-        <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
-        <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">Архив</a>
-        <!-- Виртуальный психолог теперь в меню (на мобильных) -->
-        <a href="/https-meysternlp.ru-/virtual-psychologist/" class="nav-link mobile-only">Виртуальный психолог</a>
+        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+        <a href="/https-meysternlp.ru-/igry/">Игры</a>
+        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+        <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
+        <a href="/https-meysternlp.ru-/sobytiya/">Архив</a>
+        <!-- Виртуальный психолог для мобильных -->
+        <a href="/https-meysternlp.ru-/virtual-psychologist/" class="mobile-only">🧠 Виртуальный психолог</a>
       </div>
       
-      <!-- Кнопка "Виртуальный психолог" (только на десктопе, как на главной) -->
+      <!-- Кнопка "Виртуальный психолог" (только на десктопе) -->
       <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header desktop-only">🧠 Виртуальный психолог</a>
     </div>
   </div>
 </header>
 
 <style>
-/* ===== СТИЛИ ДЛЯ ШАПКИ (КАК НА ГЛАВНОЙ СТРАНИЦЕ) ===== */
+/* ===== СТИЛИ ДЛЯ ШАПКИ ===== */
 
 /* Классы для адаптации */
 .desktop-only {
@@ -41,14 +41,14 @@
   display: none;
 }
 
-/* Стили шапки как на главной */
+/* Стили шапки */
 .header {
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid rgba(58, 134, 255, 0.2);
   position: sticky;
   top: 0;
   background-color: #0C0C0C;
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
 }
 
@@ -56,6 +56,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 60px;
 }
 
 .logo {
@@ -64,18 +65,18 @@
   letter-spacing: 0.3em;
   color: #FFFFFF;
   white-space: nowrap;
+  z-index: 1001;
 }
 
 .logo span {
   color: #3A86FF;
 }
 
-/* Стили для навигации (как на главной) */
+/* Стили для навигации */
 .nav-links {
   display: flex;
   gap: 50px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -93,21 +94,20 @@
 .nav-links a:hover {
   border-bottom-color: #3A86FF;
   color: #F0F0F0;
-  text-shadow: none;
 }
 
 .nav-links a.active {
   border-bottom-color: #3A86FF;
 }
 
-/* Кнопка в шапке (как на главной) */
+/* Кнопка в шапке */
 .btn-header {
   display: inline-block;
-  padding: 10px 24px;
+  padding: 8px 20px;
   background: linear-gradient(to right, #00A8E8, #3A86FF);
   color: white;
   border-radius: 30px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   text-transform: none;
   letter-spacing: normal;
@@ -115,18 +115,18 @@
   box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
   white-space: nowrap;
   transition: all 0.3s ease;
+  z-index: 1001;
 }
 
 .btn-header:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
   color: white;
-  text-shadow: none;
 }
 
 /* ===== СТИЛИ ДЛЯ БУРГЕР-МЕНЮ ===== */
 
-/* Скрываем бургер на десктопе по умолчанию */
+/* Скрываем бургер на десктопе */
 .burger {
   display: none;
   flex-direction: column;
@@ -137,7 +137,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 110;
+  z-index: 1001;
 }
 
 .burger span {
@@ -147,7 +147,6 @@
   transition: all 0.3s ease;
 }
 
-/* Анимация для открытого бургера */
 .burger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
@@ -174,6 +173,17 @@
   
   .mobile-only {
     display: block;
+    background: linear-gradient(to right, #00A8E8, #3A86FF);
+    color: white;
+    border-radius: 30px;
+    margin: 10px auto 0;
+    text-transform: none !important;
+    font-weight: 500 !important;
+    border: none !important;
+    text-align: center;
+    padding: 15px 0;
+    width: 90%;
+    max-width: 280px;
   }
   
   .burger {
@@ -182,18 +192,17 @@
   
   .nav-links {
     position: fixed;
-    top: 80px;
+    top: 70px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     background-color: #0C0C0C;
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 30px 20px;
     transition: left 0.3s ease;
-    z-index: 100;
+    z-index: 999;
     overflow-y: auto;
-    gap: 10px;
-    border-top: 1px solid rgba(58, 134, 255, 0.2);
+    gap: 5px;
   }
   
   .nav-links.active {
@@ -206,43 +215,10 @@
     width: 100%;
     text-align: center;
     border-bottom: 1px solid rgba(58, 134, 255, 0.2);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #F0F0F0;
-    font-weight: 300;
-  }
-  
-  .nav-links a:hover {
-    border-bottom-color: #3A86FF;
-    color: #F0F0F0;
-  }
-  
-  .nav-links a.active {
-    border-bottom-color: #3A86FF;
-  }
-  
-  .nav-links a:last-child {
-    border-bottom: none;
-    margin-top: 20px;
-    background: linear-gradient(to right, #00A8E8, #3A86FF);
-    border-radius: 30px;
-    color: white;
-    border: none;
-    padding: 15px 0;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: normal;
-    box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
-  }
-  
-  .nav-links a:last-child:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
-    border-bottom: none;
   }
   
   .header {
-    padding: 20px 0;
+    padding: 15px 0;
   }
 }
 
@@ -260,18 +236,16 @@
 </style>
 
 <script>
-// Функция для подсветки активного пункта меню (как на главной)
+// Функция для подсветки активного пункта меню
 function highlightCurrentPage() {
   const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-links a');
   
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    // Убираем базовый путь для сравнения
-    const cleanHref = href.replace('/https-meysternlp.ru-', '');
+    const cleanHref = href ? href.replace('/https-meysternlp.ru-', '') : '';
     const cleanPath = currentPath.replace('/https-meysternlp.ru-', '');
     
-    // Проверяем точное совпадение или начало пути
     if (cleanPath === cleanHref || 
         (cleanHref !== '/' && cleanPath.startsWith(cleanHref + '/')) ||
         (cleanHref === '/' && cleanPath === '/')) {
@@ -291,7 +265,7 @@ function initBurger() {
     burger.addEventListener('click', () => {
       burger.classList.toggle('active');
       nav.classList.toggle('active');
-      // Блокируем скролл body при открытом меню
+      
       if (nav.classList.contains('active')) {
         document.body.style.overflow = 'hidden';
       } else {
@@ -299,7 +273,6 @@ function initBurger() {
       }
     });
     
-    // Закрываем меню при клике на ссылку
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         burger.classList.remove('active');
@@ -308,7 +281,6 @@ function initBurger() {
       });
     });
     
-    // Закрываем меню при изменении размера окна (если стали десктопом)
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
         burger.classList.remove('active');
@@ -319,7 +291,6 @@ function initBurger() {
   }
 }
 
-// Запускаем после загрузки страницы
 document.addEventListener('DOMContentLoaded', () => {
   highlightCurrentPage();
   initBurger();
