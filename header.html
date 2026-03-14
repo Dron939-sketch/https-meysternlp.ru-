@@ -2,8 +2,8 @@
 <header class="header">
   <div class="container">
     <div class="nav">
-      <!-- Логотип ведёт на страницу "Обо мне" -->
-      <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <!-- Логотип ведёт на главную страницу (как на главной) -->
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
       
       <!-- Кнопка-бургер (видна только на мобильных) -->
       <button class="burger" id="burgerBtn" aria-label="Меню">
@@ -14,25 +14,23 @@
       
       <!-- Навигация (на десктопе видна всегда, на мобильных — в бургере) -->
       <div class="nav-links" id="main-nav">
-        <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
         <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
         <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
         <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
         <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
-        <a href="/https-meysternlp.ru-/arhiv/" class="nav-link">Архив</a>
-        <a href="/https-meysternlp.ru-/blog/" class="nav-link">Статьи</a>
+        <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">Архив</a>
         <!-- Виртуальный психолог теперь в меню (на мобильных) -->
         <a href="/https-meysternlp.ru-/virtual-psychologist/" class="nav-link mobile-only">Виртуальный психолог</a>
       </div>
       
-      <!-- Кнопка "Виртуальный психолог" (только на десктопе) -->
+      <!-- Кнопка "Виртуальный психолог" (только на десктопе, как на главной) -->
       <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header desktop-only">🧠 Виртуальный психолог</a>
     </div>
   </div>
 </header>
 
 <style>
-/* ===== СТИЛИ ДЛЯ ШАПКИ (КАК В ОРИГИНАЛЕ) ===== */
+/* ===== СТИЛИ ДЛЯ ШАПКИ (КАК НА ГЛАВНОЙ СТРАНИЦЕ) ===== */
 
 /* Классы для адаптации */
 .desktop-only {
@@ -43,7 +41,7 @@
   display: none;
 }
 
-/* Стили шапки как в оригинале */
+/* Стили шапки как на главной */
 .header {
   padding: 30px 0;
   border-bottom: 1px solid rgba(58, 134, 255, 0.2);
@@ -72,7 +70,7 @@
   color: #3A86FF;
 }
 
-/* Стили для навигации (как в оригинале) */
+/* Стили для навигации (как на главной) */
 .nav-links {
   display: flex;
   gap: 50px;
@@ -88,7 +86,7 @@
   text-transform: uppercase;
   border-bottom: 1px solid transparent;
   padding-bottom: 5px;
-  transition: border-color 0.3s ease, color 0.3s ease;
+  transition: border-color 0.3s ease;
   white-space: nowrap;
 }
 
@@ -100,10 +98,9 @@
 
 .nav-links a.active {
   border-bottom-color: #3A86FF;
-  color: #F0F0F0;
 }
 
-/* Кнопка в шапке (как в оригинале) */
+/* Кнопка в шапке (как на главной) */
 .btn-header {
   display: inline-block;
   padding: 10px 24px;
@@ -222,7 +219,6 @@
   
   .nav-links a.active {
     border-bottom-color: #3A86FF;
-    color: #F0F0F0;
   }
   
   .nav-links a:last-child {
@@ -264,7 +260,7 @@
 </style>
 
 <script>
-// Функция для подсветки активного пункта меню (как в оригинале)
+// Функция для подсветки активного пункта меню (как на главной)
 function highlightCurrentPage() {
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.nav-link');
