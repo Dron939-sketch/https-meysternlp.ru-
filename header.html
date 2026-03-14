@@ -1,23 +1,111 @@
-<!-- ===== ШАПКА (общий файл для всех страниц) ===== -->
+<!-- ===== ШАПКА С БУРГЕР-МЕНЮ (общий файл для всех страниц) ===== -->
 <header class="header">
   <div class="container">
     <div class="nav">
-      <!-- Логотип теперь ведёт на страницу "Обо мне" -->
+      <!-- Логотип ведёт на страницу "Обо мне" -->
       <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      
+      <!-- Кнопка-бургер (видна только на мобильных) -->
+      <button class="burger" id="burgerBtn" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Навигация -->
       <div class="nav-links" id="main-nav">
         <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
         <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
         <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
         <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
         <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
-        <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">События</a>
+        <a href="/https-meysternlp.ru-/arhiv/" class="nav-link">Архив</a>
         <a href="/https-meysternlp.ru-/blog/" class="nav-link">Статьи</a>
-        <!-- Пункт "Обо мне" УДАЛЁН -->
+        <!-- Пункт "Обо мне" УДАЛЁН, "События" заменён на "Архив" -->
       </div>
+      
+      <!-- Кнопка "Виртуальный психолог" -->
       <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
     </div>
   </div>
 </header>
+
+<style>
+/* ===== СТИЛИ ДЛЯ БУРГЕР-МЕНЮ ===== */
+
+/* Скрываем бургер на десктопе по умолчанию */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 110;
+}
+
+.burger span {
+  width: 100%;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+/* Анимация для открытого бургера */
+.burger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #0C0C0C;
+    flex-direction: column;
+    padding: 40px 20px;
+    transition: left 0.3s ease;
+    z-index: 100;
+    overflow-y: auto;
+    gap: 20px;
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+  }
+  
+  /* Кнопка психолога на мобильных */
+  .btn-header {
+    margin-left: auto;
+  }
+}
+</style>
 
 <script>
 // Функция для подсветки активного пункта меню
@@ -42,6 +130,30 @@ function highlightCurrentPage() {
   });
 }
 
+// Функция для работы бургер-меню
+function initBurger() {
+  const burger = document.getElementById('burgerBtn');
+  const nav = document.getElementById('main-nav');
+  
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      nav.classList.toggle('active');
+    });
+    
+    // Закрываем меню при клике на ссылку
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('active');
+        nav.classList.remove('active');
+      });
+    });
+  }
+}
+
 // Запускаем после загрузки страницы
-document.addEventListener('DOMContentLoaded', highlightCurrentPage);
+document.addEventListener('DOMContentLoaded', () => {
+  highlightCurrentPage();
+  initBurger();
+});
 </script>
