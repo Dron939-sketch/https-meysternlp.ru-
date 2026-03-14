@@ -168,7 +168,7 @@
       color: white;
     }
 
-    /* ===== ГЕРОЙ ===== */
+    /* ===== ГЕРОЙ (НОВАЯ ВЕРСИЯ) ===== */
     .hero {
       padding: 100px 0;
     }
@@ -188,17 +188,68 @@
       text-transform: uppercase;
     }
 
-    .hero-description {
+    .hero-quote {
+      font-size: 2.2rem;
+      font-weight: 200;
+      line-height: 1.3;
+      color: #FFFFFF;
+      margin: 30px 0 20px;
+      letter-spacing: -0.01em;
+      border-left: 3px solid #C6A43F;
+      padding-left: 25px;
+    }
+
+    .hero-principle {
       font-size: 1.2rem;
-      border-left: 2px solid #3A86FF;
-      padding-left: 20px;
-      margin: 30px 0 40px;
+      color: #CCCCCC;
+      margin: 20px 0;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .gold-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #C6A43F;
+      border-radius: 50%;
+      position: absolute;
+      left: 8px;
+      top: 10px;
+      box-shadow: 0 0 10px #C6A43F;
+    }
+
+    .hero-result {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #F0F0F0;
+      margin: 30px 0 0;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .gold-asterisk {
+      position: absolute;
+      left: 8px;
+      top: 5px;
+      color: #C6A43F;
+      font-size: 1.8rem;
+      font-weight: 300;
+    }
+
+    .gold-text {
+      color: #C6A43F;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid rgba(198, 164, 63, 0.3);
+      padding-bottom: 2px;
     }
 
     .hero-buttons {
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
+      margin-top: 40px;
     }
 
     /* ===== ВИДЕО ===== */
@@ -606,6 +657,19 @@
         gap: 40px;
       }
       
+      .hero-quote {
+        font-size: 1.6rem;
+        padding-left: 15px;
+      }
+      
+      .hero-principle {
+        font-size: 1rem;
+      }
+      
+      .hero-result {
+        font-size: 1.2rem;
+      }
+      
       .strategies-grid,
       .projects-grid,
       .blog-preview-grid {
@@ -640,11 +704,10 @@
 </head>
 <body>
 
-<!-- ШАПКА (ОБНОВЛЁННАЯ) -->
+<!-- ШАПКА -->
 <header class="header">
   <div class="container">
     <div class="nav">
-      <!-- Логотип теперь ведёт на страницу "Обо мне" -->
       <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
       <div class="nav-links">
         <a href="/https-meysternlp.ru-/" class="active">Главная</a>
@@ -654,24 +717,38 @@
         <a href="/https-meysternlp.ru-/v-razrabotke/">В разработке</a>
         <a href="/https-meysternlp.ru-/sobytiya/">События</a>
         <a href="/https-meysternlp.ru-/blog/">Статьи</a>
-        <!-- Пункт "Обо мне" УДАЛЁН -->
       </div>
-      <!-- Кнопка изменена на "Виртуальный психолог" -->
       <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
     </div>
   </div>
 </header>
 
-<!-- ГЕРОЙ -->
+<!-- ГЕРОЙ (НОВАЯ ВЕРСИЯ) -->
 <section id="home" class="hero">
   <div class="container">
     <div class="hero-grid">
       <div class="hero-content">
         <div class="hero-subtitle">тренер системного и латерального мышления</div>
         <h1>Андрей<br>Мейстер</h1>
-        <div class="hero-description">
-          Автор бестселлера «Теория манипуляции», кандидат наук. Вижу закономерности там, где другие видят хаос.
+        
+        <!-- НОВЫЙ ТЕКСТ -->
+        <div class="hero-quote">
+          «Хватит тонуть в хаосе и чужих советах.<br>
+          Я даю вам мышление, которое само находит ответы».
         </div>
+        
+        <div class="hero-principle">
+          <span class="gold-dot"></span>
+          Мои продукты работают без меня.<br>
+          Книги, игры, практикумы — это готовые инструменты. Вы просто берете их и применяете.
+        </div>
+        
+        <div class="hero-result">
+          <span class="gold-asterisk">*</span>
+          Вы будете знать, <span class="gold-text">ЗАЧЕМ</span> просыпаться утром 
+          и <span class="gold-text">КАК</span> сделать так, чтобы вечером был результат.
+        </div>
+        
         <div class="hero-buttons">
           <a href="#" class="btn" onclick="alert('Форма записи появится здесь')">Консультация</a>
           <a href="#projects" class="btn">Проекты</a>
