@@ -5,20 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO МЕТА-ТЕГИ -->
-  <title>Проекты в разработке — индивидуальные дидактические упражнения | Андрей Мейстер</title>
-  <meta name="description" content="Разработка персональных дидактических упражнений под ваш запрос. Индивидуальный подход к развитию навыков системного мышления, латерального мышления и когнитивной гибкости.">
-  <meta name="keywords" content="разработка упражнений, дидактические материалы, индивидуальное обучение, развитие навыков, вариатика, системное мышление">
+  <title>Проекты в разработке — Концептикон, Фреди, виртуальный маркетолог | Андрей Мейстер</title>
+  <meta name="description" content="Три проекта Андрея Мейстера в разработке: книга «Концептикон», виртуальный психолог Фреди и виртуальный маркетолог. Следите за новостями.">
+  <meta name="keywords" content="андрей мейстер, концептикон, фреди, виртуальный психолог, виртуальный маркетолог, разработка">
   <meta name="author" content="Андрей Мейстер">
   
-  <!-- OPEN GRAPH ДЛЯ СОЦСЕТЕЙ -->
-  <meta property="og:title" content="Проекты в разработке — индивидуальные дидактические упражнения">
-  <meta property="og:description" content="Разработка персональных упражнений под ваш запрос. 5 шагов к идеальной версии себя.">
-  <meta property="og:image" content="/https-meysternlp.ru-/images/razrabotka-preview.jpg">
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Проекты в разработке — Андрей Мейстер">
+  <meta property="og:description" content="Три проекта: книга «Концептикон», виртуальный психолог Фреди и виртуальный маркетолог">
+  <meta property="og:image" content="/https-meysternlp.ru-/images/projects-preview.jpg">
   <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/v-razrabotke/">
   <meta property="og:type" content="website">
   
   <!-- КАНОНИЧЕСКАЯ ССЫЛКА -->
   <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/v-razrabotke/">
+  
+  <!-- Подключаем Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
     /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
@@ -33,14 +38,15 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: #0C0C0C;
       color: #F0F0F0;
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 20px;
     }
@@ -50,28 +56,22 @@
       font-weight: 300;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      line-height: 1.2;
     }
 
     h1 {
       font-size: 3.5rem;
       font-weight: 200;
-      margin: 60px 0 20px;
-      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+      color: #3A86FF;
     }
 
     h2 {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       font-weight: 300;
-      margin-bottom: 2rem;
-      color: #3A86FF;
-      letter-spacing: 0.15em;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
+      margin: 2.5rem 0 1rem;
       color: #FFFFFF;
+      letter-spacing: 0.1em;
     }
 
     p {
@@ -94,14 +94,15 @@
 
     .btn {
       display: inline-block;
-      padding: 14px 32px;
-      border: 1px solid #3A86FF;
-      background: transparent;
-      color: #FFFFFF;
-      text-decoration: none;
+      padding: 12px 28px;
+      font-weight: 400;
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      font-size: 0.9rem;
+      text-decoration: none;
+      border: 1px solid #3A86FF;
+      background-color: transparent;
+      color: #FFFFFF;
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
@@ -130,32 +131,7 @@
       left: 0;
     }
 
-    /* Кнопка в шапке (градиентная) */
-    .btn-header {
-      display: inline-block;
-      padding: 10px 24px;
-      background: linear-gradient(to right, #00A8E8, #3A86FF);
-      color: white;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: none;
-      letter-spacing: normal;
-      border: none;
-      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
-    }
-
-    .btn-header:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
-      color: white;
-    }
-
-    .btn-header::before {
-      display: none;
-    }
-
-    /* Стили для шапки (оставляем для резерва) */
+    /* ===== ШАПКА ===== */
     .header {
       padding: 20px 0;
       border-bottom: 1px solid rgba(58, 134, 255, 0.2);
@@ -207,76 +183,174 @@
       color: #3A86FF;
     }
 
+    .btn-header {
+      display: inline-block;
+      padding: 10px 24px;
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      color: white;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: normal;
+      border: none;
+      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+    }
+
+    .btn-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
+      color: white;
+    }
+
     /* ===== СТРАНИЦА В РАЗРАБОТКЕ ===== */
     .page-header {
-      padding: 60px 0 30px;
-      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
-      margin-bottom: 40px;
+      padding: 60px 0 20px;
+      text-align: center;
     }
 
     .page-header h1 {
-      color: #3A86FF;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
-    .page-header p {
+    .page-header .subtitle {
       font-size: 1.2rem;
-      max-width: 800px;
-    }
-
-    /* Герой-блок */
-    .hero-block {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(58, 134, 255, 0.2);
-      padding: 50px;
-      margin-bottom: 60px;
-      border-radius: 8px;
-    }
-
-    .hero-block h2 {
       color: #FFFFFF;
+      font-weight: 200;
+      letter-spacing: 0.1em;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background-color: #3A86FF;
+      margin: 30px auto;
+    }
+
+    .project-card {
+      margin: 50px 0;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(58, 134, 255, 0.1);
+    }
+
+    .project-card:last-of-type {
+      border-bottom: none;
+    }
+
+    .project-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
       margin-bottom: 20px;
     }
 
-    /* Шаги */
-    .steps-section {
-      margin-bottom: 60px;
+    .project-icon {
+      font-size: 2.5rem;
     }
 
-    .steps-section h2 {
-      margin-bottom: 40px;
+    .project-name {
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #3A86FF;
     }
 
-    .step-item {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 40px;
-      padding: 30px;
+    .project-desc {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      margin: 15px 0;
+      font-weight: 300;
+    }
+
+    .project-list {
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    .project-list li {
+      color: #CCCCCC;
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .project-list li::before {
+      content: "•";
+      color: #3A86FF;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .project-status {
+      margin-top: 20px;
+      padding: 15px 0;
+      color: #C6A43F;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .email-section {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(58, 134, 255, 0.2);
-      transition: all 0.3s ease;
+      padding: 40px;
+      margin: 60px 0;
+      text-align: center;
+      border-radius: 8px;
     }
 
-    .step-item:hover {
+    .email-section p {
+      margin-bottom: 25px;
+      color: #FFFFFF;
+    }
+
+    .form-group {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .email-input {
+      background-color: transparent;
+      border: 1px solid rgba(58, 134, 255, 0.3);
+      padding: 14px 20px;
+      font-size: 1rem;
+      color: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      min-width: 300px;
+    }
+
+    .email-input:focus {
+      outline: none;
       border-color: #3A86FF;
-      transform: translateX(10px);
     }
 
-    .step-number {
-      font-size: 3rem;
-      font-weight: 200;
-      color: #3A86FF;
-      min-width: 100px;
+    .form-note {
+      font-size: 0.85rem;
+      color: #666;
     }
 
-    .step-content h3 {
-      color: #C6A43F;
-      margin-bottom: 10px;
-      font-size: 1.3rem;
+    .actions-section {
+      text-align: center;
+      margin: 50px 0;
     }
 
-    .step-content p {
-      margin-bottom: 0;
+    .actions-title {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      margin-bottom: 25px;
+      letter-spacing: 0.1em;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     /* ===== ПОДВАЛ ===== */
@@ -328,7 +402,6 @@
     /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
-      h2 { font-size: 1.8rem; }
       
       .nav {
         flex-direction: column;
@@ -339,131 +412,163 @@
         gap: 15px;
       }
       
-      .step-item {
+      .project-title {
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-start;
+        gap: 10px;
       }
       
-      .step-number {
-        min-width: auto;
+      .project-icon {
+        font-size: 2rem;
+      }
+      
+      .project-name {
+        font-size: 1.5rem;
+      }
+      
+      .email-input {
+        min-width: 100%;
+      }
+      
+      .action-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .action-buttons .btn {
+        width: 100%;
+        max-width: 280px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
-<div id="header-placeholder"></div>
-
-<script>
-  // Загружаем шапку из header.html
-  fetch('/https-meysternlp.ru-/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Ошибка загрузки шапки:', error);
-      // Запасной вариант на случай ошибки
-      document.getElementById('header-placeholder').innerHTML = `
-        <header class="header">
-          <div class="container">
-            <div class="nav">
-              <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
-              <div class="nav-links">
-                <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
-                <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
-                <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
-                <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
-                <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link active">В разработке</a>
-                <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">События</a>
-                <a href="/https-meysternlp.ru-/blog/" class="nav-link">Статьи</a>
-              </div>
-              <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
-            </div>
-          </div>
-        </header>
-      `;
-    });
-</script>
+<!-- ШАПКА -->
+<header class="header">
+  <div class="container">
+    <div class="nav">
+      <a href="/https-meysternlp.ru-/" class="logo"><span>А</span>МЕЙСТЕР</a>
+      <div class="nav-links">
+        <a href="/https-meysternlp.ru-/knigi/">Книги</a>
+        <a href="/https-meysternlp.ru-/igry/">Игры</a>
+        <a href="/https-meysternlp.ru-/treningi/">Тренинги</a>
+        <a href="/https-meysternlp.ru-/v-razrabotke/" class="active">В разработке</a>
+        <a href="/https-meysternlp.ru-/sobytiya/">События</a>
+        <a href="/https-meysternlp.ru-/blog/">Статьи</a>
+      </div>
+      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
+    </div>
+  </div>
+</header>
 
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <div class="container">
-  <!-- Заголовок страницы -->
+  <!-- Заголовок -->
   <div class="page-header">
     <h1>ПРОЕКТЫ В РАЗРАБОТКЕ</h1>
-    <p>Вы можете узнать, над какими проектами сейчас работает Андрей Мейстер — практикующий психолог, мастер и тренер НЛП.</p>
+    <div class="subtitle">Три направления. Три инструмента.</div>
+    <div class="subtitle">Объединённых одной методологией.</div>
+    <div class="divider"></div>
   </div>
 
-  <!-- Герой-блок -->
-  <div class="hero-block">
-    <h2>Разработка дидактических упражнений под запрос</h2>
-    <p>Быстро достичь личных и профессиональных целей можно только с помощью индивидуального подхода к обучению. Андрей Мейстер, кандидат психологических наук, НЛП-тренер международного уровня, разработает для вас комплекс теоретических и практических упражнений, который будет идеально соответствовать вашим потребностям и желаемым результатам.</p>
+  <!-- Книга Концептикон -->
+  <div class="project-card">
+    <div class="project-title">
+      <span class="project-icon">📘</span>
+      <span class="project-name">КНИГА «КОНЦЕПТИКОН»</span>
+    </div>
+    <div class="project-desc">Семь линз, которые меняют восприятие. ЛСД без ЛСД. Градусник для психики.</div>
+    <ul class="project-list">
+      <li>7 глав — 7 способов видеть реальность</li>
+      <li>QR-коды с видео-демонстрациями</li>
+      <li>Испытания для закрепления навыка</li>
+    </ul>
+    <div class="project-status">Статус: в работе. Выход — 2026 год.</div>
   </div>
 
-  <!-- 5 шагов -->
-  <div class="steps-section">
-    <h2>До жизни мечты всего 5 шагов</h2>
-    
-    <div class="step-item">
-      <div class="step-number">ШАГ 1</div>
-      <div class="step-content">
-        <p>Опишите свой образ жизни с использованием терминов моделей «Вариатика. BASIC»</p>
-      </div>
+  <!-- Виртуальный психолог Фреди -->
+  <div class="project-card">
+    <div class="project-title">
+      <span class="project-icon">🧠</span>
+      <span class="project-name">ВИРТУАЛЬНЫЙ ПСИХОЛОГ (ФРЕДИ)</span>
     </div>
-
-    <div class="step-item">
-      <div class="step-number">ШАГ 2</div>
-      <div class="step-content">
-        <p>Сформулируйте конкретные результаты, к которым должно привести ваше поведение после формирования желаемого навыка.</p>
-      </div>
-    </div>
-
-    <div class="step-item">
-      <div class="step-number">ШАГ 3</div>
-      <div class="step-content">
-        <p>Отправьте запрос через форму обратной связи на сайте или по указанным контактам.</p>
-      </div>
-    </div>
-
-    <div class="step-item">
-      <div class="step-number">ШАГ 4</div>
-      <div class="step-content">
-        <p>Получите персональный набор дидактических упражнений.</p>
-      </div>
-    </div>
-
-    <div class="step-item">
-      <div class="step-number">ШАГ 5</div>
-      <div class="step-content">
-        <p>Пройдите обучение и станьте идеальной версией себя!</p>
-      </div>
-    </div>
+    <div class="project-desc">Цифровой помощник на основе 7 линз. Помогает увидеть структуру там, где раньше был хаос.</div>
+    <ul class="project-list">
+      <li>Формирует психологический портрет</li>
+      <li>Анализирует глубинные паттерны</li>
+      <li>Работает в трёх режимах (коуч, психолог, тренер)</li>
+      <li>Отвечает голосом и текстом</li>
+    </ul>
+    <div class="project-status">Статус: beta-тест. Уже доступен.</div>
   </div>
 
-  <!-- Кнопка действия -->
-  <div style="text-align: center; margin: 60px 0;">
-    <a href="#" class="btn" onclick="alert('Форма связи появится здесь')">Отправить запрос</a>
+  <!-- Виртуальный маркетолог -->
+  <div class="project-card">
+    <div class="project-title">
+      <span class="project-icon">📊</span>
+      <span class="project-name">ВИРТУАЛЬНЫЙ МАРКЕТОЛОГ</span>
+    </div>
+    <div class="project-desc">Следующий шаг. Инструмент для бизнеса.</div>
+    <ul class="project-list">
+      <li>Анализировать ресурсы (линза РЕСУРСЫ)</li>
+      <li>Оценивать рынок в вашем городе (линза ИНФОРМАЦИЯ)</li>
+      <li>Строить пошаговую стратегию (линза ПРОЦЕССЫ)</li>
+      <li>Находить точки рычага (линза СИСТЕМЫ)</li>
+    </ul>
+    <div class="project-status">Статус: проектирование. Сбор требований.</div>
+  </div>
+
+  <!-- Подписка -->
+  <div class="email-section">
+    <p>Хотите узнать о запуске первым?</p>
+    <div class="form-group">
+      <input type="email" class="email-input" placeholder="Ваш email">
+      <button class="btn">📧 УВЕДОМИТЬ О ЗАПУСКЕ</button>
+    </div>
+    <div class="form-note">* Без спама. Только новости о проектах.</div>
+  </div>
+
+  <!-- Действия -->
+  <div class="actions-section">
+    <div class="actions-title">А пока можете:</div>
+    <div class="action-buttons">
+      <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn">🧠 ПОПРОБОВАТЬ ФРЕДИ</a>
+      <a href="/https-meysternlp.ru-/blog/" class="btn">📖 ЧИТАТЬ БЛОГ</a>
+    </div>
   </div>
 </div>
 
-<!-- ПОДКЛЮЧАЕМ ПОДВАЛ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
-<div id="footer-placeholder"></div>
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo"><span class="text-blue">А</span>МЕЙСТЕР</div>
+      <div class="social-links">
+        <a href="https://t.me/meysternlp" target="_blank">Tg</a>
+        <a href="https://vk.com/meysternlp" target="_blank">VK</a>
+        <a href="https://rutube.ru/channel/29916593/" target="_blank">Rutube</a>
+        <a href="https://dzen.ru/89857788588" target="_blank">Дзен</a>
+      </div>
+    </div>
+    <div class="copyright">© Андрей Мейстер · 2026</div>
+  </div>
+</footer>
 
 <script>
-  // Загружаем подвал из footer.html
-  fetch('/https-meysternlp.ru-/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Ошибка загрузки подвала:', error);
+  // Подсветка активного пункта меню
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (currentPath === href) {
+        link.classList.add('active');
+      }
     });
+  });
 </script>
-
-<!-- Font Awesome для иконок (если понадобятся) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </body>
 </html>
