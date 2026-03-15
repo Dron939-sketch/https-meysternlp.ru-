@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   
   <!-- ОСНОВНЫЕ SEO ТЕГИ -->
-  <title>Разговорный гипноз. Пакет «Стандартный» | Андрей Мейстер</title>
-  <meta name="description" content="38 видео с техниками речевого воздействия + дополнительные материалы и расширенная обратная связь. Никакой магии — только алгоритмы.">
-  <meta name="keywords" content="разговорный гипноз, эриксоновский гипноз, речевые техники, стандартный пакет">
+  <title>Разговорный гипноз. Пакет «Самостоятельный» | Андрей Мейстер</title>
+  <meta name="description" content="38 видео с техниками речевого воздействия. Без обещаний «стать миллионером». Только инструменты и их применение.">
+  <meta name="keywords" content="разговорный гипноз, эриксоновский гипноз, речевые техники">
   <meta name="author" content="Андрей Мейстер">
   
   <!-- OPEN GRAPH -->
-  <meta property="og:title" content="Разговорный гипноз. Пакет «Стандартный»">
-  <meta property="og:description" content="38 видео с техниками речевого воздействия + дополнительные материалы. Без обещаний «стать миллионером».">
-  <meta property="og:image" content="/https-meysternlp.ru-/images/Пакет стандарт.jpg">
-  <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/treningi/razgovornyy-gipnoz-standart/">
+  <meta property="og:title" content="Разговорный гипноз. Пакет «Самостоятельный»">
+  <meta property="og:description" content="38 видео с техниками речевого воздействия. Никакой магии — только алгоритмы.">
+  <meta property="og:image" content="/https-meysternlp.ru-/2.webp">
+  <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/treningi/razgovornyy-gipnoz-samostoyatelnyy/">
   <meta property="og:type" content="website">
   
   <!-- КАНОНИЧЕСКАЯ ССЫЛКА -->
-  <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/treningi/razgovornyy-gipnoz-standart/">
+  <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/treningi/razgovornyy-gipnoz-samostoyatelnyy/">
   
   <!-- Подключаем Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -224,11 +224,25 @@
       margin: 20px 0;
     }
 
+    /* ===== ФОТО ПРОДУКТА С ПРОЗРАЧНЫМ ФОНОМ ===== */
+    .product-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .product-image img {
       width: 100%;
       max-width: 500px;
+      height: auto;
       border-radius: 8px;
-      border: 1px solid rgba(58, 134, 255, 0.2);
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+    }
+
+    .product-image img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 15px 25px rgba(58, 134, 255, 0.3));
     }
 
     /* ===== ЧТО ВХОДИТ ===== */
@@ -253,72 +267,21 @@
       font-size: 1.5rem;
     }
 
-    .includes-list .bonus {
-      color: #3A86FF;
-    }
-
-    /* ===== СРАВНЕНИЕ ПАКЕТОВ ===== */
-    .comparison-grid {
+    /* ===== ТЕМЫ КУРСА ===== */
+    .themes-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin: 40px 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 30px 0;
     }
 
-    .package-card {
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(58, 134, 255, 0.2);
-      padding: 30px;
-      border-radius: 8px;
-    }
-
-    .package-card.standout {
-      border: 2px solid #3A86FF;
+    .theme-item {
       background: rgba(58, 134, 255, 0.05);
-    }
-
-    .package-name {
-      font-size: 1.5rem;
-      color: #FFFFFF;
-      margin-bottom: 15px;
-    }
-
-    .package-feature {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-      color: #CCCCCC;
-    }
-
-    .package-feature.yes::before {
-      content: "✓";
-      color: #3A86FF;
-      font-size: 1.2rem;
-    }
-
-    .package-feature.no::before {
-      content: "✗";
-      color: #666;
-      font-size: 1.2rem;
-    }
-
-    /* ===== АВТОР ===== */
-    .author-section {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 60px;
-      margin: 60px 0;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.02);
       border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 20px;
       border-radius: 8px;
-    }
-
-    .author-image img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
+      text-align: center;
+      font-size: 1rem;
     }
 
     /* ===== ПОДВАЛ ===== */
@@ -366,27 +329,50 @@
       color: #666;
     }
 
+    .text-blue { color: #3A86FF; }
+
     /* ===== АДАПТИВНОСТЬ ===== */
-    @media (max-width: 768px) {
-      h1 { font-size: 2.5rem; }
-      
+    @media (max-width: 992px) {
       .product-hero {
         grid-template-columns: 1fr;
         gap: 30px;
       }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
       
-      .comparison-grid {
-        grid-template-columns: 1fr;
+      .product-hero {
+        text-align: center;
       }
       
-      .author-section {
-        grid-template-columns: 1fr;
+      .product-badge {
+        align-self: center;
+      }
+      
+      .themes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .product-actions {
+        flex-direction: column;
+      }
+      
+      .product-actions .btn {
+        width: 100%;
       }
       
       .footer-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .themes-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -466,7 +452,7 @@
   <div class="breadcrumbs">
     <a href="/https-meysternlp.ru-/">Главная</a> / 
     <a href="/https-meysternlp.ru-/treningi/">Тренинги</a> / 
-    <span>Разговорный гипноз (Стандартный)</span>
+    <span>Разговорный гипноз (Самостоятельный)</span>
   </div>
 </div>
 
@@ -475,80 +461,55 @@
   <!-- ГЕРОЙ ПРОДУКТА -->
   <div class="product-hero">
     <div class="product-info">
-      <span class="product-badge">38 видео + доп. материалы</span>
+      <span class="product-badge">38 видео</span>
       <h1 class="product-title">Разговорный гипноз</h1>
-      <div class="product-package">Пакет «Стандартный»</div>
+      <div class="product-package">Пакет «Самостоятельный»</div>
       
       <div class="product-description">
-        <p style="margin-bottom: 20px;">Базовый пакет даёт инструмент. Этот — инструмент и возможность задать вопрос тому, кто его сделал.</p>
+        <p style="margin-bottom: 20px;">Есть два способа получить от человека то, что вам нужно. Первый — объяснить, почему это выгодно ему. Второй — сделать так, чтобы он сам захотел. Разговорный гипноз про второе.</p>
         
-        <p style="margin-bottom: 20px;">Те же 38 видео. Та же структура. Но если в самостоятельном пакете вы остаётесь один на один с материалом, здесь у вас есть канал связи. Можно уточнить, переспросить, показать, что получилось.</p>
+        <p style="margin-bottom: 20px;">Это не манипуляция в бытовом смысле. Это понимание того, как устроено внимание, как работает подсознание и почему одни слова вызывают доверие, а другие — сопротивление.</p>
         
-        <p>Плюс — дополнительные материалы. Не обязательные, но расширяющие. Для тех, кому мало базовых техник.</p>
+        <p>Никакой магии. Только алгоритмы, которые либо работают, либо нет. Проверять придётся самостоятельно.</p>
       </div>
       
       <div class="product-actions">
-        <a href="https://www.ozon.ru/product/razgovornyy-gipnoz-paket-standartnyy-meyster-andrey-yurevich-1292495422/" target="_blank" class="btn btn-large btn-ozon">Купить на Ozon</a>
+        <a href="https://www.ozon.ru/product/razgovornyy-gipnoz-samostoyatelnoe-obuchenie-tehnikam-nlp-dlya-primeneniya-v-realnoy-zhizni-932753267/" target="_blank" class="btn btn-large btn-ozon">Купить на Ozon</a>
       </div>
     </div>
     
+    <!-- НОВОЕ ФОТО 2.WEBP -->
     <div class="product-image">
-  <img src="/https-meysternlp.ru-/Пакет стандарт.jpg" 
-       alt="Разговорный гипноз Стандартный" 
-       onerror="this.src='https://via.placeholder.com/500x500/0C0C0C/3A86FF?text=Стандартный'">
-</div>
+      <img src="/https-meysternlp.ru-/2.webp" 
+           alt="Разговорный гипноз Самостоятельный">
+    </div>
+  </div>
 
   <!-- ЧТО ВНУТРИ -->
   <h2>Что внутри</h2>
   <ul class="includes-list">
-    <li>38 видео с конкретными конструкциями и алгоритмами</li>
-    <li>Закрытый Telegram-канал — не чат "поболтать", а рабочая переписка</li>
-    <li>Доступ к материалам на 12 месяцев</li>
-    <li class="bonus">➕ Дополнительные материалы — для тех, кому мало базовых техник</li>
-    <li class="bonus">➕ Расширенная обратная связь — можно спросить у автора</li>
+    <li>38 видео, в которых я без воды показываю конкретные конструкции</li>
+    <li>Никакой теории ради теории — каждый урок = одна техника</li>
+    <li>Доступ в закрытый Telegram-канал (обсуждать, спорить, задавать вопросы)</li>
+    <li>Доступ к материалам на 12 месяцев — возвращаться можно сколько угодно</li>
   </ul>
 
-  <!-- СРАВНЕНИЕ ПАКЕТОВ -->
-  <h2>Чем отличается от самостоятельного</h2>
-  <div class="comparison-grid">
-    <div class="package-card">
-      <div class="package-name">Самостоятельный</div>
-      <div class="package-feature yes">38 видео</div>
-      <div class="package-feature yes">Telegram-канал</div>
-      <div class="package-feature yes">Доступ 12 месяцев</div>
-      <div class="package-feature no">Дополнительные материалы</div>
-      <div class="package-feature no">Обратная связь от автора</div>
-    </div>
-    <div class="package-card standout">
-      <div class="package-name">Стандартный</div>
-      <div class="package-feature yes">38 видео</div>
-      <div class="package-feature yes">Telegram-канал</div>
-      <div class="package-feature yes">Доступ 12 месяцев</div>
-      <div class="package-feature yes">➕ Дополнительные материалы</div>
-      <div class="package-feature yes">➕ Обратная связь от автора</div>
-    </div>
-  </div>
-
-  <!-- ПРО АВТОРА -->
-  <div class="author-section">
-    <div class="author-image">
-      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер" onerror="this.src='https://via.placeholder.com/400x623/0C0C0C/3A86FF?text=Андрей+Мейстер'">
-    </div>
-    <div class="author-info">
-      <h3>Андрей Мейстер</h3>
-      <p>Автор трилогии «Теория манипуляции». Кандидат наук. 10 лет тренингов.</p>
-      <p>Специализация — бессознательное обучение. То есть формирование навыков без скучной теории.</p>
-      <p style="margin-top: 20px;">Отвечаю на вопросы в Telegram-канале лично. Не быстро, но по делу.</p>
-    </div>
-  </div>
-
-  <!-- КНОПКА ВНИЗУ -->
-  <div style="text-align: center; margin: 60px 0;">
-    <a href="https://www.ozon.ru/product/razgovornyy-gipnoz-paket-standartnyy-meyster-andrey-yurevich-1292495422/" target="_blank" class="btn btn-large btn-ozon" style="font-size: 1.2rem; padding: 18px 50px;">Перейти к курсу на Ozon</a>
+  <!-- ПРИМЕРЫ ТЕМ -->
+  <h2>Примеры тем</h2>
+  <div class="themes-grid">
+    <div class="theme-item">Как распознать воздействие</div>
+    <div class="theme-item">Как отвечать на воздействие</div>
+    <div class="theme-item">Как наводить транс</div>
+    <div class="theme-item">Внушения и сброс внушений</div>
+    <div class="theme-item">Проекция эмоций</div>
+    <div class="theme-item">Скрытые внушения</div>
+    <div class="theme-item">Единая структура воздействия</div>
+    <div class="theme-item">Самовнушение</div>
+    <div class="theme-item">Фокусы языка</div>
   </div>
 </div>
 
-<!-- ПОДВАЛ ПОДГРУЖАЕТСЯ ИЗ FOOTER.HTML -->
+<!-- ПОДВАЛ -->
 <div id="footer-placeholder"></div>
 
 <script>
