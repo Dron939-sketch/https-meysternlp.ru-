@@ -1,6 +1,6 @@
-<!-- ===== ШАПКА С БУРГЕР-МЕНЮ (общий файл для всех страниц) ===== -->
+<!-- ===== ШАПКА С БУРГЕР-МЕНЮ (адаптивная к любой ширине контейнера) ===== -->
 <header class="header">
-  <div class="container">
+  <div class="container header-container">
     <div class="nav">
       <!-- Логотип ведёт на главную страницу -->
       <a href="/https-meysternlp.ru-/" class="logo" title="Андрей Мейстер — главная"><span>А</span>МЕЙСТЕР</a>
@@ -67,11 +67,23 @@
   width: 100%;
 }
 
+/* ===== АДАПТИВНЫЙ КОНТЕЙНЕР ===== */
+/* Контейнер шапки подстраивается под ширину родителя */
+.header .header-container {
+  max-width: 100%; /* Будет подстраиваться под родительский контейнер */
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 60px;
+  width: 100%;
+  flex-wrap: wrap; /* Разрешаем перенос при необходимости */
+  gap: 15px; /* Минимальный отступ между элементами */
 }
 
 .logo {
@@ -81,6 +93,7 @@
   color: #FFFFFF;
   white-space: nowrap;
   z-index: 1001;
+  flex-shrink: 0; /* Запрещаем сжиматься */
 }
 
 .logo span {
@@ -92,6 +105,9 @@
   display: flex;
   gap: 50px;
   align-items: center;
+  flex-wrap: wrap; /* Разрешаем перенос при узкой ширине */
+  justify-content: center; /* Центрируем при переносе */
+  flex: 1 1 auto; /* Позволяем занимать доступное место */
 }
 
 .nav-links a {
@@ -103,8 +119,9 @@
   border-bottom: 1px solid transparent;
   padding-bottom: 5px;
   transition: border-color 0.3s ease;
-  white-space: nowrap;
+  white-space: nowrap; /* Запрещаем перенос текста внутри ссылок */
   text-decoration: none;
+  flex-shrink: 0; /* Запрещаем сжиматься */
 }
 
 .nav-links a:hover {
@@ -133,6 +150,7 @@
   transition: all 0.3s ease;
   z-index: 1001;
   text-decoration: none;
+  flex-shrink: 0; /* Запрещаем сжиматься */
 }
 
 .btn-header:hover {
@@ -155,6 +173,7 @@
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+  flex-shrink: 0;
 }
 
 .burger span {
@@ -176,13 +195,32 @@
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Мобильная адаптация */
-@media (max-width: 992px) {
+/* ===== АДАПТАЦИЯ ПРОМЕЖУТОЧНЫХ ШИРИН ===== */
+
+/* Для экранов от 992px до 1100px (уменьшаем gap) */
+@media (max-width: 1100px) {
   .nav-links {
     gap: 30px;
   }
 }
 
+/* Для экранов от 768px до 992px (уменьшаем gap ещё) */
+@media (max-width: 992px) {
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    font-size: 0.85rem; /* Чуть уменьшаем шрифт */
+  }
+  
+  .btn-header {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
 @media (max-width: 768px) {
   .desktop-only {
     display: none;
@@ -228,6 +266,7 @@
     z-index: 999;
     overflow-y: auto;
     gap: 5px;
+    flex-wrap: nowrap; /* На мобильных запрещаем перенос */
   }
   
   .nav-links.active {
@@ -240,10 +279,20 @@
     width: 100%;
     text-align: center;
     border-bottom: 1px solid rgba(58, 134, 255, 0.2);
+    white-space: normal; /* На мобильных разрешаем перенос */
   }
   
   .header {
     padding: 15px 0;
+  }
+  
+  /* Убираем flex-свойства на мобильных */
+  .nav {
+    flex-wrap: nowrap;
+  }
+  
+  .nav-links {
+    flex: none;
   }
 }
 
