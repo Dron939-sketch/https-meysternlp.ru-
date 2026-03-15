@@ -6,13 +6,13 @@
   
   <!-- ОСНОВНЫЕ SEO ТЕГИ -->
   <title>Дидактическая игра «Вариатика — Progressive» — Андрей Мейстер</title>
-  <meta name="description" content="Искусство везения — превращение маловероятных позитивных исходов в реальность. Научитесь создавать «счастливые случайности» через игру.">
-  <meta name="keywords" content="дидактическая игра, вариатика, progressive, искусство везения, счастливые случайности, системное мышление">
+  <meta name="description" content="Инструмент для создания новых нарративов. Искусство везения — превращение маловероятных позитивных исходов в реальность.">
+  <meta name="keywords" content="дидактическая игра, вариатика, progressive, искусство везения, счастливые случайности, системное мышление, нарратив">
   <meta name="author" content="Андрей Мейстер">
   
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Дидактическая игра «Вариатика — Progressive»">
-  <meta property="og:description" content="Овладейте навыком везения — научитесь превращать маловероятные позитивные исходы в реальность.">
+  <meta property="og:description" content="Инструмент для создания новых нарративов. Овладейте навыком везения — научитесь превращать маловероятные позитивные исходы в реальность.">
   <meta property="og:image" content="/https-meysternlp.ru-/progresive.webp">
   <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/igry/variatika-progressive.html">
   <meta property="og:type" content="website">
@@ -342,19 +342,70 @@
       letter-spacing: 0.1em;
     }
 
-    /* ===== БЛОК С ИЗОБРАЖЕНИЯМИ ===== */
-    .image-text-block {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+    /* ===== БЛОК ФИЛОСОФИИ ===== */
+    .philosophy-block {
       margin: 60px 0;
-      align-items: center;
+      padding: 40px;
+      border-left: 3px solid #3A86FF;
+      background: rgba(58, 134, 255, 0.02);
     }
 
-    .image-block img {
-      width: 100%;
+    .philosophy-block p {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      margin-bottom: 20px;
+    }
+
+    .system-list {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .system-list li {
+      color: #CCCCCC;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .system-list li::before {
+      content: "—";
+      color: #3A86FF;
+      position: absolute;
+      left: 0;
+    }
+
+    /* ===== ПУТЬ В СИСТЕМЕ ===== */
+    .path-block {
+      margin: 40px 0;
+      padding: 30px;
+      background: rgba(58, 134, 255, 0.05);
+      border: 1px solid rgba(58, 134, 255, 0.2);
       border-radius: 8px;
-      border: 1px solid rgba(58, 134, 255, 0.3);
+      text-align: center;
+    }
+
+    .path-steps {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .path-step {
+      padding: 10px 20px;
+      background: rgba(58, 134, 255, 0.1);
+      border: 1px solid #3A86FF;
+      border-radius: 30px;
+      color: #FFFFFF;
+    }
+
+    .path-arrow {
+      color: #3A86FF;
+      font-size: 1.5rem;
     }
 
     /* ===== ПОДВАЛ ===== */
@@ -419,9 +470,13 @@
         grid-template-columns: 1fr;
       }
       
-      .image-text-block {
-        grid-template-columns: 1fr;
-        gap: 30px;
+      .path-steps {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .path-arrow {
+        transform: rotate(90deg);
       }
     }
 
@@ -539,7 +594,7 @@
     <div class="product-info">
       <span class="product-badge">Дидактическая игра</span>
       <h1 class="product-title">Вариатика</h1>
-      <div class="product-subtitle">Progressive</div>
+      <div class="product-subtitle">Инструмент для создания новых нарративов</div>
       
       <div class="product-description">
         <p style="margin-bottom: 20px;">Программа «Вариатика-PROGRESSIVE» посвящена искусству <span class="text-blue">везения</span> — навыку, который позволяет превратить маловероятные позитивные исходы в реальность.</p>
@@ -557,6 +612,21 @@
       <img src="/https-meysternlp.ru-/progresive.webp" 
            alt="Дидактическая игра Вариатика Progressive">
     </div>
+  </div>
+
+  <!-- ПУТЬ В СИСТЕМЕ -->
+  <div class="path-block">
+    <h3 style="color: #FFFFFF; margin-bottom: 20px;">Путь в системе моих игр</h3>
+    <div class="path-steps">
+      <span class="path-step">Basic</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step">Intensive</span>
+      <span class="path-arrow">→</span>
+      <span class="path-step" style="background: #3A86FF; color: #0C0C0C;">Progressive</span>
+    </div>
+    <p style="color: #CCCCCC; margin-top: 20px;">
+      Basic учит видеть нарративы других. Intensive — понимать, как устроены системы. Progressive даёт возможность создавать новые.
+    </p>
   </div>
 
   <!-- ОПРЕДЕЛЕНИЕ ВЕЗЕНИЯ -->
@@ -618,26 +688,27 @@
     <p style="font-size: 1.3rem; color: #FFFFFF; margin: 0;">Главный показатель везения — это насколько легко вы достигли желаемого результата по сравнению с традиционными способами, которые требуют значительных личных усилий.</p>
   </div>
 
-  <!-- БЛОК С ИЗОБРАЖЕНИЕМ -->
-  <div class="image-text-block">
-    <div class="image-block">
-      <img src="/https-meysternlp.ru-/images/celi-programmy-variatika-progressive.webp" alt="Цели программы Вариатика Progressive" onerror="this.style.display='none'">
-    </div>
-    <div>
-      <h2 style="margin-top: 0;">Присоединяйтесь к программе</h2>
-      <p>«Вариатика-PROGRESSIVE» направлена на то, чтобы развить навыки распознания и использования «счастливых случайностей» — тех моментов, которые кажутся удачными случайностями, но на самом деле их можно научиться прогнозировать и использовать.</p>
+  <!-- БЛОК ФИЛОСОФИИ (СВЯЗЬ С НАРРАТИВОМ) -->
+  <div class="philosophy-block">
+    <p>«Вариатика — Progressive» учит создавать новые нарративы.</p>
+    <p style="color: #CCCCCC; font-size: 1rem;">Basic даёт инструменты для анализа поведения людей. Intensive позволяет понять, как устроены системы. Progressive даёт возможность активно влиять на реальность, создавая «счастливые случайности» — новые нарративы, которые работают на вас.</p>
+    
+    <div style="margin-top: 30px;">
+      <p style="color: #3A86FF; margin-bottom: 15px;">В системе моих проектов:</p>
+      <ul class="system-list">
+        <li>📘 <span class="text-blue">Книги</span> — увидеть свой нарратив</li>
+        <li>🎲 <span class="text-blue">Basic</span> — анализ поведения</li>
+        <li>🎲 <span class="text-blue">Intensive</span> — анализ систем</li>
+        <li>🎲 <span class="text-blue">Progressive</span> — создание реальности (вы здесь)</li>
+        <li>✏️ <span class="text-blue">Практикумы</span> — создать свой камень</li>
+      </ul>
     </div>
   </div>
 
-  <!-- БЛОК РАЗРАБОТЧИК -->
-  <div class="image-text-block">
-    <div>
-      <h2 style="margin-top: 0;">Кто разработчик?</h2>
-      <p>Мейстер А.Ю. – признанный эксперт в области психологии и образовательных технологий. Его методы преподавания практичны и ориентированы на результат, что доказано многочисленными отзывами успешных выпускников.</p>
-    </div>
-    <div class="image-block">
-      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер">
-    </div>
+  <!-- БЛОК РАЗРАБОТЧИК (ТЕКСТОВАЯ ВЕРСИЯ) -->
+  <div style="margin: 60px 0;">
+    <h2 style="margin-top: 0;">Кто разработчик?</h2>
+    <p>Мейстер А.Ю. – признанный эксперт в области психологии и образовательных технологий. Его методы преподавания практичны и ориентированы на результат, что доказано многочисленными отзывами успешных выпускников.</p>
   </div>
 
   <!-- ЗАКЛЮЧЕНИЕ -->
@@ -645,6 +716,10 @@
     <p style="font-size: 1.3rem; margin-bottom: 30px; color: #FFFFFF;">Овладейте навыком везения — научитесь создавать «счастливые случайности» и достигать желаемого с минимальными усилиями!</p>
     
     <p style="color: #3A86FF; font-size: 1.3rem; margin-bottom: 30px;">Серия игры лимитирована!</p>
+    
+    <p style="text-align: center; color: #666; margin-bottom: 20px; font-style: italic;">
+      *Это один из моих камней. Берите и бросайте.
+    </p>
     
     <a href="https://ozon.by/product/variatika-progressive-1705906113/" target="_blank" class="btn btn-large btn-ozon" style="font-size: 1.2rem; padding: 18px 50px;">Заказать игру на Ozon</a>
   </div>
