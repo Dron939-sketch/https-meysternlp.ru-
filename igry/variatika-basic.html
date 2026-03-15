@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  
+  <!-- ОСНОВНЫЕ SEO ТЕГИ -->
+  <title>Дидактическая игра «Вариатика — Basic» — Андрей Мейстер</title>
+  <meta name="description" content="Развитие навыка анализа и прогнозирования поведения людей. Понимание характера, истинных желаний, способностей и ограничений через игру.">
+  <meta name="keywords" content="дидактическая игра, вариатика, basic, анализ поведения, прогнозирование, системное мышление">
+  <meta name="author" content="Андрей Мейстер">
+  
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Дидактическая игра «Вариатика — Basic»">
+  <meta property="og:description" content="Научитесь понимать людей, предсказывать их реакции и эффективно общаться через игру.">
+  <meta property="og:image" content="/https-meysternlp.ru-/Басик.webp">
+  <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/igry/variatika-basic.html">
+  <meta property="og:type" content="website">
+  
+  <!-- КАНОНИЧЕСКАЯ ССЫЛКА -->
+  <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/igry/variatika-basic.html">
+  
+  <!-- Подключаем Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0C0C0C;
+      color: #F0F0F0;
+      line-height: 1.6;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    /* ===== ТИПОГРАФИКА ===== */
+    h1, h2, h3 {
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 200;
+      margin-bottom: 0.5rem;
+      color: #FFFFFF;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin: 60px 0 30px;
+      color: #3A86FF;
+      letter-spacing: 0.15em;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 40px 0 20px;
+      color: #FFFFFF;
+    }
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #CCCCCC;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
+    a {
+      color: #3A86FF;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #FFFFFF;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid #3A86FF;
+      background: transparent;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      text-align: center;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #3A86FF;
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .btn:hover {
+      color: #0C0C0C;
+      border-color: #3A86FF;
+      box-shadow: 0 0 20px #3A86FF;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .btn-large {
+      padding: 16px 40px;
+      font-size: 1rem;
+    }
+
+    .btn-ozon {
+      background: linear-gradient(to right, #00A8E8, #3A86FF);
+      border: none;
+    }
+
+    .btn-ozon:hover {
+      background: linear-gradient(to right, #3A86FF, #00A8E8);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(58, 134, 255, 0.4);
+    }
+
+    /* ===== ХЛЕБНЫЕ КРОШКИ ===== */
+    .breadcrumbs {
+      display: flex;
+      gap: 10px;
+      margin: 30px 0 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .breadcrumbs a {
+      color: #666;
+    }
+
+    .breadcrumbs a:hover {
+      color: #3A86FF;
+    }
+
+    /* ===== ГЕРОЙ ПРОДУКТА ===== */
+    .product-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin: 40px 0 60px;
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(58, 134, 255, 0.2);
+      color: #3A86FF;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      font-weight: 200;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .product-subtitle {
+      color: #3A86FF;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .product-description {
+      font-size: 1.1rem;
+      color: #CCCCCC;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    /* ===== ФОТО ПРОДУКТА ===== */
+    .product-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
+    }
+
+    .product-image img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 15px 25px rgba(58, 134, 255, 0.3));
+    }
+
+    /* ===== БЛОК ПРЕИМУЩЕСТВ ===== */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .benefit-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .benefit-title {
+      color: #3A86FF;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .benefit-text {
+      color: #CCCCCC;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* ===== СПИСОК СПЕЦИАЛИСТОВ ===== */
+    .specialists-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .specialist-item {
+      color: #CCCCCC;
+      font-size: 1.1rem;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .specialist-item::before {
+      content: "•";
+      color: #3A86FF;
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+    }
+
+    /* ===== БЛОК С ИЗОБРАЖЕНИЯМИ ===== */
+    .image-text-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 60px 0;
+      align-items: center;
+    }
+
+    .image-block img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(58, 134, 255, 0.3);
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    .footer {
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(58, 134, 255, 0.2);
+      margin-top: 60px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      color: #F0F0F0;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .social-links a:hover {
+      color: #3A86FF;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.8rem;
+      opacity: 0.5;
+      color: #666;
+    }
+
+    .text-blue { color: #3A86FF; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 992px) {
+      .product-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .specialists-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .image-text-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
+      
+      .product-hero {
+        text-align: center;
+      }
+      
+      .product-badge {
+        align-self: center;
+      }
+      
+      .product-actions {
+        flex-direction: column;
+      }
+      
+      .product-actions .btn {
+        width: 100%;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ПОДКЛЮЧАЕМ ШАПКУ -->
+<div id="header-placeholder"></div>
+
+<script>
+  fetch('/https-meysternlp.ru-/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+      
+      setTimeout(() => {
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && href.includes('/igry/')) {
+            link.classList.add('active');
+          }
+        });
+        
+        const burger = document.getElementById('burgerBtn');
+        const nav = document.getElementById('navLinks');
+        
+        if (burger && nav) {
+          burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+          });
+          
+          nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            });
+          });
+          
+          window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            }
+          });
+        }
+      }, 100);
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки шапки:', error);
+      document.getElementById('header-placeholder').innerHTML = `
+        <header style="padding: 20px 0; border-bottom: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+              <a href="/https-meysternlp.ru-/" style="color: #FFFFFF; font-size: 1.5rem; letter-spacing: 0.3em; text-decoration: none;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</a>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="/https-meysternlp.ru-/knigi/" style="color: #F0F0F0; text-decoration: none;">Книги</a>
+                <a href="/https-meysternlp.ru-/igry/" style="color: #3A86FF; text-decoration: none; border-bottom: 2px solid #3A86FF;">Игры</a>
+                <a href="/https-meysternlp.ru-/treningi/" style="color: #F0F0F0; text-decoration: none;">Тренинги</a>
+                <a href="/https-meysternlp.ru-/v-razrabotke/" style="color: #F0F0F0; text-decoration: none;">В разработке</a>
+                <a href="/https-meysternlp.ru-/sobytiya/" style="color: #F0F0F0; text-decoration: none;">Архив</a>
+              </div>
+              <a href="/https-meysternlp.ru-/virtual-psychologist/" style="padding: 8px 20px; background: linear-gradient(to right, #00A8E8, #3A86FF); color: white; border-radius: 30px; text-decoration: none;">🧠 Виртуальный психолог</a>
+            </div>
+          </div>
+        </header>
+      `;
+    });
+</script>
+
+<!-- ХЛЕБНЫЕ КРОШКИ -->
+<div class="container">
+  <div class="breadcrumbs">
+    <a href="/https-meysternlp.ru-/">Главная</a> / 
+    <a href="/https-meysternlp.ru-/igry/">Игры</a> / 
+    <span>Вариатика Basic</span>
+  </div>
+</div>
+
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<div class="container">
+  <!-- ГЕРОЙ ПРОДУКТА -->
+  <div class="product-hero">
+    <div class="product-info">
+      <span class="product-badge">Дидактическая игра</span>
+      <h1 class="product-title">Вариатика</h1>
+      <div class="product-subtitle">Basic</div>
+      
+      <div class="product-description">
+        <p style="margin-bottom: 20px;">Хотите научиться понимать людей, предсказывать их реакции и эффективно общаться? Тогда дидактическая игра «Вариатика — Basic» именно то, что вам нужно!</p>
+        
+        <p style="margin-bottom: 20px;">Эта уникальная игра поможет сформировать навык анализа и прогнозирования поведения людей. Вы научитесь понимать их характер, истинные желания, способности и ограничения. Вместе с «Вариатикой — Basic» вы сможете взглянуть на мир глазами другого человека и применять эти знания на практике.</p>
+        
+        <p>«Вариатика — Basic» является не просто игрой, а мощным инструментом, который расширит ваши профессиональные возможности. Вы сможете оценивать поведение людей, развивать свой вербальный и эмоциональный интеллект, а также повысить уровень осознанности в коммуникации и стрессоустойчивости в переговорном процессе.</p>
+      </div>
+      
+      <div class="product-actions">
+        <a href="https://www.ozon.ru/product/variatika-basic-chernyy-lebed-1263096092/" target="_blank" class="btn btn-large btn-ozon">Заказать на Ozon</a>
+      </div>
+    </div>
+    
+    <!-- ФОТО ПРОДУКТА -->
+    <div class="product-image">
+      <img src="/https-meysternlp.ru-/Басик.webp" 
+           alt="Дидактическая игра Вариатика Basic">
+    </div>
+  </div>
+
+  <!-- ПРЕИМУЩЕСТВА -->
+  <h2>Что вы получите</h2>
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <div class="benefit-title">Системные знания</div>
+      <p class="benefit-text">Программа включает теоретические знания, основанные на последних исследованиях в области психологии, социологии и коммуникационных наук.</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-title">Практические упражнения</div>
+      <p class="benefit-text">Научитесь применять эти знания на практике для точного и быстрого анализа ситуаций. Специально разработанные упражнения помогут закрепить навыки аналитического мышления.</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-title">Профессиональное развитие</div>
+      <p class="benefit-text">Полученные знания и умения значительно улучшат вашу профессиональную эффективность и предоставят широкие возможности для карьерного роста.</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-title">Понимание людей</div>
+      <p class="benefit-text">Научитесь понимать характер, истинные желания, способности и ограничения людей, что позволит эффективнее выстраивать коммуникацию.</p>
+    </div>
+  </div>
+
+  <!-- ДЛЯ КОГО -->
+  <h2>Кому будет полезна игра</h2>
+  <div class="specialists-list">
+    <div class="specialist-item">Руководителям и собственникам бизнеса</div>
+    <div class="specialist-item">HR-специалистам</div>
+    <div class="specialist-item">Представителям госсектора</div>
+    <div class="specialist-item">Юристам и адвокатам</div>
+    <div class="specialist-item">Специалистам по работе с клиентами</div>
+    <div class="specialist-item">Психологам</div>
+    <div class="specialist-item">Маркетологам</div>
+    <div class="specialist-item">Тарологам</div>
+  </div>
+
+  <!-- БЛОК 1: ТЕКСТ + ИЗОБРАЖЕНИЕ -->
+  <div class="image-text-block">
+    <div class="image-block">
+      <img src="/https-meysternlp.ru-/images/65756756767.webp" alt="Вариатика Basic" onerror="this.style.display='none'">
+    </div>
+    <div>
+      <p>Эта уникальная игра поможет сформировать навык анализа и прогнозирования поведения людей. Вы научитесь понимать их характер, истинные желания, способности и ограничения. Вместе с Вариатикой — Basic вы сможете взглянуть на мир глазами другого человека и применять эти знания на практике.</p>
+    </div>
+  </div>
+
+  <!-- ЦИТАТА -->
+  <div style="margin: 60px 0; padding: 40px; border-left: 3px solid #3A86FF; background: rgba(58, 134, 255, 0.02);">
+    <p style="font-size: 1.3rem; font-style: italic; color: #FFFFFF;">«Вариатика — Basic является не просто игрой, а мощным инструментом, который расширит ваши профессиональные возможности.»</p>
+  </div>
+
+  <!-- БЛОК 2: РАЗРАБОТЧИК -->
+  <div class="image-text-block">
+    <div>
+      <h2 style="margin-top: 0;">Кто разработчик?</h2>
+      <p>Мейстер А.Ю. – признанный эксперт в области психологии и образовательных технологий. Его методы преподавания практичны и ориентированы на результат, что доказано многочисленными отзывами успешных выпускников.</p>
+    </div>
+    <div class="image-block">
+      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер">
+    </div>
+  </div>
+
+  <!-- ЗАКЛЮЧЕНИЕ -->
+  <div style="margin: 60px 0; text-align: center;">
+    <p style="font-size: 1.2rem; margin-bottom: 30px;">Не упустите возможность получить ценные знания и навыки, которые помогут вам достичь успеха в любой сфере деятельности. Закажите «Вариатику — Basic» прямо сейчас и станьте профессионалом в анализе поведения и коммуникации!</p>
+    
+    <p style="color: #3A86FF; font-size: 1.3rem; margin-bottom: 30px;">Серия игры лимитирована!</p>
+    
+    <a href="https://www.ozon.ru/product/variatika-basic-chernyy-lebed-1263096092/" target="_blank" class="btn btn-large btn-ozon" style="font-size: 1.2rem; padding: 18px 50px;">Заказать игру на Ozon</a>
+  </div>
+</div>
+
+<!-- ПОДВАЛ -->
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('/https-meysternlp.ru-/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки подвала:', error);
+      document.getElementById('footer-placeholder').innerHTML = `
+        <footer style="padding: 40px 0 20px; border-top: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C; margin-top: 40px;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+              <div style="color: #F0F0F0; font-size: 1.2rem; letter-spacing: 0.3em;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</div>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="https://t.me/meysternlp" target="_blank" style="color: #F0F0F0; text-decoration: none;">Tg</a>
+                <a href="https://vk.com/meysternlp" target="_blank" style="color: #F0F0F0; text-decoration: none;">VK</a>
+                <a href="https://rutube.ru/channel/29916593/" target="_blank" style="color: #F0F0F0; text-decoration: none;">Rutube</a>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #666;">© Андрей Мейстер · 2026</div>
+          </div>
+        </footer>
+      `;
+    });
+</script>
+
+</body>
+</html>
