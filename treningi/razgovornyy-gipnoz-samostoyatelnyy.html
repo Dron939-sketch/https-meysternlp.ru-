@@ -224,7 +224,7 @@
       margin: 20px 0;
     }
 
-    /* ===== ФОТО ПРОДУКТА (БЕЗ БЕЛОГО ФОНА) ===== */
+    /* ===== ФОТО ПРОДУКТА С УДАЛЕНИЕМ БЕЛОГО ФОНА ===== */
     .product-image {
       display: flex;
       justify-content: center;
@@ -236,7 +236,12 @@
       max-width: 500px;
       border-radius: 8px;
       border: 1px solid rgba(58, 134, 255, 0.2);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      
+      /* === УБИРАЕМ БЕЛЫЙ ФОН === */
+      mix-blend-mode: multiply;
+      background-color: transparent;
+      /* ========================= */
     }
 
     .product-image img:hover {
@@ -500,7 +505,7 @@
       </div>
     </div>
     
-    <!-- ФОТО ПРОДУКТА -->
+    <!-- ФОТО ПРОДУКТА С УДАЛЕНИЕМ БЕЛОГО ФОНА -->
     <div class="product-image">
       <img src="/https-meysternlp.ru-/Пакет самостоятельный.jpg" 
            alt="Разговорный гипноз Самостоятельный" 
