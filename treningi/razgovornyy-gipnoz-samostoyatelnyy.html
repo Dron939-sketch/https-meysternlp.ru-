@@ -6,14 +6,14 @@
   
   <!-- ОСНОВНЫЕ SEO ТЕГИ -->
   <title>Разговорный гипноз. Пакет «Самостоятельный» | Андрей Мейстер</title>
-  <meta name="description" content="38 видео с конкретными техниками речевого воздействия. Без обещаний «стать миллионером». Только инструменты и их применение.">
+  <meta name="description" content="38 видео с техниками речевого воздействия. Без обещаний «стать миллионером». Только инструменты и их применение.">
   <meta name="keywords" content="разговорный гипноз, эриксоновский гипноз, речевые техники">
   <meta name="author" content="Андрей Мейстер">
   
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Разговорный гипноз. Пакет «Самостоятельный»">
   <meta property="og:description" content="38 видео с техниками речевого воздействия. Никакой магии — только алгоритмы.">
-  <meta property="og:image" content="/https-meysternlp.ru-/images/Пакет самостоятельный.jpg">
+  <meta property="og:image" content="/https-meysternlp.ru-/Пакет самостоятельный.jpg">
   <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/treningi/razgovornyy-gipnoz-samostoyatelnyy/">
   <meta property="og:type" content="website">
   
@@ -26,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
   
   <style>
-    /* стили те же, что в предыдущей версии */
+    /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
     * {
       margin: 0;
       padding: 0;
@@ -53,6 +53,7 @@
       width: 100%;
     }
 
+    /* ===== ТИПОГРАФИКА ===== */
     h1, h2, h3 {
       font-weight: 300;
       letter-spacing: 0.1em;
@@ -82,6 +83,7 @@
       margin-bottom: 1.5rem;
     }
 
+    /* ===== ССЫЛКИ И КНОПКИ ===== */
     a {
       color: #3A86FF;
       text-decoration: none;
@@ -149,6 +151,7 @@
       box-shadow: 0 10px 25px rgba(58, 134, 255, 0.4);
     }
 
+    /* ===== ХЛЕБНЫЕ КРОШКИ ===== */
     .breadcrumbs {
       display: flex;
       gap: 10px;
@@ -165,6 +168,7 @@
       color: #3A86FF;
     }
 
+    /* ===== ГЕРОЙ ПРОДУКТА ===== */
     .product-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -220,13 +224,42 @@
       margin: 20px 0;
     }
 
-    .product-image img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 8px;
-      border: 1px solid rgba(58, 134, 255, 0.2);
+    /* ===== КОНТЕЙНЕР ДЛЯ ФОТО (ТОЛЬКО ОДНО) ===== */
+    .product-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 40px;
+      border: 1px solid rgba(58, 134, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(58, 134, 255, 0.2) inset;
+      transition: all 0.3s ease;
     }
 
+    .product-image:hover {
+      border-color: #3A86FF;
+      box-shadow: 0 15px 40px rgba(58, 134, 255, 0.3), 0 0 0 2px rgba(58, 134, 255, 0.3) inset;
+      transform: translateY(-5px);
+    }
+
+    .product-image img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+    }
+
+    .product-image:hover img {
+      transform: scale(1.15);
+    }
+
+    /* ===== ЧТО ВХОДИТ ===== */
     .includes-list {
       list-style: none;
       margin: 30px 0;
@@ -248,6 +281,24 @@
       font-size: 1.5rem;
     }
 
+    /* ===== ТЕМЫ КУРСА ===== */
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .theme-item {
+      background: rgba(58, 134, 255, 0.05);
+      border: 1px solid rgba(58, 134, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    /* ===== АВТОР ===== */
     .author-section {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -265,6 +316,7 @@
       border-radius: 8px;
     }
 
+    /* ===== ПОДВАЛ ===== */
     .footer {
       padding: 60px 0 30px;
       border-top: 1px solid rgba(58, 134, 255, 0.2);
@@ -277,6 +329,11 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.2rem;
+      letter-spacing: 0.3em;
     }
 
     .social-links {
@@ -304,16 +361,69 @@
       color: #666;
     }
 
+    .text-blue { color: #3A86FF; }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 992px) {
+      .product-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .author-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
-      .product-hero { grid-template-columns: 1fr; }
-      .author-section { grid-template-columns: 1fr; }
+      h2 { font-size: 1.8rem; }
+      
+      .product-hero {
+        text-align: center;
+      }
+      
+      .product-badge {
+        align-self: center;
+      }
+      
+      .product-image img {
+        max-height: 250px;
+      }
+      
+      .themes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .product-actions {
+        flex-direction: column;
+      }
+      
+      .product-actions .btn {
+        width: 100%;
+      }
+      
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-image img {
+        max-height: 200px;
+      }
+      
+      .themes-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- ШАПКА (как в предыдущих версиях) -->
+<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ HEADER.HTML -->
 <div id="header-placeholder"></div>
 
 <script>
@@ -340,8 +450,44 @@
             nav.classList.toggle('active');
             document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
           });
+          
+          nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            });
+          });
+          
+          window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            }
+          });
         }
       }, 100);
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки шапки:', error);
+      document.getElementById('header-placeholder').innerHTML = `
+        <header style="padding: 20px 0; border-bottom: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+              <a href="/https-meysternlp.ru-/" style="color: #FFFFFF; font-size: 1.5rem; letter-spacing: 0.3em; text-decoration: none;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</a>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="/https-meysternlp.ru-/knigi/" style="color: #F0F0F0; text-decoration: none;">Книги</a>
+                <a href="/https-meysternlp.ru-/igry/" style="color: #F0F0F0; text-decoration: none;">Игры</a>
+                <a href="/https-meysternlp.ru-/treningi/" style="color: #3A86FF; text-decoration: none; border-bottom: 2px solid #3A86FF;">Тренинги</a>
+                <a href="/https-meysternlp.ru-/v-razrabotke/" style="color: #F0F0F0; text-decoration: none;">В разработке</a>
+                <a href="/https-meysternlp.ru-/sobytiya/" style="color: #F0F0F0; text-decoration: none;">Архив</a>
+              </div>
+              <a href="/https-meysternlp.ru-/virtual-psychologist/" style="padding: 8px 20px; background: linear-gradient(to right, #00A8E8, #3A86FF); color: white; border-radius: 30px; text-decoration: none;">🧠 Виртуальный психолог</a>
+            </div>
+          </div>
+        </header>
+      `;
     });
 </script>
 
@@ -350,12 +496,13 @@
   <div class="breadcrumbs">
     <a href="/https-meysternlp.ru-/">Главная</a> / 
     <a href="/https-meysternlp.ru-/treningi/">Тренинги</a> / 
-    <span>Разговорный гипноз</span>
+    <span>Разговорный гипноз (Самостоятельный)</span>
   </div>
 </div>
 
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <div class="container">
+  <!-- ГЕРОЙ ПРОДУКТА -->
   <div class="product-hero">
     <div class="product-info">
       <span class="product-badge">38 видео</span>
@@ -375,11 +522,13 @@
       </div>
     </div>
     
+    <!-- ТОЛЬКО ОДНО ФОТО ПРОДУКТА -->
     <div class="product-image">
-  <img src="/https-meysternlp.ru-/Пакет самостоятельный.jpg" 
-       alt="Разговорный гипноз Самостоятельный" 
-       onerror="this.src='https://via.placeholder.com/563x443/0C0C0C/3A86FF?text=Разговорный+гипноз'">
-</div>
+      <img src="/https-meysternlp.ru-/Пакет самостоятельный.jpg" 
+           alt="Разговорный гипноз Самостоятельный" 
+           onerror="this.src='https://via.placeholder.com/500x400/FFFFFF/3A86FF?text=Разговорный+гипноз'">
+    </div>
+  </div>
 
   <!-- ЧТО ВНУТРИ -->
   <h2>Что внутри</h2>
@@ -390,10 +539,24 @@
     <li>Доступ к материалам на 12 месяцев — возвращаться можно сколько угодно</li>
   </ul>
 
+  <!-- ПРИМЕРЫ ТЕМ -->
+  <h2>Примеры тем</h2>
+  <div class="themes-grid">
+    <div class="theme-item">Как распознать воздействие</div>
+    <div class="theme-item">Как отвечать на воздействие</div>
+    <div class="theme-item">Как наводить транс</div>
+    <div class="theme-item">Внушения и сброс внушений</div>
+    <div class="theme-item">Проекция эмоций</div>
+    <div class="theme-item">Скрытые внушения</div>
+    <div class="theme-item">Единая структура воздействия</div>
+    <div class="theme-item">Самовнушение</div>
+    <div class="theme-item">Фокусы языка</div>
+  </div>
+
   <!-- ПРО АВТОРА -->
   <div class="author-section">
     <div class="author-image">
-      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер">
+      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер" onerror="this.src='https://via.placeholder.com/400x623/0C0C0C/3A86FF?text=Андрей+Мейстер'">
     </div>
     <div class="author-info">
       <h3>Андрей Мейстер</h3>
@@ -416,6 +579,24 @@
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки подвала:', error);
+      document.getElementById('footer-placeholder').innerHTML = `
+        <footer style="padding: 40px 0 20px; border-top: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C; margin-top: 40px;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+              <div style="color: #F0F0F0; font-size: 1.2rem; letter-spacing: 0.3em;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</div>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="https://t.me/meysternlp" target="_blank" style="color: #F0F0F0; text-decoration: none;">Tg</a>
+                <a href="https://vk.com/meysternlp" target="_blank" style="color: #F0F0F0; text-decoration: none;">VK</a>
+                <a href="https://rutube.ru/channel/29916593/" target="_blank" style="color: #F0F0F0; text-decoration: none;">Rutube</a>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #666;">© Андрей Мейстер · 2026</div>
+          </div>
+        </footer>
+      `;
     });
 </script>
 
