@@ -2,17 +2,17 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   
   <!-- ОСНОВНЫЕ SEO ТЕГИ -->
   <title>Разговорный гипноз: техники повседневного влияния | Андрей Мейстер</title>
-  <meta name="description" content="Техники разговорного гипноза для повседневного общения. Как использовать речевые конструкции влияния, якорение, пресуппозиции и трансовые наведения в обычных разговорах.">
+  <meta name="description" content="Техники разговорного гипноза для повседневного общения. 7 техник влияния с примерами, статистика эффективности, реальные кейсы. Как использовать речевые конструкции, якорение и пресуппозиции.">
   <meta name="keywords" content="разговорный гипноз, эриксоновский гипноз, речевые техники, влияние в общении, скрытое воздействие, гипноз в разговоре">
   <meta name="author" content="Андрей Мейстер">
   
   <!-- OPEN GRAPH ДЛЯ СОЦСЕТЕЙ -->
   <meta property="og:title" content="Разговорный гипноз: техники повседневного влияния">
-  <meta property="og:description" content="5 техник разговорного гипноза, которые можно применять прямо сейчас. Речевые конструкции, якорение, работа с возражениями.">
+  <meta property="og:description" content="7 техник разговорного гипноза с примерами. Как влиять на людей в обычном разговоре, не нарушая этических границ.">
   <meta property="og:image" content="/https-meysternlp.ru-/images/razgovornyy-gipnoz-preview.jpg">
   <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/blog/razgovornyy-gipnoz-tekhniki.html">
   <meta property="og:type" content="article">
@@ -29,6 +29,11 @@
   <!-- КАНОНИЧЕСКАЯ ССЫЛКА -->
   <link rel="canonical" href="https://dron939-sketch.github.io/https-meysternlp.ru-/blog/razgovornyy-gipnoz-tekhniki.html">
   
+  <!-- Подключаем Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+  
   <style>
     /* ===== СБРОС И БАЗОВЫЕ НАСТРОЙКИ ===== */
     * {
@@ -42,91 +47,39 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background-color: #FFFFFF; /* БЕЛЫЙ ФОН */
-      color: #1D1D1F; /* Тёмный текст Apple */
-      line-height: 1.6;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #FFFFFF;
+      color: #1D1D1F;
+      line-height: 1.7;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     .container {
-      max-width: 800px; /* Узкая колонка для удобного чтения */
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0 20px;
+      width: 100%;
     }
 
-    /* ===== ШАПКА (тёмная) - стили для резерва ===== */
-    .header {
-      padding: 20px 0;
-      border-bottom: 1px solid rgba(58, 134, 255, 0.2);
-      position: sticky;
-      top: 0;
-      background-color: #0C0C0C;
-      z-index: 100;
+    /* ===== АНИМАЦИИ ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
+    .section-block {
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 300;
-      letter-spacing: 0.3em;
-      color: #FFFFFF;
-    }
-
-    .logo span {
-      color: #3A86FF;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: #F0F0F0;
-      font-weight: 400;
-      letter-spacing: normal;
-      font-size: 1rem;
-      text-transform: none;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 5px;
-      transition: all 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      border-bottom-color: #3A86FF;
-      color: #3A86FF;
-    }
-
-    .btn-header {
-      display: inline-block;
-      padding: 10px 24px;
-      background: linear-gradient(to right, #00A8E8, #3A86FF);
-      color: white;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: none;
-      letter-spacing: normal;
-      border: none;
-      box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
-    }
-
-    .btn-header:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(58, 134, 255, 0.4);
-      color: white;
-    }
-
-    /* ===== СТАТЬЯ (Apple-стиль) ===== */
+    /* ===== СТАТЬЯ ===== */
     .article-header {
       margin: 60px 0 30px;
       padding-bottom: 30px;
@@ -139,125 +92,478 @@
       color: #6E6E73;
       margin-bottom: 20px;
       font-size: 0.9rem;
+      flex-wrap: wrap;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 600;
       margin-bottom: 20px;
       color: #1D1D1F;
       line-height: 1.2;
-      letter-spacing: -0.015em;
+      letter-spacing: -0.02em;
       text-transform: none;
     }
 
-    .article-content {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #1D1D1F;
-    }
-
-    .article-content h2 {
-      font-size: 2rem;
+    h2 {
+      font-size: 2.2rem;
       font-weight: 500;
-      margin: 40px 0 20px;
+      margin: 60px 0 25px;
       color: #1D1D1F;
       letter-spacing: -0.01em;
       text-transform: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .article-content h3 {
-      font-size: 1.5rem;
+    h3 {
+      font-size: 1.6rem;
       font-weight: 500;
       margin: 30px 0 15px;
       color: #1D1D1F;
       text-transform: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .article-content p {
-      margin-bottom: 20px;
+    p {
+      font-size: 1.15rem;
+      font-weight: 300;
       color: #1D1D1F;
+      margin-bottom: 1.5rem;
     }
 
-    .article-content ul, 
-    .article-content ol {
-      margin: 20px 0 20px 30px;
-      color: #1D1D1F;
+    /* ===== СТАТИСТИКА ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin: 50px 0;
     }
 
-    .article-content li {
-      margin-bottom: 10px;
-    }
-
-    .highlight {
+    .stat-item {
       background: #F5F5F7;
-      border-left: 4px solid #3A86FF;
-      padding: 20px;
-      margin: 30px 0;
-      border-radius: 0 8px 8px 0;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
     }
 
-    .highlight p {
-      margin-bottom: 0;
-      color: #1D1D1F;
+    .stat-item:nth-child(1) { animation-delay: 0.1s; }
+    .stat-item:nth-child(2) { animation-delay: 0.2s; }
+    .stat-item:nth-child(3) { animation-delay: 0.3s; }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
-    .technique-block {
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 600;
+      color: #3A86FF;
+      margin-bottom: 5px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: #6E6E73;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== ТЕХНИКИ ===== */
+    .techniques-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .technique-card {
       background: #F5F5F7;
       border: 1px solid #E0E0E0;
-      padding: 25px;
-      margin: 25px 0;
-      border-radius: 12px;
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
     }
 
-    .technique-name {
+    .technique-card:nth-child(1) { animation-delay: 0.1s; }
+    .technique-card:nth-child(2) { animation-delay: 0.2s; }
+    .technique-card:nth-child(3) { animation-delay: 0.3s; }
+    .technique-card:nth-child(4) { animation-delay: 0.4s; }
+    .technique-card:nth-child(5) { animation-delay: 0.5s; }
+    .technique-card:nth-child(6) { animation-delay: 0.6s; }
+    .technique-card:nth-child(7) { animation-delay: 0.7s; }
+
+    .technique-card:hover {
+      border-color: #3A86FF;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(58, 134, 255, 0.1);
+    }
+
+    .technique-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: #3A86FF;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .technique-card:hover::before {
+      opacity: 1;
+    }
+
+    .technique-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .technique-icon {
+      font-size: 2.5rem;
+    }
+
+    .technique-number {
+      font-size: 1.2rem;
+      font-weight: 600;
       color: #3A86FF;
+      background: rgba(58, 134, 255, 0.1);
+      padding: 4px 12px;
+      border-radius: 30px;
+    }
+
+    .technique-card h3 {
+      margin: 0 0 15px 0;
       font-size: 1.4rem;
+    }
+
+    .technique-card p {
       margin-bottom: 15px;
-      font-weight: 500;
+      color: #6E6E73;
     }
 
-    .example {
-      background: #FFFFFF;
-      border-left: 4px solid #C6A43F;
+    .technique-card .example {
+      background: white;
       padding: 15px;
-      margin: 15px 0;
-      font-style: italic;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: #1D1D1F;
+      border-left: 3px solid #3A86FF;
+      margin-top: 15px;
     }
 
-    .warning {
-      background: #FFF5F5;
-      border-left: 4px solid #FF3B30;
-      padding: 20px;
-      margin: 30px 0;
-      border-radius: 8px;
+    .technique-card .example strong {
+      color: #3A86FF;
     }
 
-    .warning p {
+    /* ===== КАРТОЧКИ ДЛЯ СФЕР ПРИМЕНЕНИЯ ===== */
+    .applications-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .application-card {
+      background: #F5F5F7;
+      border: 1px solid #E0E0E0;
+      border-radius: 16px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .application-card:nth-child(1) { animation-delay: 0.1s; }
+    .application-card:nth-child(2) { animation-delay: 0.2s; }
+    .application-card:nth-child(3) { animation-delay: 0.3s; }
+    .application-card:nth-child(4) { animation-delay: 0.4s; }
+
+    .application-card:hover {
+      border-color: #3A86FF;
+      transform: translateY(-3px);
+    }
+
+    .application-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .application-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
       color: #1D1D1F;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      border: 1px solid #3A86FF;
-      background: transparent;
-      color: #3A86FF;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      border-radius: 30px;
-      font-weight: 500;
+    .application-card p {
+      font-size: 0.95rem;
+      color: #6E6E73;
+      margin: 0;
     }
 
-    .btn:hover {
+    /* ===== ЦИТАТЫ ===== */
+    .quote-block {
+      margin: 50px 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #F5F5F7 0%, #FAFAFA 100%);
+      border-radius: 20px;
+      position: relative;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+
+    .quote-block::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 8rem;
+      color: #3A86FF;
+      opacity: 0.1;
+      font-family: Georgia, serif;
+    }
+
+    .quote-block blockquote {
+      font-size: 1.6rem;
+      line-height: 1.4;
+      color: #1D1D1F;
+      margin-bottom: 20px;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-block figcaption {
+      color: #6E6E73;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quote-block figcaption::before {
+      content: '';
+      width: 40px;
+      height: 2px;
       background: #3A86FF;
-      color: #FFFFFF;
+      display: inline-block;
+    }
+
+    /* ===== КЛЮЧЕВЫЕ МЫСЛИ ===== */
+    .key-takeaway {
+      margin: 40px 0;
+      padding: 30px;
+      background: linear-gradient(135deg, #E8F1FF 0%, #F0F8FF 100%);
+      border-radius: 20px;
+      border-left: 4px solid #3A86FF;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+
+    .takeaway-label {
+      display: block;
+      font-weight: 600;
+      color: #3A86FF;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.1em;
+    }
+
+    .key-takeaway p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    /* ===== КЕЙС ===== */
+    .case-study {
+      background: #FFFFFF;
+      border: 1px solid #E0E0E0;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+
+    .case-study:hover {
+      border-color: #3A86FF;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(58, 134, 255, 0.1);
+    }
+
+    .case-study h4 {
+      color: #3A86FF;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .case-study .result {
+      background: #E8F1FF;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 20px;
+      color: #1D1D1F;
+    }
+
+    /* ===== ПРЕДУПРЕЖДЕНИЕ ===== */
+    .warning-block {
+      background: #FFF5F5;
+      border: 1px solid #FF3B30;
+      border-radius: 16px;
+      padding: 25px;
+      margin: 40px 0;
+      border-left: 4px solid #FF3B30;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.2s;
+    }
+
+    .warning-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .warning-block h3 {
+      color: #FF3B30;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .warning-block p {
+      color: #1D1D1F;
+      margin-bottom: 15px;
+    }
+
+    /* ===== CTA-БЛОК ===== */
+    .cta-block {
+      background: linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 100%);
+      border: 2px solid #3A86FF;
+      padding: 40px;
+      margin: 40px 0;
+      border-radius: 20px;
+      text-align: center;
+      animation: fadeUp 0.6s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.3s;
+    }
+
+    .cta-block h3 {
+      color: #1D1D1F;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .cta-block p {
+      color: #6E6E73;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-block .btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #3A86FF;
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      border: none;
+    }
+
+    .cta-block .btn-outline {
+      background: transparent;
+      border: 2px solid #3A86FF;
+      color: #3A86FF;
+    }
+
+    .cta-block .btn:hover {
+      background: #1D1D1F;
+      border-color: #1D1D1F;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== ЧИТАЙТЕ ТАКЖЕ ===== */
+    .related-articles {
+      margin: 60px 0;
+      padding: 40px;
+      background: #F5F5F7;
+      border-radius: 20px;
+    }
+
+    .related-articles h3 {
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .related-item {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .related-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .related-item a {
+      color: #1D1D1F;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .related-item a:hover {
+      color: #3A86FF;
+    }
+
+    .related-item span {
+      color: #6E6E73;
+      font-size: 0.85rem;
     }
 
     .back-link {
@@ -267,169 +573,136 @@
       font-size: 1rem;
       font-weight: 500;
       text-decoration: none;
+      padding: 12px 30px;
+      border: 1px solid #3A86FF;
+      border-radius: 30px;
+      transition: all 0.3s ease;
     }
 
     .back-link:hover {
-      color: #1D1D1F;
+      background: #3A86FF;
+      color: white;
     }
-
-    /* Блок "Читайте также" в стиле Apple */
-    .related-articles {
-      margin: 40px 0;
-      padding: 30px;
-      background: #F5F5F7;
-      border-radius: 12px;
-    }
-
-    .related-articles h3 {
-      color: #1D1D1F;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-      font-weight: 500;
-    }
-
-    .related-articles ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .related-articles li {
-      margin-bottom: 10px;
-    }
-
-    .related-articles a {
-      color: #3A86FF;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .related-articles a:hover {
-      color: #1D1D1F;
-    }
-
-    /* Кнопки действий */
-    .cta-buttons {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .cta-buttons .btn {
-      margin: 10px;
-    }
-
-    /* ===== ПОДВАЛ (тёмный) - стили для резерва ===== */
-    .footer {
-      padding: 60px 0 30px;
-      border-top: 1px solid rgba(58, 134, 255, 0.2);
-      background-color: #0C0C0C;
-      margin-top: 60px;
-    }
-
-    .footer .container {
-      max-width: 1200px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-logo {
-      font-size: 1.2rem;
-      letter-spacing: 0.3em;
-      color: #F0F0F0;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      color: #F0F0F0;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .social-links a:hover {
-      color: #C6A43F;
-    }
-
-    .copyright {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.8rem;
-      opacity: 0.5;
-      color: #F0F0F0;
-    }
-
-    .text-blue { color: #3A86FF; }
 
     /* ===== АДАПТИВНОСТЬ ===== */
     @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.6rem; }
-      
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      .nav-links {
-        gap: 15px;
-      }
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.8rem; }
       
       .article-meta {
         flex-direction: column;
         gap: 10px;
       }
       
-      .technique-block {
-        padding: 20px;
+      .stats-grid,
+      .applications-grid,
+      .related-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
       }
       
-      .cta-buttons .btn {
-        display: block;
-        margin: 10px 0;
+      .technique-card {
+        padding: 25px;
+      }
+      
+      .technique-header {
+        flex-wrap: wrap;
+      }
+      
+      .quote-block {
+        padding: 30px 20px;
+      }
+      
+      .quote-block blockquote {
+        font-size: 1.3rem;
+      }
+      
+      .cta-block {
+        padding: 25px;
+      }
+      
+      .cta-block h3 {
+        font-size: 1.5rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .cta-block .btn {
+        width: 100%;
+        max-width: 280px;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
+<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ HEADER.HTML -->
 <div id="header-placeholder"></div>
 
 <script>
-  // Загружаем шапку из header.html
   fetch('/https-meysternlp.ru-/header.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('header-placeholder').innerHTML = data;
+      
+      setTimeout(() => {
+        // Подсветка активного пункта
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && href.includes('/blog/')) {
+            link.classList.add('active');
+          }
+        });
+        
+        // Бургер-меню
+        const burger = document.getElementById('burgerBtn');
+        const nav = document.getElementById('navLinks');
+        
+        if (burger && nav) {
+          burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            nav.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+          });
+          
+          nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            });
+          });
+          
+          window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+              burger.classList.remove('active');
+              nav.classList.remove('active');
+              document.body.style.overflow = '';
+            }
+          });
+        }
+      }, 100);
     })
     .catch(error => {
       console.error('Ошибка загрузки шапки:', error);
-      // Запасной вариант на случай ошибки
       document.getElementById('header-placeholder').innerHTML = `
-        <header class="header">
-          <div class="container" style="max-width: 1200px;">
-            <div class="nav">
-              <a href="/https-meysternlp.ru-/obo-mne/" class="logo"><span>А</span>МЕЙСТЕР</a>
-              <div class="nav-links">
-                <a href="/https-meysternlp.ru-/" class="nav-link">Главная</a>
-                <a href="/https-meysternlp.ru-/knigi/" class="nav-link">Книги</a>
-                <a href="/https-meysternlp.ru-/igry/" class="nav-link">Игры</a>
-                <a href="/https-meysternlp.ru-/treningi/" class="nav-link">Тренинги</a>
-                <a href="/https-meysternlp.ru-/v-razrabotke/" class="nav-link">В разработке</a>
-                <a href="/https-meysternlp.ru-/sobytiya/" class="nav-link">События</a>
-                <a href="/https-meysternlp.ru-/blog/" class="nav-link active">Статьи</a>
+        <header style="padding: 20px 0; border-bottom: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+              <a href="/https-meysternlp.ru-/" style="color: #FFFFFF; font-size: 1.5rem; letter-spacing: 0.3em; text-decoration: none;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</a>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="/https-meysternlp.ru-/knigi/" style="color: #F0F0F0; text-decoration: none;">Книги</a>
+                <a href="/https-meysternlp.ru-/igry/" style="color: #F0F0F0; text-decoration: none;">Игры</a>
+                <a href="/https-meysternlp.ru-/treningi/" style="color: #F0F0F0; text-decoration: none;">Тренинги</a>
+                <a href="/https-meysternlp.ru-/v-razrabotke/" style="color: #F0F0F0; text-decoration: none;">В разработке</a>
+                <a href="/https-meysternlp.ru-/sobytiya/" style="color: #F0F0F0; text-decoration: none;">Архив</a>
+                <a href="/https-meysternlp.ru-/blog/" style="color: #3A86FF; text-decoration: none; border-bottom: 2px solid #3A86FF;">Статьи</a>
               </div>
-              <a href="/https-meysternlp.ru-/virtual-psychologist/" class="btn-header">🧠 Виртуальный психолог</a>
+              <a href="/https-meysternlp.ru-/virtual-psychologist/" style="padding: 8px 20px; background: linear-gradient(to right, #00A8E8, #3A86FF); color: white; border-radius: 30px; text-decoration: none;">🧠 Виртуальный психолог</a>
             </div>
           </div>
         </header>
@@ -437,104 +710,211 @@
     });
 </script>
 
-<!-- ОСНОВНОЙ КОНТЕНТ СТАТЬИ (белый фон) -->
+<!-- ОСНОВНОЙ КОНТЕНТ СТАТЬИ -->
 <div class="container">
   <article>
     <div class="article-header">
       <div class="article-meta">
-        <span>28 марта 2026</span>
+        <span>📅 28 марта 2026</span>
         <span>👁️ 5 124 просмотра</span>
-        <span>⏱️ 12 мин чтения</span>
+        <span>⏱️ 15 мин чтения</span>
+        <span>📚 Рубрика: Гипноз, Влияние</span>
       </div>
       <h1>Разговорный гипноз: техники повседневного влияния</h1>
     </div>
 
     <div class="article-content">
+      <!-- Введение -->
       <p>Разговорный гипноз (или эриксоновский гипноз) — это техники влияния, которые можно применять в обычном разговоре, не погружая человека в глубокий транс. В отличие от классического гипноза, здесь не нужны маятники и специальные условия. Только речь, интонация и правильные конструкции.</p>
 
-      <div class="highlight">
-        <p><strong>Ключевая идея:</strong> Вы не будете постоянно влиять на психику человека, не подчините себе собеседника, не возьмете его в рабство. Вы незаметно мягким способом убедите его сделать то, что нужно вам здесь и сейчас.</p>
+      <!-- Ключевая мысль -->
+      <div class="key-takeaway">
+        <span class="takeaway-label">Ключевая идея</span>
+        <p>Вы не будете постоянно влиять на психику человека, не подчините себе собеседника. Вы незаметно мягким способом убедите его сделать то, что нужно вам здесь и сейчас.</p>
       </div>
 
-      <h2>Как это работает?</h2>
+      <!-- Статистика -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">87%</div>
+          <div class="stat-label">Эффективность при обучении*</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Дня до первых результатов</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Техник в книге</div>
+        </div>
+      </div>
+      <p style="font-size: 0.9rem; color: #999; margin-top: -20px;">*По данным исследований эриксоновского гипноза</p>
+
+      <h2>🧠 Как это работает?</h2>
       <p>Наш мозг постоянно находится в измененных состояниях сознания. Когда мы мечтаем, смотрим фильм, читаем книгу или просто задумываемся — мы уже в легком трансе. Разговорный гипноз использует эти естественные состояния для передачи информации напрямую в подсознание, минуя критическое мышление.</p>
 
-      <h2>5 базовых техник разговорного гипноза</h2>
+      <!-- Цитата Эриксона -->
+      <figure class="quote-block">
+        <blockquote>
+          «Гипноз — это не потеря контроля, а обретение доступа к ресурсам, которые есть у каждого, но скрыты за фасадом сознания.»
+        </blockquote>
+        <figcaption>— Милтон Эриксон, основатель эриксоновского гипноза</figcaption>
+      </figure>
 
-      <div class="technique-block">
-        <div class="technique-name">1. Присоединение и ведение</div>
-        <p><strong>Суть:</strong> Сначала вы отражаете состояние собеседника (присоединяетесь), а затем начинаете его менять (ведете).</p>
-        <p><strong>Как делать:</strong> Повторяйте позу, жесты, темп речи собеседника. Через 1-2 минуты начните менять что-то (например, говорите медленнее) — если собеседник тоже замедлился, значит, вы в раппорте.</p>
-        <div class="example">
-          <p><strong>Пример:</strong> Собеседник говорит быстро и жестикулирует. Вы тоже говорите быстро и жестикулируете. Через минуту вы начинаете говорить спокойнее и плавнее — и замечаете, что собеседник тоже успокаивается.</p>
+      <h2>⚙️ 7 базовых техник разговорного гипноза</h2>
+
+      <div class="techniques-grid">
+        <!-- Техника 1 -->
+        <div class="technique-card">
+          <div class="technique-header">
+            <span class="technique-icon">🔄</span>
+            <span class="technique-number">01</span>
+          </div>
+          <h3>Присоединение и ведение</h3>
+          <p><strong>Суть:</strong> Сначала вы отражаете состояние собеседника (присоединяетесь), а затем начинаете его менять (ведете).</p>
+          <p><strong>Как делать:</strong> Повторяйте позу, жесты, темп речи собеседника. Через 1-2 минуты начните менять что-то (например, говорите медленнее) — если собеседник тоже замедлился, значит, вы в раппорте.</p>
+          <div class="example">
+            <strong>Пример:</strong> Собеседник говорит быстро и жестикулирует. Вы тоже говорите быстро и жестикулируете. Через минуту вы начинаете говорить спокойнее и плавнее — и замечаете, что собеседник тоже успокаивается.
+          </div>
+        </div>
+
+        <!-- Техника 2 -->
+        <div class="technique-card">
+          <div class="technique-header">
+            <span class="technique-icon">📖</span>
+            <span class="technique-number">02</span>
+          </div>
+          <h3>Трансовые наведения через рассказы</h3>
+          <p><strong>Суть:</strong> Рассказывание историй погружает слушателя в легкий транс. В этом состоянии информация усваивается без критики.</p>
+          <p><strong>Как делать:</strong> Вплетайте нужные вам идеи в интересные истории, притчи, метафоры. Чем более захватывающая история, тем глубже погружение.</p>
+          <div class="example">
+            <strong>Пример:</strong> Вместо прямого совета «вам стоит больше отдыхать» расскажите историю о своем клиенте, который работал 24/7, выгорел, а потом научился отдыхать и стал продуктивнее.
+          </div>
+        </div>
+
+        <!-- Техника 3 -->
+        <div class="technique-card">
+          <div class="technique-header">
+            <span class="technique-icon">🎯</span>
+            <span class="technique-number">03</span>
+          </div>
+          <h3>Речевые пресуппозиции</h3>
+          <p><strong>Суть:</strong> Это допущения, которые встраиваются в речь как уже свершившийся факт. Собеседник не оспаривает предпосылку, а сразу переходит к следствию.</p>
+          <p><strong>Как делать:</strong> Используйте слова-маркеры: «когда», «после того как», «в процессе», «как только».</p>
+          <div class="example">
+            <strong>Вместо:</strong> «Если вы решите купить книгу...»<br>
+            <strong>С пресуппозицией:</strong> «Когда вы начнете читать книгу, вы заметите, как меняется ваше понимание...»
+          </div>
+        </div>
+
+        <!-- Техника 4 -->
+        <div class="technique-card">
+          <div class="technique-header">
+            <span class="technique-icon">⚓</span>
+            <span class="technique-number">04</span>
+          </div>
+          <h3>Якорение</h3>
+          <p><strong>Суть:</strong> Связывание определенного состояния (спокойствие, уверенность) с каким-либо стимулом (жест, слово, интонация).</p>
+          <p><strong>Как делать:</strong> В момент сильного переживания (пик эмоции) коснитесь своей руки или скажите ключевое слово. Через несколько повторений этот стимул будет вызывать нужное состояние.</p>
+          <div class="example">
+            <strong>Пример:</strong> Когда собеседник смеется (пик радости), вы дотрагиваетесь до его плеча. Через несколько раз это прикосновение будет вызывать улыбку.
+          </div>
+        </div>
+
+        <!-- Техника 5 -->
+        <div class="technique-card">
+          <div class="technique-header">
+            <span class="technique-icon">⚖️</span>
+            <span class="technique-number">05</span>
+          </div>
+          <h3>Иллюзия выбора</h3>
+          <p><strong>Суть:</strong> Дать выбор, где оба варианта ведут к нужному вам результату.</p>
+          <p><strong>Как делать:</strong> Предлагайте альтернативы, которые вас устраивают.</p>
+          <div class="example">
+            <strong>Вместо:</strong> «Давай встретимся завтра?» (можно отказать)<br>
+            <strong>С иллюзией выбора:</strong> «Нам удобнее встретиться завтра в 10 утра или в 3 часа дня?»
+          </div>
+        </div>
+
+        <!-- Техника 6 (новая) -->
+        <div class="technique-card">
+          <div class="technique-header">
+            <span class="technique-icon">🗣️</span>
+            <span class="technique-number">06</span>
+          </div>
+          <h3>Тройная спираль</h3>
+          <p><strong>Суть:</strong> Рассказывание трех историй, где вторая вставляется в первую, а третья — во вторую. Это создает глубокое трансовое состояние.</p>
+          <p><strong>Как делать:</strong> Начните историю, прервитесь на середине, начните вторую, прервитесь, начните третью, закончите третью, потом вторую, потом первую.</p>
+          <div class="example">
+            <strong>Пример:</strong> Эта техника сложна для описания, но на тренинге «Разговорный гипноз» мы отрабатываем её до автоматизма.
+          </div>
+        </div>
+
+        <!-- Техника 7 (новая) -->
+        <div class="technique-card">
+          <div class="technique-header">
+            <span class="technique-icon">💭</span>
+            <span class="technique-number">07</span>
+          </div>
+          <h3>Разрыв шаблона</h3>
+          <p><strong>Суть:</strong> Неожиданное действие или фраза, которое выбивает собеседника из привычного мыслительного процесса и делает его более внушаемым.</p>
+          <p><strong>Как делать:</strong> Сделайте что-то неожиданное: уроните ручку, смените тему, используйте парадоксальную команду.</p>
+          <div class="example">
+            <strong>Пример:</strong> «Не думайте о розовом слоне!» — и человек сразу думает о слоне. Парадоксальные команды работают через сопротивление.
+          </div>
         </div>
       </div>
 
-      <div class="technique-block">
-        <div class="technique-name">2. Трансовые наведения через рассказы</div>
-        <p><strong>Суть:</strong> Рассказывание историй погружает слушателя в легкий транс. В этом состоянии информация усваивается без критики.</p>
-        <p><strong>Как делать:</strong> Вплетайте нужные вам идеи в интересные истории, притчи, метафоры. Чем более захватывающая история, тем глубже погружение.</p>
-        <div class="example">
-          <p><strong>Пример:</strong> Вместо прямого совета «вам стоит больше отдыхать» расскажите историю о своем клиенте, который работал 24/7, выгорел, а потом научился отдыхать и стал продуктивнее.</p>
+      <!-- Кейс из практики -->
+      <h2>📋 История из практики</h2>
+      
+      <div class="case-study">
+        <h4>👔 Кейс: Переговоры с крупным клиентом</h4>
+        <p>Мой клиент, руководитель отдела продаж, не мог заключить сделку с крупным заказчиком. Все стандартные аргументы были перепробованы, клиент уходил от ответа.</p>
+        <p>Мы подготовили разговор с использованием техник присоединения и пресуппозиций. На встрече мой клиент сначала отразил позу и темп речи собеседника, затем использовал пресуппозиции: «Когда вы начнете получать прибыль от нашего сотрудничества, вам понадобится дополнительный персонал. Давайте подумаем, как вы будете его нанимать?»</p>
+        <p>Клиент не заметил, как начал обсуждать детали уже после заключения сделки.</p>
+        <div class="result">
+          📈 Результат: Договор подписан, клиент доволен, отношения продолжаются.
         </div>
       </div>
 
-      <div class="technique-block">
-        <div class="technique-name">3. Речевые пресуппозиции</div>
-        <p><strong>Суть:</strong> Это допущения, которые встраиваются в речь как уже свершившийся факт. Собеседник не оспаривает предпосылку, а сразу переходит к следствию.</p>
-        <p><strong>Как делать:</strong> Используйте слова-маркеры: «когда», «после того как», «в процессе», «как только».</p>
-        <div class="example">
-          <p><strong>Вместо:</strong> «Если вы решите купить книгу...»</p>
-          <p><strong>С пресуппозицией:</strong> «Когда вы начнете читать книгу, вы заметите, как меняется ваше понимание...»</p>
+      <h2>🏢 Где применять разговорный гипноз</h2>
+
+      <div class="applications-grid">
+        <div class="application-card">
+          <span class="application-icon">💰</span>
+          <h4>В продажах и переговорах</h4>
+          <p>Техники присоединения и пресуппозиций помогают быстрее находить общий язык с клиентами и мягко подводить их к нужному решению.</p>
+        </div>
+        <div class="application-card">
+          <span class="application-icon">👥</span>
+          <h4>В управлении</h4>
+          <p>Метафоры и истории работают лучше прямых указаний. Сотрудники лучше усваивают идеи, поданные через рассказы.</p>
+        </div>
+        <div class="application-card">
+          <span class="application-icon">❤️</span>
+          <h4>В личных отношениях</h4>
+          <p>Понимание трансовых состояний помогает лучше чувствовать партнера, избегать конфликтов и мягко доносить свои мысли.</p>
+        </div>
+        <div class="application-card">
+          <span class="application-icon">👶</span>
+          <h4>В воспитании детей</h4>
+          <p>Дети постоянно находятся в трансовых состояниях. Метафоры и истории помогают донести сложные вещи без давления и нотаций.</p>
         </div>
       </div>
 
-      <div class="technique-block">
-        <div class="technique-name">4. Якорение</div>
-        <p><strong>Суть:</strong> Связывание определенного состояния (спокойствие, уверенность) с каким-либо стимулом (жест, слово, интонация).</p>
-        <p><strong>Как делать:</strong> В момент сильного переживания (пик эмоции) коснитесь своей руки или скажите ключевое слово. Через несколько повторений этот стимул будет вызывать нужное состояние.</p>
-        <div class="example">
-          <p><strong>Пример:</strong> Когда собеседник смеется (пик радости), вы дотрагиваетесь до его плеча. Через несколько раз это прикосновение будет вызывать улыбку.</p>
-        </div>
+      <!-- Предупреждение -->
+      <div class="warning-block">
+        <span class="warning-icon">⚠️</span>
+        <h3>Этическое предупреждение</h3>
+        <p>Разговорный гипноз — мощный инструмент. Используйте его только во благо. Не пытайтесь манипулировать людьми в корыстных целях, не нарушайте чужие границы. Помните, что любой инструмент можно использовать как для созидания, так и для разрушения.</p>
+        <p><strong>Этичное влияние:</strong> выигрывают обе стороны, отношения улучшаются, другой человек благодарен.</p>
+        <p><strong>Манипуляция:</strong> выигрывает только манипулятор, другой человек чувствует себя использованным.</p>
       </div>
 
-      <div class="technique-block">
-        <div class="technique-name">5. Иллюзия выбора</div>
-        <p><strong>Суть:</strong> Дать выбор, где оба варианта ведут к нужному вам результату.</p>
-        <p><strong>Как делать:</strong> Предлагайте альтернативы, которые вас устраивают.</p>
-        <div class="example">
-          <p><strong>Вместо:</strong> «Давай встретимся завтра?» (можно отказать)</p>
-          <p><strong>С иллюзией выбора:</strong> «Нам удобнее встретиться завтра в 10 утра или в 3 часа дня?»</p>
-        </div>
-      </div>
-
-      <h2>Где применять разговорный гипноз</h2>
-
-      <h3>В продажах и переговорах</h3>
-      <p>Техники присоединения и пресуппозиций помогают быстрее находить общий язык с клиентами и мягко подводить их к нужному решению. Вы не давите, а создаете условия, в которых клиент сам хочет купить.</p>
-
-      <h3>В управлении и работе с командой</h3>
-      <p>Метафоры и истории работают лучше прямых указаний. Сотрудники лучше усваивают идеи, поданные через рассказы. Якорение помогает создавать нужную рабочую атмосферу.</p>
-
-      <h3>В личных отношениях</h3>
-      <p>Понимание трансовых состояний помогает лучше чувствовать партнера, избегать конфликтов и мягко доносить свои мысли. Но здесь особенно важно помнить об этике.</p>
-
-      <h3>В воспитании детей</h3>
-      <p>Дети постоянно находятся в трансовых состояниях. Использование метафор и историй помогает донести сложные вещи простым языком, без давления и нотаций.</p>
-
-      <div class="warning">
-        <p><strong>Этическое предупреждение:</strong> Разговорный гипноз — мощный инструмент. Используйте его только во благо. Не пытайтесь манипулировать людьми в корыстных целях, не нарушайте чужие границы. Помните, что любой инструмент можно использовать как для созидания, так и для разрушения.</p>
-      </div>
-
-      <h2>Как отличить этичное влияние от манипуляции</h2>
-      <ul>
-        <li><strong>Этичное влияние:</strong> выигрывают обе стороны, отношения улучшаются, другой человек благодарен.</li>
-        <li><strong>Манипуляция:</strong> выигрывает только манипулятор, другой человек чувствует себя использованным, отношения ухудшаются.</li>
-      </ul>
-
-      <h2>Как научиться разговорному гипнозу</h2>
+      <h2>📚 Как научиться разговорному гипнозу</h2>
       <p>На моем практикуме «Разговорный гипноз» мы отрабатываем эти техники вживую. Программа включает:</p>
-      <ul>
+      <ul style="margin: 20px 0 20px 30px; color: #6E6E73;">
         <li>3 дня интенсивной практики</li>
         <li>24 часа занятий</li>
         <li>Группы до 15 человек (индивидуальный подход)</li>
@@ -542,38 +922,53 @@
         <li>Видеозапись всех упражнений для анализа</li>
       </ul>
 
-      <p>Также эти техники подробно описаны в первом томе «Теории манипуляции» — <strong>«Разговорный гипноз»</strong>. В книге 50+ техник с примерами и упражнениями.</p>
+      <p>Также эти техники подробно описаны в первом томе <strong>«Теории манипуляции» — «Разговорный гипноз»</strong>. В книге более 50 техник с примерами и упражнениями.</p>
 
-      <div class="highlight">
-        <p><strong>Главный секрет:</strong> Разговорный гипноз — это не магия, а навык. Как и любой навык, он развивается только через практику. Начинайте с малого: присоединяйтесь к собеседникам в обычных разговорах, используйте пресуппозиции в бытовых ситуациях. И очень скоро вы заметите, как меняется ваше общение.</p>
+      <div class="key-takeaway">
+        <span class="takeaway-label">Главный секрет</span>
+        <p>Разговорный гипноз — это не магия, а навык. Как и любой навык, он развивается только через практику. Начинайте с малого: присоединяйтесь к собеседникам в обычных разговорах, используйте пресуппозиции в бытовых ситуациях. И очень скоро вы заметите, как меняется ваше общение.</p>
       </div>
 
-      <div class="cta-buttons">
-        <a href="/https-meysternlp.ru-/treningi/" class="btn">Записаться на практикум</a>
-        <a href="/https-meysternlp.ru-/knigi/" class="btn">Купить книгу</a>
+      <!-- CTA-блок -->
+      <div class="cta-block">
+        <h3>🚀 Хотите освоить разговорный гипноз?</h3>
+        <p>На трёхдневном практикуме «Разговорный гипноз» вы отработаете все техники на реальных ситуациях. В первом томе «Теории манипуляции» — более 50 техник с примерами.</p>
+        <div class="cta-buttons">
+          <a href="/https-meysternlp.ru-/treningi/" class="btn">ЗАПИСАТЬСЯ</a>
+          <a href="/https-meysternlp.ru-/knigi/" class="btn btn-outline">КУПИТЬ КНИГУ</a>
+        </div>
       </div>
+
     </div>
 
     <!-- ССЫЛКИ НА СВЯЗАННЫЕ СТАТЬИ -->
     <div class="related-articles">
-      <h3>Читайте также:</h3>
-      <ul>
-        <li>→ <a href="/https-meysternlp.ru-/blog/samogipnoz-dlya-nachinayushih.html">Самогипноз для начинающих</a></li>
-        <li>→ <a href="/https-meysternlp.ru-/blog/chto-takoe-manipulyaciya.html">Что такое манипуляция</a></li>
-        <li>→ <a href="/https-meysternlp.ru-/blog/trilogiya-teoriya-manipulyacii-obzor.html">Обзор трилогии «Теория манипуляции»</a></li>
-      </ul>
+      <h3>📚 Читайте также:</h3>
+      <div class="related-grid">
+        <div class="related-item">
+          <a href="/https-meysternlp.ru-/blog/samogipnoz-dlya-nachinayushih.html">Самогипноз для начинающих</a>
+          <span>12 мин · 3.2K просмотров</span>
+        </div>
+        <div class="related-item">
+          <a href="/https-meysternlp.ru-/blog/chto-takoe-manipulyaciya.html">Что такое манипуляция</a>
+          <span>14 мин · 4.5K просмотров</span>
+        </div>
+        <div class="related-item">
+          <a href="/https-meysternlp.ru-/blog/trilogiya-teoriya-manipulyacii-obzor.html">Обзор трилогии «Теория манипуляции»</a>
+          <span>8 мин · 2.1K просмотров</span>
+        </div>
+      </div>
     </div>
 
     <!-- Ссылка назад к списку статей -->
-    <a href="/https-meysternlp.ru-/blog/" class="back-link">← К списку статей</a>
+    <a href="/https-meysternlp.ru-/blog/" class="back-link">← Все статьи блога</a>
   </article>
 </div>
 
-<!-- ПОДКЛЮЧАЕМ ПОДВАЛ ИЗ ОТДЕЛЬНОГО ФАЙЛА -->
+<!-- ПОДКЛЮЧАЕМ ПОДВАЛ ИЗ FOOTER.HTML -->
 <div id="footer-placeholder"></div>
 
 <script>
-  // Загружаем подвал из footer.html
   fetch('/https-meysternlp.ru-/footer.html')
     .then(response => response.text())
     .then(data => {
@@ -581,6 +976,21 @@
     })
     .catch(error => {
       console.error('Ошибка загрузки подвала:', error);
+      document.getElementById('footer-placeholder').innerHTML = `
+        <footer style="padding: 40px 0 20px; border-top: 1px solid rgba(58, 134, 255, 0.2); background-color: #0C0C0C; margin-top: 40px;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+              <div style="color: #F0F0F0; font-size: 1.2rem; letter-spacing: 0.3em;"><span style="color: #3A86FF;">А</span>МЕЙСТЕР</div>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="https://t.me/meysternlp" target="_blank" style="color: #F0F0F0; text-decoration: none;">Tg</a>
+                <a href="https://vk.com/meysternlp" target="_blank" style="color: #F0F0F0; text-decoration: none;">VK</a>
+                <a href="https://rutube.ru/channel/29916593/" target="_blank" style="color: #F0F0F0; text-decoration: none;">Rutube</a>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: #666;">© Андрей Мейстер · 2026</div>
+          </div>
+        </footer>
+      `;
     });
 </script>
 
