@@ -13,7 +13,7 @@
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Тренинги — упакованные курсы">
   <meta property="og:description" content="Купил — и пользуешься. Без сборищ, без онлайнов, без расписаний.">
-  <meta property="og:image" content="/https-meysternlp.ru-/2.webp">
+  <meta property="og:image" content="/https-meysternlp.ru-/kurs1.png">
   <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/treningi/">
   <meta property="og:type" content="website">
   
@@ -233,15 +233,15 @@
       align-self: flex-start;
     }
 
-    /* ===== КОНТЕЙНЕР ДЛЯ ФОТО ===== */
+    /* ===== КОНТЕЙНЕР ДЛЯ ФОТО (БЕЗ БЕЛОГО ФОНА) ===== */
     .training-image {
       margin-bottom: 25px;
       text-align: center;
-      background-color: #FFFFFF;
+      background-color: transparent;
       border-radius: 12px;
-      padding: 25px;
-      border: 1px solid rgba(58, 134, 255, 0.2);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      padding: 0;
+      border: none;
+      box-shadow: none;
     }
 
     .training-image img {
@@ -250,12 +250,13 @@
       height: auto;
       max-height: 240px;
       object-fit: contain;
-      transform: scale(1.2);
       transition: transform 0.3s ease;
+      filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.5));
     }
 
     .training-card:hover .training-image img {
-      transform: scale(1.25);
+      transform: scale(1.05);
+      filter: drop-shadow(0 15px 25px rgba(58, 134, 255, 0.3));
     }
 
     .training-title {
@@ -371,7 +372,6 @@
       
       .training-image img {
         max-height: 200px;
-        transform: scale(1.1);
       }
       
       .footer-content {
@@ -476,11 +476,11 @@
 
   <!-- СЕТКА ТРЕНИНГОВ -->
   <div class="trainings-grid">
-    <!-- Пакет "Самостоятельный" с фото 2.webp -->
+    <!-- Пакет "Самостоятельный" с фото kurs1.png -->
     <div class="training-card">
       <span class="training-badge">38 видео</span>
       <div class="training-image">
-        <img src="/https-meysternlp.ru-/2.webp" alt="Разговорный гипноз Самостоятельный" onerror="this.src='https://via.placeholder.com/360x240/FFFFFF/3A86FF?text=Самостоятельный'">
+        <img src="/https-meysternlp.ru-/kurs1.png" alt="Разговорный гипноз Самостоятельный" onerror="this.src='https://via.placeholder.com/360x240/0C0C0C/3A86FF?text=Самостоятельный'">
       </div>
       <h2 class="training-title">Разговорный гипноз</h2>
       <div class="training-subtitle">Пакет «Самостоятельный»</div>
@@ -500,7 +500,7 @@
     <div class="training-card">
       <span class="training-badge">38 видео +</span>
       <div class="training-image">
-        <img src="/https-meysternlp.ru-/3.webp" alt="Разговорный гипноз Стандартный" onerror="this.src='https://via.placeholder.com/360x240/FFFFFF/3A86FF?text=Стандартный'">
+        <img src="/https-meysternlp.ru-/3.webp" alt="Разговорный гипноз Стандартный" onerror="this.src='https://via.placeholder.com/360x240/0C0C0C/3A86FF?text=Стандартный'">
       </div>
       <h2 class="training-title">Разговорный гипноз</h2>
       <div class="training-subtitle">Пакет «Стандартный»</div>
