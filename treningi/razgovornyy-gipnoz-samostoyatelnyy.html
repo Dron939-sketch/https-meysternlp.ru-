@@ -224,7 +224,7 @@
       margin: 20px 0;
     }
 
-    /* ===== ФОТО ПРОДУКТА (ПРОСТОЕ И КРАСИВОЕ) ===== */
+    /* ===== ФОТО ПРОДУКТА (ПРОСТОЕ КАК В ПРИМЕРЕ) ===== */
     .product-image {
       display: flex;
       justify-content: center;
@@ -234,16 +234,13 @@
     .product-image img {
       width: 100%;
       max-width: 500px;
+      height: auto;
       border-radius: 8px;
-      border: 1px solid rgba(58, 134, 255, 0.2);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-      /* Убраны все эксперименты с прозрачностью */
+      transition: transform 0.3s ease;
     }
 
     .product-image img:hover {
       transform: scale(1.05);
-      border-color: #3A86FF;
-      box-shadow: 0 0 20px rgba(58, 134, 255, 0.3);
     }
 
     /* ===== ЧТО ВХОДИТ ===== */
@@ -402,7 +399,7 @@
 </head>
 <body>
 
-<!-- ПОДКЛЮЧАЕМ ШАПКУ -->
+<!-- ПОДКЛЮЧАЕМ ШАПКУ ИЗ HEADER.HTML -->
 <div id="header-placeholder"></div>
 
 <script>
@@ -501,11 +498,10 @@
       </div>
     </div>
     
-    <!-- ФОТО ПРОДУКТА (РАБОЧАЯ ВЕРСИЯ) -->
+    <!-- ФОТО ПРОДУКТА - ТАК ЖЕ КАК В ПРИМЕРЕ -->
     <div class="product-image">
       <img src="/https-meysternlp.ru-/Пакет самостоятельный.jpg" 
-           alt="Разговорный гипноз Самостоятельный" 
-           onerror="this.src='https://via.placeholder.com/500x400/0C0C0C/3A86FF?text=Разговорный+гипноз'">
+           alt="Разговорный гипноз Самостоятельный">
     </div>
   </div>
 
@@ -535,7 +531,7 @@
   <!-- ПРО АВТОРА -->
   <div class="author-section">
     <div class="author-image">
-      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер" onerror="this.src='https://via.placeholder.com/400x623/0C0C0C/3A86FF?text=Андрей+Мейстер'">
+      <img src="/https-meysternlp.ru-/images/andrej-mejster-filosofiya.png" alt="Андрей Мейстер">
     </div>
     <div class="author-info">
       <h3>Андрей Мейстер</h3>
