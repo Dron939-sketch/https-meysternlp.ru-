@@ -12,7 +12,7 @@
   
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Дидактические игры — Андрей Мейстер">
-  <meta property="og:description" content="Настольные игры для развития системного мышления. Маркетолог + Вариатика (Basic, Intensive, Progressive).">
+  <meta property="og:description" content="Инструменты для изменения реальности. Маркетолог + Вариатика (Basic, Intensive, Progressive).">
   <meta property="og:image" content="/https-meysternlp.ru-/Маркетолог.png">
   <meta property="og:url" content="https://dron939-sketch.github.io/https-meysternlp.ru-/igry/">
   <meta property="og:type" content="website">
@@ -151,6 +151,39 @@
       left: 0;
     }
 
+    /* ===== БЛОК ФИЛОСОФИИ ===== */
+    .philosophy-block {
+      margin: 40px 0 60px;
+      padding: 30px;
+      border-left: 3px solid #3A86FF;
+      background: rgba(58, 134, 255, 0.02);
+    }
+
+    .philosophy-block p {
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .philosophy-block .small {
+      color: #CCCCCC;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    /* ===== ПРОГРЕССИЯ ===== */
+    .progression {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
+
+    .progression span {
+      color: #3A86FF;
+    }
+
     /* ===== СЕТКА ИГР ===== */
     .games-grid {
       display: grid;
@@ -216,6 +249,11 @@
       margin-bottom: 15px;
     }
 
+    .game-subtitle i {
+      margin-right: 5px;
+      font-style: normal;
+    }
+
     .game-description {
       color: #CCCCCC;
       margin-bottom: 20px;
@@ -226,6 +264,17 @@
 
     .game-actions {
       margin-top: auto;
+    }
+
+    /* ===== ПРИЗЫВ ===== */
+    .cta-block {
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+
+    .cta-block p {
+      color: #CCCCCC;
+      margin-bottom: 20px;
     }
 
     /* ===== ПОДВАЛ ===== */
@@ -387,8 +436,20 @@
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <div class="container">
   <h1>ДИДАКТИЧЕСКИЕ ИГРЫ</h1>
-  <p style="color: #3A86FF; margin-bottom: 40px; font-size: 1.2rem;">Учимся мыслить системно через игру</p>
+  <p style="color: #3A86FF; margin-bottom: 20px; font-size: 1.2rem;">Инструменты для изменения реальности</p>
 
+  <!-- БЛОК ФИЛОСОФИИ (СВЯЗЬ С МАНИФЕСТОМ) -->
+  <div class="philosophy-block">
+    <p>🎲 Мои камни</p>
+    <p class="small">Каждая игра — это инструмент. Маркетолог учит создавать нарративы для других. Вариатика — видеть, понимать и создавать реальность. Берите и бросайте.</p>
+  </div>
+
+  <!-- ПРОГРЕССИЯ ВАРИАТИКИ -->
+  <div class="progression">
+    <span>Basic</span> → <span>Intensive</span> → <span>Progressive</span>: от анализа поведения к созданию реальности
+  </div>
+
+  <!-- СЕТКА ИГР -->
   <div class="games-grid">
     <!-- Маркетолог -->
     <div class="game-card">
@@ -396,7 +457,7 @@
         <img src="/https-meysternlp.ru-/Маркетолог.png" alt="Маркетолог" onerror="this.src='https://via.placeholder.com/300x300/0C0C0C/3A86FF?text=Маркетолог'">
       </div>
       <div class="game-title">Маркетолог</div>
-      <div class="game-subtitle">Креативное мышление</div>
+      <div class="game-subtitle"><i>📢</i> Креативное мышление</div>
       <div class="game-description">Развитие креативного мышления и навыков речевого воздействия. Учитесь создавать эффективные рекламные сообщения через игру. 2-3 игрока.</div>
       <div class="game-actions">
         <a href="/https-meysternlp.ru-/igry/marketolog.html" class="btn">ПОДРОБНЕЕ</a>
@@ -409,7 +470,7 @@
         <img src="/https-meysternlp.ru-/Басик.webp" alt="Вариатика Basic" onerror="this.src='https://via.placeholder.com/300x300/0C0C0C/3A86FF?text=Basic'">
       </div>
       <div class="game-title">Вариатика</div>
-      <div class="game-subtitle">Basic</div>
+      <div class="game-subtitle"><i>🔍</i> Basic</div>
       <div class="game-description">Анализ и прогнозирование поведения людей. Понимание характера, истинных желаний, способностей и ограничений.</div>
       <div class="game-actions">
         <a href="/https-meysternlp.ru-/igry/variatika-basic.html" class="btn">ПОДРОБНЕЕ</a>
@@ -422,7 +483,7 @@
         <img src="/https-meysternlp.ru-/интенсив.webp" alt="Вариатика Intensive" onerror="this.src='https://via.placeholder.com/300x300/0C0C0C/3A86FF?text=Intensive'">
       </div>
       <div class="game-title">Вариатика</div>
-      <div class="game-subtitle">Intensive</div>
+      <div class="game-subtitle"><i>🧠</i> Intensive</div>
       <div class="game-description">Системное, критическое и латеральное мышление. Анализ сложных систем и принятие эффективных решений.</div>
       <div class="game-actions">
         <a href="/https-meysternlp.ru-/igry/variatika-intensive.html" class="btn">ПОДРОБНЕЕ</a>
@@ -435,12 +496,18 @@
         <img src="/https-meysternlp.ru-/progresive.webp" alt="Вариатика Progressive" onerror="this.src='https://via.placeholder.com/300x300/0C0C0C/3A86FF?text=Progressive'">
       </div>
       <div class="game-title">Вариатика</div>
-      <div class="game-subtitle">Progressive</div>
+      <div class="game-subtitle"><i>✨</i> Progressive</div>
       <div class="game-description">Искусство везения — превращение маловероятных позитивных исходов в реальность. Создание «счастливых случайностей».</div>
       <div class="game-actions">
         <a href="/https-meysternlp.ru-/igry/variatika-progressive.html" class="btn">ПОДРОБНЕЕ</a>
       </div>
     </div>
+  </div>
+
+  <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
+  <div class="cta-block">
+    <p>Выберите свой инструмент и начните менять свою реальность</p>
+    <a href="#header-placeholder" class="btn" style="padding: 12px 40px;">К ИГРАМ</a>
   </div>
 </div>
 
