@@ -1218,9 +1218,67 @@
         overlay.onclick = function (e) { if (e.target === overlay) overlay.remove(); };
     }
 
+    // Ранняя дверь аккаунта. 06.09: 99 первых сообщений за день и 3 просьбы
+    // завести аккаунт. Стена аккаунта приходит, когда выговорены 10 минут,
+    // а человек из объявления отвечает на автовопрос, пишет один раз сам и
+    // уходит на третьей минуте — до стены он не доживает. Поэтому аккаунт
+    // предлагается раньше: после второго сообщения сессии, когда Фреди уже
+    // ответил на своё. Карточка не блокирует, закрывается кликом мимо,
+    // раз в сутки на браузер, только анониму. Числа минут — из статуса
+    // счётчика, руками не вписываются.
+    var DOOR_KEY = 'meter_account_door_day';
+    function showAccountDoor(source) {
+        try {
+            if (_authed()) return;
+            if (_lastCheck && (_lastCheck.is_registered === true || _lastCheck.is_premium)) return;
+            var today = new Date().toISOString().slice(0, 10);
+            var shown = '';
+            try { shown = localStorage.getItem(DOOR_KEY) || ''; } catch (e) {}
+            if (shown === today) return;
+            if (document.getElementById('meterOverlay') || document.getElementById('meterUpsellOverlay')
+                || document.getElementById('meterPeakOverlay') || document.getElementById('meterDoorOverlay')
+                || document.getElementById('faAuthModal')) return;
+            _injectMeterStyles();
+            try { localStorage.setItem(DOOR_KEY, today); } catch (e) {}
+            var gain = _accountGain(_lastCheck);
+            _track('meter_account_door_shown', { source: source || '', gain: !!gain });
+            var who = _name();
+            var overlay = document.createElement('div');
+            overlay.className = 'meter-overlay';
+            overlay.id = 'meterDoorOverlay';
+            overlay.innerHTML =
+                '<div class="meter-modal">' +
+                    '<div class="meter-emoji">📩</div>' +
+                    '<div class="meter-title">Продолжим завтра?</div>' +
+                    '<div class="meter-text">' + (who ? _esc(who) + ', разговор пошёл. ' : 'Разговор пошёл. ') +
+                        'Без аккаунта Фреди его завтра не вспомнит и начнёт с чистого листа. ' +
+                        'Аккаунт — это почта и четыре цифры, минута времени.' +
+                        (gain
+                            ? ' С аккаунтом ' + gain.big + ' минут каждый день вместо ' + gain.small + '.'
+                            : '') +
+                    '</div>' +
+                    '<button class="meter-btn meter-btn-primary" id="meterDoorReg">📩 Завести аккаунт</button>' +
+                    '<button class="meter-btn meter-btn-secondary" id="meterDoorLater">Позже</button>' +
+                '</div>';
+            document.body.appendChild(overlay);
+            document.getElementById('meterDoorReg').onclick = function () {
+                overlay.remove();
+                _openRegister('door_' + (source || ''));
+            };
+            document.getElementById('meterDoorLater').onclick = function () {
+                _track('meter_account_door_dismissed', { source: source || '', reason: 'later' });
+                overlay.remove();
+            };
+            overlay.onclick = function (e) {
+                if (e.target === overlay) { _track('meter_account_door_dismissed', { source: source || '', reason: 'outside' }); overlay.remove(); }
+            };
+        } catch (e) { console.warn('showAccountDoor failed:', e); }
+    }
+
     window.FrediMeter = {
         checkCanSend: checkCanSend,
         showPeakOffer: showPeakOffer,
+        showAccountDoor: showAccountDoor,
         gameLocked: gameLocked,
         showGameLock: showGameLock,
         premiumGames: PREMIUM_GAMES,
