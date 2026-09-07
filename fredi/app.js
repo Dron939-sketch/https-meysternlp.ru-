@@ -764,6 +764,9 @@ async function _chatStreamRequest(text, getBubble) {
 
 // Глобальный флаг против двойных нажатий
 let _isLoading = false;
+// Сообщений за сессию через композер (в том числе автовопрос из ссылки).
+// Живёт вне setupDashComposer: дашборд перерисовывается, а счёт нет.
+let _dashMsgCount = 0;
 
 // Текстовая отправка с главного экрана — альтернатива голосу.
 // Голос идёт через voiceManager (/api/voice/process_stream), текст — прямо
@@ -879,6 +882,19 @@ function setupDashComposer() {
             if (answer && /завтра спрошу|продолжим завтра/i.test(answer)
                 && window.FrediMeter && typeof window.FrediMeter.showPeakOffer === 'function') {
                 setTimeout(function () { window.FrediMeter.showPeakOffer('closing'); }, 1500);
+            }
+        } catch (e) {}
+
+        // Ранняя дверь аккаунта: после второго сообщения сессии, когда Фреди
+        // ответил. Автовопрос из объявления считается первым — человек,
+        // написавший после него сам, уже в разговоре. Стена по счётчику
+        // приходит на десятой минуте, а 96 из 99 разговоров 06.09 до неё
+        // не дожили. Показывает meter.js, он же знает, аноним ли это.
+        try {
+            _dashMsgCount++;
+            if (answer && _dashMsgCount === 2
+                && window.FrediMeter && typeof window.FrediMeter.showAccountDoor === 'function') {
+                setTimeout(function () { window.FrediMeter.showAccountDoor('second_message'); }, 1500);
             }
         } catch (e) {}
 
